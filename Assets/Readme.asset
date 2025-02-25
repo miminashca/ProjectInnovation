@@ -12,29 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcf7219bab7fe46a1ad266029b2fee19, type: 3}
   m_Name: Readme
   m_EditorClassIdentifier: 
-  icon: {fileID: 2800000, guid: cbea0258d69fdef4ba73fa582f0e2004, type: 3}
-  title: Mobile 3D Template
+  icon: {fileID: 2800000, guid: 727a75301c3d24613a3ebcec4a24c2c8, type: 3}
+  title: URP Empty Template
   sections:
-  - heading: Welcome to the Mobile 3D Template
-    text: This template sets up the right Project settings for developing a 3D game
-      on mobile. Also it includes some of the recommended packages for developing
-      on mobile.
+  - heading: Welcome to the Universal Render Pipeline
+    text: This template includes the settings and assets you need to start creating with the Universal Render Pipeline.
     linkText: 
-    url: 
-  - heading: Forums iOS
-    text: 
+    url:
+  - heading: URP Documentation
+    text:
+    linkText: Read more about URP
+    url: https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest
+  - heading: Forums
+    text:
     linkText: Get answers and support
-    url: https://forum.unity.com/forums/ios-and-tvos.27/?_ga=2.229741980.1233471755.1632783301-870874885.1598941469
-  - heading: Forums Android
-    text: 
-    linkText: Get answers and support
-    url: https://forum.unity.com/forums/android.30/
-  - heading: Bugs
-    text: 
-    linkText: Report any bugs
+    url: https://forum.unity.com/forums/universal-render-pipeline.383/
+  - heading: Report bugs
+    text:
+    linkText: Submit a report
     url: https://unity3d.com/unity/qa/bug-reporting
-  - heading: Template feedback
-    text: 
-    linkText: Share your feedback on this template with us
-    url: https://unitysoftware.co1.qualtrics.com/jfe/form/SV_b8GWOIYxi4l6PDE?templatename=mobile3d
   loadedLayout: 1
