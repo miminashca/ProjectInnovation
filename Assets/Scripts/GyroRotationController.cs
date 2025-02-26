@@ -1,18 +1,33 @@
+using Unity.Mathematics;
 using UnityEngine;
 
 public class GyroRotationController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private Vector3 rotation;
+    private bool gyroEnabled;
+    private Gyroscope gyro;
+    private Vector3 rotation; 
     void Start()
     {
-        Input.gyro.enabled = true;
+        gyroEnabled = EnableGyro();
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    private bool EnableGyro()
     {
-        rotation.y = - Input.gyro.rotationRateUnbiased.y;
-        transform.Rotate(rotation);
+        if (SystemInfo.supportsGyroscope)
+        {
+            gyro = Input.gyro;
+            gyro.enabled = true;
+            
+            return true;
+        }
+        return false;
+    }
+    void Update()
+    {
+        if (gyroEnabled)
+        {
+            rotation.y = - Input.gyro.rotationRateUnbiased.y;
+            transform.Rotate(rotation);
+        }
     }
 }
