@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e9604ae36531fc64eb8608fc04ffd485
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 130518
+  packageName: Photon Voice 2
+  packageVersion: 2.57
+  assetPath: Assets/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset
+  uploadId: 716761
