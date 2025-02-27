@@ -255,8 +255,7 @@ namespace Photon.Realtime
                 // check if the client should disconnect after some seconds in background
                 if (this.backgroundStopwatch.ElapsedMilliseconds > this.KeepAliveInBackground)
                 {
-                    // client.IsConnected was checked above but is true even while disconnecting. avoid calling disconnect while disconnecting
-                    if (this.DisconnectAfterKeepAlive && this.Client.State != ClientState.Disconnecting)
+                    if (this.DisconnectAfterKeepAlive)
                     {
                         this.Client.Disconnect();
                     }

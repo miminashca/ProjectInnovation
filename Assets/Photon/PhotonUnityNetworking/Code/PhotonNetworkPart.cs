@@ -2556,7 +2556,7 @@ namespace Photon.Pun
                 bool connects = PhotonNetwork.NetworkingClient.ConnectToRegionMaster(_finalDevRegion);
                 if (!connects)
                 {
-                    Debug.LogError("PUN could not ConnectToRegionMaster successfully. Please check error messages.");
+                    PhotonNetwork.NetworkingClient.Disconnect(DisconnectCause.Exception);
                 }
                 return;
             }
@@ -2567,7 +2567,7 @@ namespace Photon.Pun
                 bool connects = PhotonNetwork.NetworkingClient.ConnectToRegionMaster(regionHandler.BestRegion.Code);
                 if (!connects)
                 {
-                    Debug.LogError("PUN could not ConnectToRegionMaster successfully. Please check error messages.");
+                    PhotonNetwork.NetworkingClient.Disconnect(DisconnectCause.Exception);
                 }
             }
         }
