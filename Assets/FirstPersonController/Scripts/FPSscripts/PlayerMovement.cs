@@ -10,7 +10,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpForce = 5f;
     [SerializeField] private float moveForce = 5f;
     [SerializeField] private float moveSpeed = 5f;
-    public bool Enabled = false;
 
     private enum ControlType
     {
@@ -33,8 +32,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if(!Enabled) return;
-        
         if (IsGrounded()) {
             //Debug.Log("grounded");
             if (Input.GetKeyDown(KeyCode.Space))
