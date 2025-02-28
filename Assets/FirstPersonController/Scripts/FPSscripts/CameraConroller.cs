@@ -11,19 +11,12 @@ public class CameraConroller : MonoBehaviour
     public float verticalSensitivity = 500f;
     private float xRotation = 0f;
     
-    // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
-    private void Update()
-    {
-        RotateCamera();
-    }
-
-    void RotateCamera()
+    public void RotateCamera()
     {
         float mouseY = Input.GetAxis("Mouse Y") * verticalSensitivity * Time.deltaTime;
         
