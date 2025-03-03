@@ -4,6 +4,8 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float yClamp = 30f;
     
     private float currentYAngle;
+    
+#if UNITY_ANDROID
     void Start()
     {
         Input.gyro.enabled = true;
@@ -22,4 +24,5 @@ public class CameraController : MonoBehaviour
 
         transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, currentYAngle, transform.localEulerAngles.z);
     }
+#endif
 }
