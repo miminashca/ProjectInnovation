@@ -8,9 +8,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GyroscopeScene.unity
     guid: 577594454add54cb78e82febe1d9e4de
+  - enabled: 1
+    path: Assets/Scenes/UIScene.unity
+    guid: 654e7f3362615a547be6c6211b3e5a67
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
