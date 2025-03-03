@@ -1,0 +1,5 @@
+/Users/sveta/Documents/study/term 3/ProjectInnovation/.utmp/Debug/201y2s62/arm64-v8a/CMakeFiles/edit_cache.dir
+/Users/sveta/Documents/study/term 3/ProjectInnovation/.utmp/Debug/201y2s62/arm64-v8a/CMakeFiles/rebuild_cache.dir
+/Users/sveta/Documents/study/term 3/ProjectInnovation/.utmp/Debug/201y2s62/arm64-v8a/GameActivity/CMakeFiles/game.dir
+/Users/sveta/Documents/study/term 3/ProjectInnovation/.utmp/Debug/201y2s62/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+/Users/sveta/Documents/study/term 3/ProjectInnovation/.utmp/Debug/201y2s62/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
