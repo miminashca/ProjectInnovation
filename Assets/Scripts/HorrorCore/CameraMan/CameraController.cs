@@ -1,25 +1,41 @@
+using System;
+using System.Collections;
 using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     [SerializeField] private float yClamp = 30f;
 
-    private bool gyroAvailable;
+    private bool gyroAvailable = false;
     private float initYAngle;
     private float currentYAngle;
-    
+
+    private void OnEnable()
+    {
+        EventBus.OnCameraViewChanged += ResetCamera;
+    }
+
     void Start()
     {
-        if (SystemInfo.supportsGyroscope)
+        initYAngle = transform.localEulerAngles.y;
+        currentYAngle = initYAngle;
+        
+        // Only enable the gyroscope on real mobile devices
+        if (Application.platform == RuntimePlatform.Android)
         {
-            Input.gyro.enabled = true;
-            gyroAvailable = true;
-
-            initYAngle = transform.localEulerAngles.y;
-            currentYAngle = initYAngle;
+            if (SystemInfo.supportsGyroscope)
+            {
+                Input.gyro.enabled = true;
+                gyroAvailable = true;
+            }
+            else
+            {
+                Debug.LogWarning("Gyroscope not available on this device. Disabling rotation.");
+                gyroAvailable = false;
+            }
         }
         else
         {
-            Debug.LogWarning("Gyroscope not available on this device. Disabling rotation.");
+            Debug.LogWarning("Gyroscope is disabled on non-mobile platforms.");
             gyroAvailable = false;
         }
     }
@@ -36,5 +52,16 @@ public class CameraController : MonoBehaviour
         currentYAngle = Mathf.Clamp(currentYAngle + delta, initYAngle-yClamp, initYAngle+yClamp);
 
         transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, currentYAngle, transform.localEulerAngles.z);
+    }
+
+    private void ResetCamera()
+    {
+        initYAngle = transform.localEulerAngles.y;
+        currentYAngle = initYAngle;
+    }
+    
+    private void OnDisable()
+    {
+        EventBus.OnCameraViewChanged -= ResetCamera;
     }
 }
