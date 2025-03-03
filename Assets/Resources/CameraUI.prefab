@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5281341845801619528}
   - component: {fileID: 2607501806783753416}
   - component: {fileID: 3087733694695101758}
+  - component: {fileID: 5498885299576556777}
   m_Layer: 0
   m_Name: CameraUI
   m_TagString: Untagged
@@ -164,3 +165,16 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &5498885299576556777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5268766718112780690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2ae12af513994fd5a0366e6f58ea63e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yClamp: 30
