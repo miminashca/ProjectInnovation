@@ -6,15 +6,14 @@ using Photon.Pun;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private CameraConroller playerCameraController;
-    private Camera playerCamera;
-    
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float jumpForce = 5f;
     [SerializeField] private float moveForce = 5f;
     [SerializeField] private float moveSpeed = 5f;
-
+    
+    private PlayerCameraConroller _playerPlayerCameraController;
+    private Camera playerCamera;
     private PhotonView view;
 
     private enum ControlType
@@ -34,8 +33,8 @@ public class PlayerMovement : MonoBehaviour
         playerRigidbody = GetComponent<Rigidbody>();
         playerCamera = GetComponentInChildren<Camera>();
         
-        if(playerCamera.gameObject.GetComponent<CameraConroller>()) playerCameraController = playerCamera.gameObject.GetComponent<CameraConroller>();
-        else playerCameraController = playerCamera.gameObject.AddComponent<CameraConroller>();
+        if(playerCamera.gameObject.GetComponent<PlayerCameraConroller>()) _playerPlayerCameraController = playerCamera.gameObject.GetComponent<PlayerCameraConroller>();
+        else _playerPlayerCameraController = playerCamera.gameObject.AddComponent<PlayerCameraConroller>();
         
         view = GetComponent<PhotonView>();
     }
@@ -98,7 +97,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void RotateCamera()
     {
-        if(playerCameraController) playerCameraController.RotateCamera();
+        if(_playerPlayerCameraController) _playerPlayerCameraController.RotateCamera();
     }
     
     private void OnDrawGizmos()

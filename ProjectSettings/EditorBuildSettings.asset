@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/GyroscopeScene.unity
     guid: 577594454add54cb78e82febe1d9e4de
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Net/LoadingScene.unity
     guid: bad8a0385da434bebb8ed6a6f688a7ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Net/LobbyScene.unity
     guid: 2350eedc8256143948f11b32c74e9ed0
   - enabled: 0
@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/NetworkingScene.unity
     guid: 5496f2ad746ab45ac92af4524abd79ec
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Net/LayoutScene.unity
     guid: 17f031d46c57e3e4e8bee36f73d8c819
   m_configObjects:
