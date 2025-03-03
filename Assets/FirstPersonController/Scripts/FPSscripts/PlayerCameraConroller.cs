@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class CameraConroller : MonoBehaviour
+public class PlayerCameraConroller : MonoBehaviour
 {
-    public float topClamp = -90f;
-    public float bottomClamp = 90f;
-    public float verticalSensitivity = 500f;
-    private float xRotation = 0f;
+    [SerializeField] private float topClamp = -90f;
+    [SerializeField] private float bottomClamp = 90f;
+    [SerializeField] private float verticalSensitivity = 500f;
     
+    private float xRotation = 0f;
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
