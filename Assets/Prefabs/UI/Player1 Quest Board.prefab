@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 204372258777290221}
   m_Layer: 0
-  m_Name: Quest Board
+  m_Name: Player1 Quest Board
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
