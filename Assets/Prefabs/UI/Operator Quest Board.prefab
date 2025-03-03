@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5357656748026624788}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 5674499244978851175}
   - component: {fileID: 4291964656554834879}
   - component: {fileID: 3927989527014453995}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Active Quest Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 6543885517490257426}
   - component: {fileID: 6397559944753997903}
   - component: {fileID: 2176342897815463279}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: QuestPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +200,7 @@ RectTransform:
   m_GameObject: {fileID: 7045372916425176412}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -26.259401}
-  m_LocalScale: {x: 0.4474942, y: 0.4474942, z: 0.4474942}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5357656748026624788}
@@ -208,7 +208,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.588623, y: 0.7993763}
   m_AnchorMax: {x: 1, y: 0.9944457}
-  m_AnchoredPosition: {x: 257.48837, y: 163.99438}
+  m_AnchoredPosition: {x: 62, y: 204}
   m_SizeDelta: {x: 789.49646, y: 216.67499}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6397559944753997903
@@ -258,10 +258,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6164522117034424019}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Operator Quest Board
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -273,9 +273,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7699776440889653466}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.573069, y: -746, z: 58.69389}
-  m_LocalScale: {x: 2.2351573, y: 2.2351573, z: 2.2351573}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6543885517490257426}
@@ -292,7 +292,7 @@ GameObject:
   - component: {fileID: 2238001503205700194}
   - component: {fileID: 4094449583678500041}
   - component: {fileID: 1284937243702291815}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Active Quest Attr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
