@@ -19,6 +19,12 @@ public class MicDeviceSelector : MonoBehaviour
         recorder.SourceType = Recorder.InputSourceType.Microphone;
         recorder.MicrophoneType = Recorder.MicType.Unity;
 
+        string[] unityMics = Microphone.devices;
+        foreach (var m in unityMics)
+        {
+            Debug.Log("Detected mic device: " + m);
+        }
+
         // Populate the dropdown with available devices
         PopulateDropdown();
 
