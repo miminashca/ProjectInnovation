@@ -38,16 +38,6 @@ public class PlayerMovement : MonoBehaviour
         else playerCameraController = playerCamera.gameObject.AddComponent<CameraConroller>();
         
         view = GetComponent<PhotonView>();
-        // Find the Camera and AudioListener in children
-        var cam = GetComponentInChildren<Camera>();
-        var listener = GetComponentInChildren<AudioListener>();
-
-        // If this Player object is not owned by me, disable its camera & listener
-        if (!view.IsMine)
-        {
-            if (cam) cam.enabled = false;
-            if (listener) listener.enabled = false;
-        }
     }
 
     private void Update()

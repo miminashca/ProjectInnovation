@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/NetworkingScene.unity
     guid: 5496f2ad746ab45ac92af4524abd79ec
   - enabled: 1
-    path: Assets/Scenes/LayoutScene.unity
+    path: Assets/Scenes/Net/LayoutScene.unity
     guid: 17f031d46c57e3e4e8bee36f73d8c819
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
