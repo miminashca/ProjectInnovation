@@ -1,0 +1,5 @@
+C:/Users/Nichita Cebotari/Desktop/Coding/!ProjectInnovation/ProjectInnovation/.utmp/RelWithDebInfo/583h2419/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/Nichita Cebotari/Desktop/Coding/!ProjectInnovation/ProjectInnovation/.utmp/RelWithDebInfo/583h2419/arm64-v8a/CMakeFiles/rebuild_cache.dir
+C:/Users/Nichita Cebotari/Desktop/Coding/!ProjectInnovation/ProjectInnovation/.utmp/RelWithDebInfo/583h2419/arm64-v8a/GameActivity/CMakeFiles/game.dir
+C:/Users/Nichita Cebotari/Desktop/Coding/!ProjectInnovation/ProjectInnovation/.utmp/RelWithDebInfo/583h2419/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+C:/Users/Nichita Cebotari/Desktop/Coding/!ProjectInnovation/ProjectInnovation/.utmp/RelWithDebInfo/583h2419/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
