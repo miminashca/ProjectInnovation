@@ -670,7 +670,6 @@ GameObject:
   - component: {fileID: 8542226106201887170}
   - component: {fileID: 7294725278299715926}
   - component: {fileID: 5498885299576556777}
-  - component: {fileID: 8449258044294350393}
   m_Layer: 0
   m_Name: CameraMan_Networked
   m_TagString: Untagged
@@ -862,14 +861,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yClamp: 30
---- !u!81 &8449258044294350393
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5268766718112780690}
-  m_Enabled: 1
 --- !u!1 &5503976540711178654
 GameObject:
   m_ObjectHideFlags: 0

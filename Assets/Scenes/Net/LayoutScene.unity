@@ -1641,7 +1641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91175dcc15224463780e01a8a98b1b60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  voiceDetection: 1
+  voiceDetection: 0
   voiceDetectionThreshold: 0.2
   voiceDetectionDelayMs: 500
   interestGroup: 0
