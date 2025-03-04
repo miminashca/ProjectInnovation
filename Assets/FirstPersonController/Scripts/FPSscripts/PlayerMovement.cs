@@ -74,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
     private void Move()
     {
         Vector3 moveVector;
-        if (Application.platform == RuntimePlatform.Android && joystick)
+        if (joystick)
         {
             moveVector = new Vector3(joystick.Horizontal, 0, joystick.Vertical);
         }
