@@ -11,8 +11,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpForce = 5f;
     [SerializeField] private float moveForce = 5f;
     [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private Joystick joystick;
     
-    private PlayerCameraConroller _playerPlayerCameraController;
+    private PlayerCameraConroller playerPlayerCameraController;
     private Camera playerCamera;
     private PhotonView view;
 
@@ -33,15 +34,15 @@ public class PlayerMovement : MonoBehaviour
         playerRigidbody = GetComponent<Rigidbody>();
         playerCamera = GetComponentInChildren<Camera>();
         
-        if(playerCamera.gameObject.GetComponent<PlayerCameraConroller>()) _playerPlayerCameraController = playerCamera.gameObject.GetComponent<PlayerCameraConroller>();
-        else _playerPlayerCameraController = playerCamera.gameObject.AddComponent<PlayerCameraConroller>();
+        if(playerCamera.gameObject.GetComponent<PlayerCameraConroller>()) playerPlayerCameraController = playerCamera.gameObject.GetComponent<PlayerCameraConroller>();
+        else playerPlayerCameraController = playerCamera.gameObject.AddComponent<PlayerCameraConroller>();
         
         view = GetComponent<PhotonView>();
     }
 
     private void Update()
     {
-        if (view.IsMine)
+        if (!view || view.IsMine)
         {
             RotateCamera();
             RotatePlayer();
@@ -51,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(view.IsMine) Move();
+        if(!view || view.IsMine) Move();
     }
 
     bool IsGrounded()
@@ -69,9 +70,18 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
+    
     private void Move()
     {
-        Vector3 moveVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        Vector3 moveVector;
+        if (Application.platform == RuntimePlatform.Android && joystick)
+        {
+            moveVector = new Vector3(joystick.Horizontal, 0, joystick.Vertical);
+        }
+        else
+        {
+            moveVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        }
         
         control = IsGrounded() ? ControlType.Velocity : ControlType.Force;
         
@@ -90,14 +100,28 @@ public class PlayerMovement : MonoBehaviour
     }
     private void RotatePlayer()
     {
+        float touchX = 0f;
+
+        // 🖐️ Mobile: Use touch drag instead of mouse
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Moved)
+            {
+                touchX = touch.deltaPosition.x * horizontalSensitivity * Time.deltaTime;
+            }
+        }
+
+        // 🎮 PC: Still support mouse input
         float mouseX = Input.GetAxis("Mouse X") * horizontalSensitivity * Time.deltaTime;
-        yRotation += mouseX;
+        
+        yRotation += (mouseX + touchX);
         transform.localRotation = Quaternion.Euler(0f, yRotation, 0f);
     }
 
     private void RotateCamera()
     {
-        if(_playerPlayerCameraController) _playerPlayerCameraController.RotateCamera();
+        if(playerPlayerCameraController) playerPlayerCameraController.RotateCamera();
     }
     
     private void OnDrawGizmos()
