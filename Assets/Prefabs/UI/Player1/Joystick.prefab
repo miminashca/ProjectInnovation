@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1139748038178243604
 RectTransform:
   m_ObjectHideFlags: 0
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joystickBackground: {fileID: 8260206147148408322}
   joystickHandle: {fileID: 2905617658989222287}
-  maxJoystickDistance: 50
+  maxJoystickDistance: 70
   smoothness: 10
 --- !u!1 &2940022279982640564
 GameObject:
