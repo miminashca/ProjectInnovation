@@ -6,21 +6,20 @@ using Unity.Mathematics;
 public class SpawnPlayers : MonoBehaviourPunCallbacks
 {
     [SerializeField] private Transform playerSpawnTransform;
-    [SerializeField] private Transform cameraSpawnTransform;
-    [SerializeField] private string playerPrefabName = "Player_Networked";
-    [SerializeField] private string secondPlayerUIPrefabName = "CameraUI"; 
+    [SerializeField] private GameObject playerPrefab;
+    [SerializeField] private GameObject secondPlayerUIPrefab;
 
     private void Start()
     {
         if (PhotonNetwork.IsMasterClient)
         {
             // Spawn Player
-            PhotonNetwork.Instantiate(playerPrefabName, playerSpawnTransform.position, playerSpawnTransform.rotation);
+            PhotonNetwork.Instantiate(playerPrefab.name, playerSpawnTransform.position, playerSpawnTransform.rotation);
         }
         else
         {
             // Spawn Camera
-            PhotonNetwork.Instantiate(secondPlayerUIPrefabName, cameraSpawnTransform.position, cameraSpawnTransform.rotation);
+            PhotonNetwork.Instantiate(secondPlayerUIPrefab.name, Vector3.zero, Quaternion.identity);
         }
     }
 }

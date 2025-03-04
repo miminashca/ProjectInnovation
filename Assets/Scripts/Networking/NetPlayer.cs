@@ -12,7 +12,7 @@ public class NetPlayer : MonoBehaviour
         if (!view.IsMine)
         {
             if (camera) camera.enabled = false;
-            if (listener) listener.enabled = false;
+            //if (listener) listener.enabled = false;
         }
     }
 }
