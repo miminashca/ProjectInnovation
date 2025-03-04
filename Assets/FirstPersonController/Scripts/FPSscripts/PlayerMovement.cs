@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.EventSystems;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -74,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
     private void Move()
     {
         Vector3 moveVector;
-        if (Application.platform == RuntimePlatform.Android && joystick)
+        if (joystick)
         {
             moveVector = new Vector3(joystick.Horizontal, 0, joystick.Vertical);
         }
@@ -105,11 +106,23 @@ public class PlayerMovement : MonoBehaviour
         // 🖐️ Mobile: Use touch drag instead of mouse
         if (Input.touchCount > 0)
         {
-            Touch touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Moved)
+            foreach (Touch touch in Input.touches)
             {
-                touchX = touch.deltaPosition.x * horizontalSensitivity * Time.deltaTime;
+                // If this touch is over a UI element (e.g. joystick), skip rotation
+                if (IsTouchOverUI(touch)) 
+                    continue;
+            
+                // Otherwise, accumulate rotation from this swipe
+                if (touch.phase == TouchPhase.Moved)
+                {
+                    touchX = touch.deltaPosition.x * horizontalSensitivity * Time.deltaTime;
+                }
             }
+            // //Touch touch = Input.GetTouch(0);
+            // if (touch.phase == TouchPhase.Moved && !EventSystem.current.IsPointerOverGameObject(touch.fingerId))
+            // {
+            //     touchX = touch.deltaPosition.x * horizontalSensitivity * Time.deltaTime;
+            // }
         }
 
         // 🎮 PC: Still support mouse input
@@ -129,5 +142,13 @@ public class PlayerMovement : MonoBehaviour
         Gizmos.color = Color.magenta;
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
         //Debug.DrawRay(groundCheck.position, Vector3.down * groundCheckRadius, Color.magenta);
+    }
+    /// <summary>
+    /// Returns true if the specified touch is over any UI element, false otherwise.
+    /// </summary>
+    private bool IsTouchOverUI(Touch touch)
+    {
+        // Make sure we have a current EventSystem and use fingerId
+        return EventSystem.current != null && EventSystem.current.IsPointerOverGameObject(touch.fingerId);
     }
 }
