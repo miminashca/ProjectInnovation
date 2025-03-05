@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class CloseGame : MonoBehaviour
 {
-    public class CloseButton : MonoBehaviour
-    {
+
+    
         public void QuitGame()
         {
 #if UNITY_EDITOR
@@ -13,4 +13,4 @@ public class CloseGame : MonoBehaviour
 #endif
         }
     }
-}
+

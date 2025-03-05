@@ -964,23 +964,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 953475217}
   m_CullTransparentMesh: 1
---- !u!1 &1088963120 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4272910774577070976, guid: 0e1422595ac26b848b730093249d81e7, type: 3}
-  m_PrefabInstance: {fileID: 2156403415283945272}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1088963125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1088963120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9040b0940aa66e5459b8b4d3eef0187c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1128241300 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 204372258777290221, guid: 76e3f4587487ba046a30ed48d6df5804, type: 3}
@@ -1694,22 +1677,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 877703220}
     m_Modifications:
-    - target: {fileID: 3218321452265430447, guid: 0e1422595ac26b848b730093249d81e7, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3218321452265430447, guid: 0e1422595ac26b848b730093249d81e7, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3218321452265430447, guid: 0e1422595ac26b848b730093249d81e7, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1088963120}
-    - target: {fileID: 3218321452265430447, guid: 0e1422595ac26b848b730093249d81e7, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4289389480639281938, guid: 0e1422595ac26b848b730093249d81e7, type: 3}
       propertyPath: m_Name
       value: PauseScreenPanel
@@ -1797,10 +1764,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4272910774577070976, guid: 0e1422595ac26b848b730093249d81e7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1088963125}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e1422595ac26b848b730093249d81e7, type: 3}
 --- !u!1001 &2622384260372421657
 PrefabInstance:
