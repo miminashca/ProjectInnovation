@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
@@ -13,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float moveForce = 5f;
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private Joystick joystick;
-    
+
     private PlayerCameraConroller playerPlayerCameraController;
     private Camera playerCamera;
     private PhotonView view;
@@ -30,18 +29,18 @@ public class PlayerMovement : MonoBehaviour
     private ControlType control;
     private float groundCheckRadius = 0.5f;
     private Rigidbody playerRigidbody;
-    
+
     private float yRotation = 0f;
     public float horizontalSensitivity = 500f;
-    
+
     void Start()
     {
         playerRigidbody = GetComponent<Rigidbody>();
         playerCamera = GetComponentInChildren<Camera>();
-        
-        if(playerCamera.gameObject.GetComponent<PlayerCameraConroller>()) playerPlayerCameraController = playerCamera.gameObject.GetComponent<PlayerCameraConroller>();
+
+        if (playerCamera.gameObject.GetComponent<PlayerCameraConroller>()) playerPlayerCameraController = playerCamera.gameObject.GetComponent<PlayerCameraConroller>();
         else playerPlayerCameraController = playerCamera.gameObject.AddComponent<PlayerCameraConroller>();
-        
+
         view = GetComponent<PhotonView>();
     }
 
@@ -57,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(!view || view.IsMine) Move();
+        if (!view || view.IsMine) Move();
     }
 
     bool IsGrounded()
@@ -67,7 +66,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        if (IsGrounded()) {
+        if (IsGrounded())
+        {
             //Debug.Log("grounded");
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -75,22 +75,26 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-    
+
     private void Move()
     {
-        Vector3 moveVector;
+        Vector3 moveVector = Vector3.zero;
         if (joystick)
         {
             moveVector = new Vector3(joystick.Horizontal, 0, joystick.Vertical);
         }
+        // Optionally, you can add a preprocessor check if you want to support keyboard input on other platforms.
+#if UNITY_EDITOR
         else
         {
             moveVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         }
-        
+#endif
+
         control = IsGrounded() ? ControlType.Velocity : ControlType.Force;
-        
-        switch (control) {
+
+        switch (control)
+        {
             case ControlType.Force:
                 playerRigidbody.AddRelativeForce(moveVector * moveForce);
                 break;
@@ -103,41 +107,38 @@ public class PlayerMovement : MonoBehaviour
                 break;
         }
     }
+
     private void RotatePlayer()
     {
-        Vector2 touchVec = new Vector2(0f,0f);
+        Vector2 touchVec = Vector2.zero;
 
-        // 🖐️ Mobile: Use touch drag instead of mouse
-        if (Input.touchCount > 0)
+        if (Input.touchCount > 0 && rotationFingerId.HasValue)
         {
-            // 2) Check if we have a rotation finger
-            if (rotationFingerId.HasValue)
+            foreach (Touch t in Input.touches)
             {
-                int rotFinger = rotationFingerId.Value;
-
-                // Find that finger in current touches
-                for (int i = 0; i < Input.touchCount; i++)
+                if (t.fingerId == rotationFingerId.Value && t.phase == TouchPhase.Moved)
                 {
-                    Touch t = Input.GetTouch(i);
-                    if (t.fingerId == rotFinger && t.phase == TouchPhase.Moved)
-                    {
-                        // Accumulate rotation from its delta
-                        touchVec = horizontalSensitivity * Time.deltaTime * t.deltaPosition;
-                        break;
-                    }
+                    touchVec = horizontalSensitivity * Time.deltaTime * t.deltaPosition;
+                    break;
                 }
             }
         }
 
-        // 🎮 PC: Still support mouse input
+        // For mobile, you may want to disable the mouse input
+#if UNITY_EDITOR
         float mouseX = Input.GetAxis("Mouse X") * horizontalSensitivity * Time.deltaTime;
-        
+#else
+    float mouseX = 0;
+#endif
+
         yRotation += (mouseX + touchVec.x);
         transform.localRotation = Quaternion.Euler(0f, yRotation, 0f);
-        
-        if(playerPlayerCameraController) playerPlayerCameraController.RotateCamera(touchVec.y);
+
+        if (playerPlayerCameraController)
+            playerPlayerCameraController.RotateCamera(touchVec.y);
     }
-    
+
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.magenta;
@@ -164,7 +165,7 @@ public class PlayerMovement : MonoBehaviour
                 fingerStartedOnUI[touch.fingerId] = isOverUI;
 
                 // If no rotation finger yet, and it started OFF UI, pick it for rotation
-                if (!rotationFingerId.HasValue && !isOverUI)
+                if (!rotationFingerId.HasValue && !isOverUI && touch.position.x > Screen.width / 2)
                 {
                     rotationFingerId = touch.fingerId;
                 }
