@@ -17,6 +17,10 @@ public class PlayerMovement : MonoBehaviour
     private PlayerCameraConroller playerPlayerCameraController;
     private Camera playerCamera;
     private PhotonView view;
+    private int? rotationFingerId = null;
+    // For each finger, store whether it STARTED on UI or not
+    private Dictionary<int, bool> fingerStartedOnUI = new Dictionary<int, bool>();
+
 
     private enum ControlType
     {
@@ -45,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!view || view.IsMine)
         {
-            RotateCamera();
+            HandleTouches();
             RotatePlayer();
             Jump();
         }
@@ -101,40 +105,37 @@ public class PlayerMovement : MonoBehaviour
     }
     private void RotatePlayer()
     {
-        float touchX = 0f;
+        Vector2 touchVec = new Vector2(0f,0f);
 
         // 🖐️ Mobile: Use touch drag instead of mouse
         if (Input.touchCount > 0)
         {
-            foreach (Touch touch in Input.touches)
+            // 2) Check if we have a rotation finger
+            if (rotationFingerId.HasValue)
             {
-                // If this touch is over a UI element (e.g. joystick), skip rotation
-                if (IsTouchOverUI(touch)) 
-                    continue;
-            
-                // Otherwise, accumulate rotation from this swipe
-                if (touch.phase == TouchPhase.Moved)
+                int rotFinger = rotationFingerId.Value;
+
+                // Find that finger in current touches
+                for (int i = 0; i < Input.touchCount; i++)
                 {
-                    touchX = touch.deltaPosition.x * horizontalSensitivity * Time.deltaTime;
+                    Touch t = Input.GetTouch(i);
+                    if (t.fingerId == rotFinger && t.phase == TouchPhase.Moved)
+                    {
+                        // Accumulate rotation from its delta
+                        touchVec = horizontalSensitivity * Time.deltaTime * t.deltaPosition;
+                        break;
+                    }
                 }
             }
-            // //Touch touch = Input.GetTouch(0);
-            // if (touch.phase == TouchPhase.Moved && !EventSystem.current.IsPointerOverGameObject(touch.fingerId))
-            // {
-            //     touchX = touch.deltaPosition.x * horizontalSensitivity * Time.deltaTime;
-            // }
         }
 
         // 🎮 PC: Still support mouse input
         float mouseX = Input.GetAxis("Mouse X") * horizontalSensitivity * Time.deltaTime;
         
-        yRotation += (mouseX + touchX);
+        yRotation += (mouseX + touchVec.x);
         transform.localRotation = Quaternion.Euler(0f, yRotation, 0f);
-    }
-
-    private void RotateCamera()
-    {
-        if(playerPlayerCameraController) playerPlayerCameraController.RotateCamera();
+        
+        if(playerPlayerCameraController) playerPlayerCameraController.RotateCamera(touchVec.y);
     }
     
     private void OnDrawGizmos()
@@ -150,5 +151,37 @@ public class PlayerMovement : MonoBehaviour
     {
         // Make sure we have a current EventSystem and use fingerId
         return EventSystem.current != null && EventSystem.current.IsPointerOverGameObject(touch.fingerId);
+    }
+    private void HandleTouches()
+    {
+        // Check all touches this frame
+        foreach (Touch touch in Input.touches)
+        {
+            // 1) If it's a new touch (Began), record whether it started on UI
+            if (touch.phase == TouchPhase.Began)
+            {
+                bool isOverUI = IsTouchOverUI(touch);
+                fingerStartedOnUI[touch.fingerId] = isOverUI;
+
+                // If no rotation finger yet, and it started OFF UI, pick it for rotation
+                if (!rotationFingerId.HasValue && !isOverUI)
+                {
+                    rotationFingerId = touch.fingerId;
+                }
+            }
+
+            // 2) If it's ended/canceled, remove from dictionary
+            //    If this was our rotation finger, free it up
+            if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)
+            {
+                if (fingerStartedOnUI.ContainsKey(touch.fingerId))
+                    fingerStartedOnUI.Remove(touch.fingerId);
+
+                if (rotationFingerId.HasValue && rotationFingerId.Value == touch.fingerId)
+                {
+                    rotationFingerId = null;
+                }
+            }
+        }
     }
 }
