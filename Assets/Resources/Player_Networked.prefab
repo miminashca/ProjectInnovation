@@ -233,7 +233,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4298497214730766342, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
       propertyPath: verticalSensitivity
-      value: 7
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 5181853141744245623, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -285,7 +285,7 @@ PrefabInstance:
       objectReference: {fileID: 1918823778882171405}
     - target: {fileID: 8164019683301901393, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
       propertyPath: horizontalSensitivity
-      value: 10
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

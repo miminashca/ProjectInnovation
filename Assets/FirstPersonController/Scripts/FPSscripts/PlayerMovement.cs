@@ -78,15 +78,12 @@ public class PlayerMovement : MonoBehaviour
     
     private void Move()
     {
-        Vector3 moveVector;
+        Vector3 moveVector = new Vector3();
         if (joystick)
         {
-            moveVector = new Vector3(joystick.Horizontal, 0, joystick.Vertical);
+            moveVector += new Vector3(joystick.Horizontal, 0, joystick.Vertical);
         }
-        else
-        {
-            moveVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        }
+        moveVector += new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         
         control = IsGrounded() ? ControlType.Velocity : ControlType.Force;
         
