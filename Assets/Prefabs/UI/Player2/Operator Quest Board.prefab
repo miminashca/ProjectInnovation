@@ -334,6 +334,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6164522117034424019}
+  - component: {fileID: 3747957084674919431}
   m_Layer: 5
   m_Name: Operator Quest Board
   m_TagString: Untagged
@@ -357,6 +358,19 @@ Transform:
   - {fileID: 6543885517490257426}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3747957084674919431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7699776440889653466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7276c116e9c9d5245afe6ee884f0597c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counterText: {fileID: 0}
 --- !u!1 &7815214188037279575
 GameObject:
   m_ObjectHideFlags: 0
