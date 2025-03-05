@@ -81,14 +81,10 @@ public class PlayerMovement : MonoBehaviour
         Vector3 moveVector = Vector3.zero;
         if (joystick)
         {
-            moveVector = new Vector3(joystick.Horizontal, 0, joystick.Vertical);
+            moveVector += new Vector3(joystick.Horizontal, 0, joystick.Vertical);
         }
-        // Optionally, you can add a preprocessor check if you want to support keyboard input on other platforms.
 #if UNITY_EDITOR
-        else
-        {
-            moveVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        }
+        moveVector += new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 #endif
 
         control = IsGrounded() ? ControlType.Velocity : ControlType.Force;
@@ -125,10 +121,9 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // For mobile, you may want to disable the mouse input
+        float mouseX = 0;
 #if UNITY_EDITOR
-        float mouseX = Input.GetAxis("Mouse X") * horizontalSensitivity * Time.deltaTime;
-#else
-    float mouseX = 0;
+        mouseX = Input.GetAxis("Mouse X") * horizontalSensitivity * Time.deltaTime;
 #endif
 
         yRotation += (mouseX + touchVec.x);
