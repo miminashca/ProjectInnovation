@@ -3,6 +3,6 @@ public class CameraButtons : MonoBehaviour
 {
     public void PressCameraButtonWithID(int ID)
     {
-        EventBus.PressCameraSwitchButton(ID);
+        PickupEventBus.PressCameraSwitchButton(ID);
     }
 }
