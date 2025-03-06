@@ -10,6 +10,7 @@ public enum EnemyStateType
 }
 public interface IEnemyState
 {
+    EnemyStateMachine SM { get; }
     EnemyStateType enemyStateType { get; }
     void Enter(EnemyContext context);
     void Execute(EnemyContext context);

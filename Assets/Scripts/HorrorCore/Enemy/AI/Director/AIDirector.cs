@@ -2,15 +2,12 @@ using UnityEngine;
 
 public class AIDirector : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public delegate void NoiseEvent(Vector3 position, float loudness);
+    public static event NoiseEvent OnNoiseEvent;
 
-    // Update is called once per frame
-    void Update()
+    public static void PlayerMadeNoise(Vector3 position, float loudness)
     {
-        
+        OnNoiseEvent?.Invoke(position, loudness);
     }
 }
+

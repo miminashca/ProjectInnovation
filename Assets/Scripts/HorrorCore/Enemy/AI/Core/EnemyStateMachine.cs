@@ -8,7 +8,7 @@ public class EnemyStateMachine : MonoBehaviour
     private void Start()
     {
         // Initialize with Roaming State (or whichever default state you want).
-        SetState(new RoamingState());
+        SetState(new RoamingState(this));
     }
 
     private void Update()
