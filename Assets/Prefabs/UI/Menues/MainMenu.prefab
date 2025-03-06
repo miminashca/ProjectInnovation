@@ -117,7 +117,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 4351463033812976931}
+  m_TargetGraphic: {fileID: 1000548816153559671}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -276,7 +276,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4798934472332247704
 RectTransform:
   m_ObjectHideFlags: 0
