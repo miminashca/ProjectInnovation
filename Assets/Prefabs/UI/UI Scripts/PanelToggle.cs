@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class PausePopUp : MonoBehaviour
+public class PanelToggle : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-    [SerializeField] private GameObject PausePanel;
+    [SerializeField] private GameObject targetPanel;
 
     
     // Update is called once per frame
@@ -12,12 +12,12 @@ public class PausePopUp : MonoBehaviour
     {
            
     }
-    public void Pause()
+    public void On()
     {
-        PausePanel.SetActive(true);
+        targetPanel.SetActive(true);
     } 
-    public void Continue()
+    public void Off()
     {
-        PausePanel.SetActive(false);
+        targetPanel.SetActive(false);
     }
 }

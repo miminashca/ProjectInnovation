@@ -121,9 +121,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2488156780758422379}
+      - m_Target: {fileID: 7962878456030968885}
         m_TargetAssemblyTypeName: PausePopUp, Assembly-CSharp
-        m_MethodName: Continue
+        m_MethodName: Off
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -390,9 +390,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8694465979677336313}
-        m_TargetAssemblyTypeName: CloseGame, Assembly-CSharp
-        m_MethodName: QuitGame
+      - m_Target: {fileID: 7774530328194453454}
+        m_TargetAssemblyTypeName: LeaveGame, Assembly-CSharp
+        m_MethodName: QuitToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -413,8 +413,8 @@ GameObject:
   - component: {fileID: 6773033122781804725}
   - component: {fileID: 8907989969357449316}
   - component: {fileID: 1346771853690452910}
-  - component: {fileID: 8694465979677336313}
-  - component: {fileID: 2488156780758422379}
+  - component: {fileID: 7774530328194453454}
+  - component: {fileID: 7962878456030968885}
   m_Layer: 5
   m_Name: PauseScreenPanel
   m_TagString: Untagged
@@ -482,7 +482,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8694465979677336313
+--- !u!114 &7774530328194453454
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -491,10 +491,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4289389480639281938}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9040b0940aa66e5459b8b4d3eef0187c, type: 3}
+  m_Script: {fileID: 11500000, guid: d22b5176cdd9d8842962531140b45337, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2488156780758422379
+--- !u!114 &7962878456030968885
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -506,7 +506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c717f7b368692594e927899d77734634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PausePanel: {fileID: 4289389480639281938}
+  targetPanel: {fileID: 4289389480639281938}
 --- !u!1 &4390218110999452741
 GameObject:
   m_ObjectHideFlags: 0
