@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4228377888416293454}
-  - component: {fileID: 9066058971439733315}
   - component: {fileID: 3461072725114169468}
+  - component: {fileID: 9066058971439733315}
   - component: {fileID: 2247020837568389447}
   m_Layer: 0
   m_Name: AudioManager
@@ -34,6 +34,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8292480152848259969}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3461072725114169468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841088466992918238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79e2dd8b9ac961a488d82dace409ed02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listener: {fileID: 0}
+  maxDistance: 30
+  occlusionThreshold: 0.5
+  occlusionLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  numberOfRays: 10
+  coneAngle: 45
+  occlusionCutoffScalingFactor: 0.1
 --- !u!82 &9066058971439733315
 AudioSource:
   m_ObjectHideFlags: 0
@@ -131,27 +152,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &3461072725114169468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1841088466992918238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79e2dd8b9ac961a488d82dace409ed02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  listener: {fileID: 0}
-  maxDistance: 30
-  occlusionThreshold: 0.5
-  occlusionLayerMask:
-    serializedVersion: 2
-    m_Bits: 64
-  numberOfRays: 10
-  coneAngle: 45
-  occlusionCutoffScalingFactor: 0.1
 --- !u!169 &2247020837568389447
 AudioLowPassFilter:
   m_ObjectHideFlags: 0
