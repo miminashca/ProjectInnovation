@@ -14,10 +14,7 @@ public class EnemyStateMachine : MonoBehaviour
     private void Update()
     {
         // Each frame, just run the current state’s logic.
-        if (currentState != null)
-        {
-            currentState.Execute(context);
-        }
+        currentState?.Execute(context);
     }
 
     public void SetState(IEnemyState newState)
@@ -25,7 +22,7 @@ public class EnemyStateMachine : MonoBehaviour
         // 1) Exit the current state
         if (currentState != null)
         {
-            EnemyAiEventBus.ExitStateWithID(currentState.enemyStateType);
+            EnemyAiEventBus.ExitStateWithEnum(currentState.enemyStateType);
             currentState.Exit(context);
         }
 
@@ -35,7 +32,7 @@ public class EnemyStateMachine : MonoBehaviour
         // 3) Enter the new state
         if (currentState != null)
         {
-            EnemyAiEventBus.EnterStateWithID(currentState.enemyStateType);
+            EnemyAiEventBus.EnterStateWithEnum(currentState.enemyStateType);
             currentState.Enter(context);
         }
     }

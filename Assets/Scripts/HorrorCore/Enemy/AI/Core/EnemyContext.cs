@@ -16,9 +16,9 @@ public class EnemyContext
     public bool hasRecentNoise;
     
     // Suspicion / detection parameters
-    public float alertThreshold;        // e.g., how many decibels or “loudness units” needed
-    public float investigateTimeout;    // Time in Investigating before returning to Roaming
-    public float pursuingVisionLostTime; // Time we can’t see the player before giving up
+    public float alertThreshold;            // e.g., how many decibels or “loudness units” needed
+    public float investigateTimeout;        // Time in Investigating before returning to Roaming
+    public float pursuingVisionLostTime;    // Time we can’t see the player before giving up
 
     // Timers / counters / states
     public float timeSinceLastPlayerSight;
@@ -28,7 +28,7 @@ public class EnemyContext
     // Movement/Patrol data
     public float roamSpeed;
     public float chaseSpeed;
-    public Transform[] patrolPoints; // if you want a set route
+    public Transform[] patrolPoints;        // if you want a set route
     public int currentPatrolIndex;
     
     // Additional design tweak fields...
