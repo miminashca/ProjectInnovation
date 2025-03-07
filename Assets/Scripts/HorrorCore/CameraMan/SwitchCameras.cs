@@ -7,7 +7,7 @@ public class SwitchCameras : MonoBehaviour
     [SerializeField] private CameraTransformsData cameraTransformsData;
     private void OnEnable()
     {
-        EventBus.OnCameraSwitchButtonPressedWithID += SetCameraTransformByID;
+        PickupEventBus.OnCameraSwitchButtonPressedWithID += SetCameraTransformByID;
     }
     void Start()
     {
@@ -17,7 +17,7 @@ public class SwitchCameras : MonoBehaviour
     {
         transform.position = GetCamTransformByID(ID).position;
         transform.rotation = GetCamTransformByID(ID).rotation;
-        EventBus.ChangeCameraView();
+        PickupEventBus.ChangeCameraView();
     }
     private Transform GetCamTransformByID(int ID)
     {
@@ -27,6 +27,6 @@ public class SwitchCameras : MonoBehaviour
     }
     private void OnDisable()
     {
-        EventBus.OnCameraSwitchButtonPressedWithID -= SetCameraTransformByID;
+        PickupEventBus.OnCameraSwitchButtonPressedWithID -= SetCameraTransformByID;
     }
 }

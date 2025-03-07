@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public static class EventBus
+public static class PickupEventBus
 {
     public static event Action<int> OnCameraSwitchButtonPressedWithID;
     public static event Action OnCameraViewChanged;

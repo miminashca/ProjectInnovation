@@ -7,13 +7,13 @@ public class TryGetPickup : MonoBehaviour
     private PickUp currentPickup;
     private void OnEnable()
     {
-        EventBus.OnPickupDetected += PickupDetected;
-        EventBus.OnPickupUndetected += PickupUndetected;
+        PickupEventBus.OnPickupDetected += PickupDetected;
+        PickupEventBus.OnPickupUndetected += PickupUndetected;
     }
     private void OnDisable()
     {
-        EventBus.OnPickupDetected -= PickupDetected;
-        EventBus.OnPickupUndetected -= PickupUndetected;
+        PickupEventBus.OnPickupDetected -= PickupDetected;
+        PickupEventBus.OnPickupUndetected -= PickupUndetected;
     }
 
     void Start()
@@ -44,7 +44,7 @@ public class TryGetPickup : MonoBehaviour
 
                     if (pickup == currentPickup)
                     {
-                        EventBus.CollectPickup(currentPickup); // Your custom pickup handling
+                        PickupEventBus.CollectPickup(currentPickup); // Your custom pickup handling
                         currentPickup = null;
                         Debug.Log("picked up");
                     }
@@ -64,7 +64,7 @@ public class TryGetPickup : MonoBehaviour
                 PickUp pickup = hitInfo.collider.GetComponent<PickUp>();
                 if (pickup == currentPickup)
                 {
-                    EventBus.CollectPickup(currentPickup); // Your custom pickup handling
+                    PickupEventBus.CollectPickup(currentPickup); // Your custom pickup handling
                     currentPickup = null;
                     Debug.Log("picked up");
                 }
