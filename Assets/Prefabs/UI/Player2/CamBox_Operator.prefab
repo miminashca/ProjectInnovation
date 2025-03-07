@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 6172826705911067893}
   - component: {fileID: 7841569236763627272}
   m_Layer: 5
-  m_Name: CamBox
+  m_Name: CamBox_Operator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

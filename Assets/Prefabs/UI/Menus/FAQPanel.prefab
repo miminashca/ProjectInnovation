@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3015407757868310262}
   - component: {fileID: 1134613534486627017}
   m_Layer: 5
-  m_Name: Button
+  m_Name: CloseButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 7809214946794284376}
   - component: {fileID: 4899944478077579668}
   m_Layer: 5
-  m_Name: P1
+  m_Name: Player1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 936075530833775619}
   - component: {fileID: 3191576544682102219}
   m_Layer: 5
-  m_Name: desc
+  m_Name: Player2Description
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -360,7 +360,7 @@ GameObject:
   - component: {fileID: 5381854207258299931}
   - component: {fileID: 5370627199729709192}
   m_Layer: 5
-  m_Name: Pl1
+  m_Name: Player1Header
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -496,7 +496,7 @@ GameObject:
   - component: {fileID: 1225995985102361939}
   - component: {fileID: 7323573647997504652}
   m_Layer: 5
-  m_Name: P2
+  m_Name: Player2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -573,7 +573,7 @@ GameObject:
   - component: {fileID: 3225657770929943266}
   - component: {fileID: 3826601752986110102}
   m_Layer: 5
-  m_Name: header
+  m_Name: Header
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -709,7 +709,7 @@ GameObject:
   - component: {fileID: 676332090547509881}
   - component: {fileID: 4178975324037283578}
   m_Layer: 5
-  m_Name: Pl2
+  m_Name: Player2Header
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -845,7 +845,7 @@ GameObject:
   - component: {fileID: 7168769519379162320}
   - component: {fileID: 8859904720460174983}
   m_Layer: 5
-  m_Name: content
+  m_Name: Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1059,7 +1059,7 @@ GameObject:
   - component: {fileID: 2870975179466121424}
   - component: {fileID: 1484813546133521455}
   m_Layer: 5
-  m_Name: desc
+  m_Name: Player1Description
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1197,7 +1197,7 @@ GameObject:
   - component: {fileID: 497806494820297932}
   - component: {fileID: 3775659076638555802}
   m_Layer: 5
-  m_Name: InfoPanel
+  m_Name: FAQPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

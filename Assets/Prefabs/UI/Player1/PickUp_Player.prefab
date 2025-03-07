@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8598901353485245122}
   - component: {fileID: 8119674654892842949}
   m_Layer: 5
-  m_Name: PickUp
+  m_Name: PickUp_Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 4283757900754959146}
   - component: {fileID: 4180867277746758464}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: PickupButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 1315074841491098039}
   - component: {fileID: 7431339688477852553}
   m_Layer: 5
-  m_Name: Button
+  m_Name: PickupButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

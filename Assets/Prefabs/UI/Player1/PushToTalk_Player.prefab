@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 6176371216645762482}
   - component: {fileID: 3462189693740385936}
   m_Layer: 5
-  m_Name: PushToTalk
+  m_Name: PushToTalk_Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

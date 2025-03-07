@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2016910374409145190}
   - component: {fileID: 6458672845129302957}
   m_Layer: 5
-  m_Name: min
+  m_Name: FakeMinElement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 529020145449621089}
   - component: {fileID: 3547112055860509824}
   m_Layer: 5
-  m_Name: body
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 3811638931553978945}
   - component: {fileID: 8235765860790764764}
   m_Layer: 5
-  m_Name: header
+  m_Name: Header
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 6093350231386871439}
   - component: {fileID: 6004198022898418331}
   m_Layer: 5
-  m_Name: Panel (3)
+  m_Name: OutlineBorderCO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 8455247174873041175}
   - component: {fileID: 4528858168402491346}
   m_Layer: 5
-  m_Name: Panel (1)
+  m_Name: OutlineBorder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -395,7 +395,7 @@ GameObject:
   - component: {fileID: 2126855447935646627}
   - component: {fileID: 3517268501636635127}
   m_Layer: 5
-  m_Name: Proresstxt
+  m_Name: ProgressText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -667,7 +667,7 @@ GameObject:
   - component: {fileID: 1530914124541383899}
   - component: {fileID: 6388685457796418237}
   m_Layer: 5
-  m_Name: hide
+  m_Name: FakeHideElement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -743,7 +743,7 @@ GameObject:
   - component: {fileID: 7561158727813569382}
   - component: {fileID: 4674730740747344950}
   m_Layer: 5
-  m_Name: message
+  m_Name: Message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -880,7 +880,7 @@ GameObject:
   - component: {fileID: 7190697115204167465}
   - component: {fileID: 4458371434013084019}
   m_Layer: 5
-  m_Name: Panel (2)
+  m_Name: OutlineBorder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -955,7 +955,7 @@ GameObject:
   - component: {fileID: 2017951848661906913}
   - component: {fileID: 8222194038244050634}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: HeaderText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1091,7 +1091,7 @@ GameObject:
   - component: {fileID: 4035208138082216790}
   - component: {fileID: 1049017858810239803}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: ContinueButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1227,7 +1227,7 @@ GameObject:
   - component: {fileID: 4547796392317427540}
   - component: {fileID: 2434390489943496319}
   m_Layer: 5
-  m_Name: close
+  m_Name: FakeCloseElement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1378,7 +1378,7 @@ GameObject:
   - component: {fileID: 3269216722275160520}
   - component: {fileID: 2332758653536968571}
   m_Layer: 5
-  m_Name: oeriew
+  m_Name: Overview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1771,7 +1771,7 @@ GameObject:
   - component: {fileID: 7997425463875734557}
   - component: {fileID: 8765933913280779769}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: BorderCOText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1907,7 +1907,7 @@ GameObject:
   - component: {fileID: 3340437608264014228}
   - component: {fileID: 4269888462091158862}
   m_Layer: 5
-  m_Name: bkgrng
+  m_Name: BackgroundImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

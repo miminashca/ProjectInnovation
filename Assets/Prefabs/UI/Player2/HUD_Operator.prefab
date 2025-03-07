@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5286933088231523789}
   - component: {fileID: 2583676692870271225}
   m_Layer: 5
-  m_Name: Rec
+  m_Name: RecordText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 8825654755190856025}
   - component: {fileID: 4544489083383267252}
   m_Layer: 5
-  m_Name: Operator Hud
+  m_Name: HUD_Operator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 4303494659706389517}
   - component: {fileID: 4477774181032126818}
   m_Layer: 5
-  m_Name: corner TR
+  m_Name: CornerTopRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -304,7 +304,7 @@ GameObject:
   - component: {fileID: 3655062202124915483}
   - component: {fileID: 795122168087299462}
   m_Layer: 5
-  m_Name: corner BL
+  m_Name: CornerBottomLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: 8080757834251482890}
   - component: {fileID: 5759668841342762263}
   m_Layer: 5
-  m_Name: corner BR
+  m_Name: CornerBottomRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -454,7 +454,7 @@ GameObject:
   - component: {fileID: 8140974213099688799}
   - component: {fileID: 1830209033199689583}
   m_Layer: 5
-  m_Name: corner TL
+  m_Name: CornerTopLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -529,7 +529,7 @@ GameObject:
   - component: {fileID: 7479683192873746704}
   - component: {fileID: 6791685457301908019}
   m_Layer: 5
-  m_Name: recDot
+  m_Name: RecordDotElement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
