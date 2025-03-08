@@ -3,19 +3,22 @@ using UnityEngine.Audio;
 
 public class ChaseMusicController : MonoBehaviour
 {
-    public AudioMixer musicMixer;               // (optional)
+    [Header("Optional Audio Mixer")]
+    public AudioMixer musicMixer;
+    [Header("Distances")]
     public float activationDistance = 40f;
     public float baseStartDistance = 30f;
     public float intenseStartDistance = 20f;
     public float crazyStartDistance = 10f;
     public float minDistance = 5f;
 
+    [Header("Audio Sources")]
     public AudioSource baseLayer;
     public AudioSource intenseLayer;
     public AudioSource crazyLayer;
 
-    private GameObject player; // no longer public
-    private GameObject enemy;  // no longer public
+    private GameObject player;
+    private GameObject enemy;
     private float currentDistance;
     private bool isMusicPlaying = false;
 
@@ -27,9 +30,7 @@ public class ChaseMusicController : MonoBehaviour
 
     void Update()
     {
-        // If references not set yet, do nothing
-        if (player == null || enemy == null)
-            return;
+        if (player == null || enemy == null) return;
 
         currentDistance = Vector3.Distance(player.transform.position, enemy.transform.position);
 

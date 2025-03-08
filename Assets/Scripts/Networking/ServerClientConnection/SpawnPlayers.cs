@@ -6,40 +6,31 @@ public class SpawnPlayers : MonoBehaviourPunCallbacks
     [Header("Prefabs")]
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private GameObject secondPlayerUIPrefab;
-    [SerializeField] private GameObject enemyPrefab;
 
     [Header("Spawn Points")]
     [SerializeField] private Transform playerSpawnTransform;
-    [SerializeField] private Transform enemySpawnTransform;
 
-    // If you placed your AudioManager in the same scene,
-    // you can drag it here from the hierarchy.
-    [Header("Audio Manager (Scene Object)")]
+    [Header("Scene References")]
+    [Tooltip("Drag the pre-placed Enemy from the scene here.")]
+    [SerializeField] private GameObject enemyInScene;
+    [Tooltip("Drag the AudioManager with ChaseMusicController here.")]
     [SerializeField] private ChaseMusicController chaseMusicController;
 
     private void Start()
     {
-        // The MasterClient spawns the monster and the local player
         if (PhotonNetwork.IsMasterClient)
         {
-            // 1) Spawn the monster
-            GameObject enemyInstance = PhotonNetwork.Instantiate(
-                enemyPrefab.name,
-                enemySpawnTransform.position,
-                enemySpawnTransform.rotation
-            );
-
-            // 2) Spawn the local player
+            // 1) Spawn the main player
             GameObject playerInstance = PhotonNetwork.Instantiate(
                 playerPrefab.name,
                 playerSpawnTransform.position,
                 playerSpawnTransform.rotation
             );
 
-            // 3) Wire them up to the chase music
+            // 2) Hook up chase music references on the MasterClient side
             if (chaseMusicController != null)
             {
-                chaseMusicController.SetTargets(playerInstance, enemyInstance);
+                chaseMusicController.SetTargets(playerInstance, enemyInScene);
             }
             else
             {
@@ -48,8 +39,7 @@ public class SpawnPlayers : MonoBehaviourPunCallbacks
         }
         else
         {
-            // If not the MasterClient,
-            // just spawn whatever the second player needs:
+            // If not the MasterClient, spawn the second player (the camera man)
             PhotonNetwork.Instantiate(
                 secondPlayerUIPrefab.name,
                 Vector3.zero,

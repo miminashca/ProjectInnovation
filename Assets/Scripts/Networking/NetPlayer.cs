@@ -1,5 +1,6 @@
 using UnityEngine;
 using Photon.Pun;
+
 public class NetPlayer : MonoBehaviour
 {
     private PhotonView view;
@@ -13,13 +14,10 @@ public class NetPlayer : MonoBehaviour
         if (!view.IsMine)
         {
             if (camera) camera.enabled = false;
-            //if (listener) listener.enabled = false;
-            if (canvases.Length > 0)
+            if (listener) listener.enabled = false;
+            foreach (Canvas canvas in canvases)
             {
-                foreach (Canvas canvas in canvases)
-                {
-                    canvas.gameObject.SetActive(false);
-                }
+                canvas.gameObject.SetActive(false);
             }
         }
     }
