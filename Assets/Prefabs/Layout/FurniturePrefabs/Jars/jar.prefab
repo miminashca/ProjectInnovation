@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1099288689019281248}
   - component: {fileID: 5570083943084033760}
   - component: {fileID: 2940259933782007538}
+  - component: {fileID: 1433040284074363427}
   m_Layer: 0
   m_Name: jar
   m_TagString: Untagged
@@ -65,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5cce022c83bbfcf47b54ffbd3ba680a2, type: 2}
+  - {fileID: 2100000, guid: dec9ca35dcff47749851dfe48569c83a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -108,3 +109,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.37176585, y: 0.4650774, z: 0.37176466}
   m_Center: {x: -0.0040747076, y: 0.23557985, z: 7.6757803}
+--- !u!114 &1433040284074363427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4691117498836685535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 170c415a50b79fa4098a565880cc65f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newTexture: {fileID: 0}
