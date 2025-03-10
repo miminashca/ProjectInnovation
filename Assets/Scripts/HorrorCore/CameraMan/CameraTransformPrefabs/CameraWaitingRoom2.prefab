@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8509834380640512530
+--- !u!1 &9090672440377601289
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,41 +8,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3490872748625128120}
-  - component: {fileID: 5172709134143221276}
-  - component: {fileID: 272107184243712864}
-  m_Layer: 0
-  m_Name: Camera
+  - component: {fileID: 3781313720925421159}
+  - component: {fileID: 4210975431755471418}
+  - component: {fileID: 6073724981666581144}
+  - component: {fileID: 7129440754343409081}
+  m_Layer: 6
+  m_Name: CameraWaitingRoom2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!4 &3490872748625128120
+--- !u!4 &3781313720925421159
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8509834380640512530}
+  m_GameObject: {fileID: 9090672440377601289}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.23809165, y: 0.3510595, z: -0.0927879, w: 0.90081084}
-  m_LocalPosition: {x: 10.55, y: 3.39, z: -2.92}
+  m_LocalRotation: {x: 0.19371833, y: 0.33993545, z: -0.07177474, w: 0.9174778}
+  m_LocalPosition: {x: 3.168, y: 2.159, z: 30.293}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 29.61, y: 42.583, z: 0}
---- !u!20 &5172709134143221276
+  m_LocalEulerAnglesHint: {x: 23.845, y: 40.66, z: 0}
+--- !u!20 &4210975431755471418
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8509834380640512530}
+  m_GameObject: {fileID: 9090672440377601289}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 4
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -74,7 +75,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: 9fdf849b18b424cce93d288bd3c70156, type: 2}
+  m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -84,13 +85,21 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &272107184243712864
+--- !u!81 &6073724981666581144
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9090672440377601289}
+  m_Enabled: 1
+--- !u!114 &7129440754343409081
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8509834380640512530}
+  m_GameObject: {fileID: 9090672440377601289}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}

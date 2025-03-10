@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: CameraTransformsData
   m_EditorClassIdentifier: 
   cameraTransforms:
-  - {fileID: 3490872748625128120, guid: 0fc2e910e455e4a6ea7e41082dd5f4bb, type: 3}
-  - {fileID: 8406637089384731538, guid: d3005c7d59e544259b3961fae5115745, type: 3}
+  - {fileID: 8582230404187412317, guid: 8676dc5ac8da1a645a04009751944c41, type: 3}
+  - {fileID: 7345686704732889524, guid: 03a948ce9f54ae041a0be65d9cf467e3, type: 3}
+  - {fileID: 7449555628829453114, guid: 10b2e5cfb2992004e83dd3247454636f, type: 3}
+  - {fileID: 3781313720925421159, guid: 5c526ab7bf548654dbc4ef7deedf015d, type: 3}
+  - {fileID: 7782879909365241439, guid: 7cd1c875e100ee743b29708464d7b226, type: 3}
