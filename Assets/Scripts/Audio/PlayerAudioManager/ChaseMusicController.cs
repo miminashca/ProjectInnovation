@@ -1,10 +1,12 @@
 using UnityEngine;
 using UnityEngine.Audio;
+using Photon.Pun;
 
-public class ChaseMusicController : MonoBehaviour
+public class ChaseMusicController : MonoBehaviourPunCallbacks
 {
     [Header("Optional Audio Mixer")]
     public AudioMixer musicMixer;
+
     [Header("Distances")]
     public float activationDistance = 40f;
     public float baseStartDistance = 30f;
@@ -17,51 +19,121 @@ public class ChaseMusicController : MonoBehaviour
     public AudioSource intenseLayer;
     public AudioSource crazyLayer;
 
-    private GameObject player;
+    private GameObject thiefPlayer;
     private GameObject enemy;
+
     private float currentDistance;
     private bool isMusicPlaying = false;
 
-    public void SetTargets(GameObject playerObj, GameObject enemyObj)
+    void Start()
     {
-        player = playerObj;
-        enemy = enemyObj;
+
+        if (!PhotonNetwork.IsMasterClient)
+        {
+            baseLayer.mute = true;
+            intenseLayer.mute = true;
+            crazyLayer.mute = true;
+            enabled = false;
+            return;
+        }
     }
+
+
+    /// <summary>
+    /// Called from SpawnPlayers to assign the thief player and enemy.
+    /// </summary>
+    public void SetReferences(GameObject thiefPlayerObj, GameObject enemyObj)
+    {
+        Debug.Log("thief player" + thiefPlayerObj);
+        thiefPlayer = thiefPlayerObj;
+        enemy = enemyObj;
+        Debug.Log("thief player after set " + thiefPlayer);
+//        if (thiefPlayer == null)
+//            Debug.LogError("ChaseMusicController: thiefPlayer is NULL after SetReferences!");
+//
+//        if (enemy == null)
+//            Debug.LogError("ChaseMusicController: enemy is NULL after SetReferences!");
+
+//        Debug.Log("ChaseMusicController: SetReferences successfully set thiefPlayer and enemy.");
+    }
+
 
     void Update()
     {
-        if (player == null || enemy == null) return;
+        Debug.Log(thiefPlayer);
+      //  if (thiefPlayer == null || enemy == null)
+      //      return;
 
-        currentDistance = Vector3.Distance(player.transform.position, enemy.transform.position);
+        // Use a fixed distance for testing
+        currentDistance = 10f;  // Set a fixed distance within activation range
+        Debug.Log("Hello this is working");
 
         if (currentDistance <= activationDistance)
         {
             if (!isMusicPlaying)
             {
-                StartMusic();
+                StartMusic();  // This should definitely start the music if called
                 isMusicPlaying = true;
+                Debug.Log("Music is now playing.");
             }
             UpdateMusicLayers();
         }
-        else
-        {
-            if (isMusicPlaying)
-            {
-                StopMusic();
-                isMusicPlaying = false;
-            }
-        }
     }
+
 
     void StartMusic()
     {
-        baseLayer.Play();
-        intenseLayer.Play();
-        crazyLayer.Play();
+        Debug.Log("Starting music...");
+
+        if (baseLayer != null)
+        {
+            Debug.Log("Base Layer: " + baseLayer.name);
+            if (!baseLayer.isPlaying)
+            {
+                baseLayer.Play();
+                Debug.Log("Base layer started playing.");
+            }
+        }
+        else
+        {
+            Debug.LogError("Base Layer AudioSource is not assigned.");
+        }
+
+        if (intenseLayer != null)
+        {
+            Debug.Log("Intense Layer: " + intenseLayer.name);
+            if (!intenseLayer.isPlaying)
+            {
+                intenseLayer.Play();
+                Debug.Log("Intense layer started playing.");
+            }
+        }
+        else
+        {
+            Debug.LogError("Intense Layer AudioSource is not assigned.");
+        }
+
+        if (crazyLayer != null)
+        {
+            Debug.Log("Crazy Layer: " + crazyLayer.name);
+            if (!crazyLayer.isPlaying)
+            {
+                crazyLayer.Play();
+                Debug.Log("Crazy layer started playing.");
+            }
+        }
+        else
+        {
+            Debug.LogError("Crazy Layer AudioSource is not assigned.");
+        }
     }
+
+
+
 
     void StopMusic()
     {
+        Debug.Log("Stopping music...");
         baseLayer.Stop();
         intenseLayer.Stop();
         crazyLayer.Stop();
@@ -72,6 +144,8 @@ public class ChaseMusicController : MonoBehaviour
         float baseVolume = CalculateLayerVolume(baseStartDistance);
         float intenseVolume = CalculateLayerVolume(intenseStartDistance);
         float crazyVolume = CalculateLayerVolume(crazyStartDistance);
+
+        Debug.Log($"Updated Volumes - Base: {baseVolume}, Intense: {intenseVolume}, Crazy: {crazyVolume}");
 
         baseLayer.volume = baseVolume;
         intenseLayer.volume = intenseVolume;
@@ -87,10 +161,14 @@ public class ChaseMusicController : MonoBehaviour
 
     float CalculateLayerVolume(float layerStartDistance)
     {
-        if (currentDistance > layerStartDistance)
-            return 0f;
+        if (currentDistance >= layerStartDistance) return 0f;
+        if (currentDistance <= minDistance) return 1f;
 
-        float normalizedValue = Mathf.InverseLerp(layerStartDistance, minDistance, currentDistance);
-        return Mathf.Lerp(0f, 1f, normalizedValue);
+        float fraction = (layerStartDistance - currentDistance) / (layerStartDistance - minDistance);
+        float volume = Mathf.Clamp01(fraction);
+
+        Debug.Log($"LayerStartDist: {layerStartDistance}, MinDist: {minDistance}, Fraction: {fraction}, Volume: {volume}");
+
+        return volume;
     }
 }

@@ -873,7 +873,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 352937653}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a997b6a551201354f93b1da0be29c20e, type: 3}
   m_Name: 
@@ -2850,7 +2850,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1365579972
 Transform:
   m_ObjectHideFlags: 0
@@ -2873,7 +2873,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1365579971}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -4031084321955496063, guid: d76781c670d4f9d498a4d79112a7eca4, type: 2}
   m_audioClip: {fileID: 8300000, guid: 785bb4c34a75aee42a2801347cb65ba9, type: 3}
@@ -2970,7 +2970,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1365579971}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -5101190818952906238, guid: d76781c670d4f9d498a4d79112a7eca4, type: 2}
   m_audioClip: {fileID: 8300000, guid: a5ef1fa34cf6697429af39c9b2b1a409, type: 3}
@@ -3067,7 +3067,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1365579971}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16e6a951e425bee42ad0402f2235973a, type: 3}
   m_Name: 
@@ -3088,7 +3088,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1365579971}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a997b6a551201354f93b1da0be29c20e, type: 3}
   m_Name: 
@@ -3101,7 +3101,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1365579971}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 7478553111070866429, guid: d76781c670d4f9d498a4d79112a7eca4, type: 2}
   m_audioClip: {fileID: 8300000, guid: b3ae226b8dc65c64ea8874e6ba704caf, type: 3}
@@ -4356,7 +4356,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2046700749
 Transform:
   m_ObjectHideFlags: 0
