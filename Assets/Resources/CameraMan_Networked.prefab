@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1263221434077164171}
   - component: {fileID: 105890554519707874}
   - component: {fileID: 2025131508885545782}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CameraButtons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 7103027645237126003}
   - component: {fileID: 6417295542247570666}
   - component: {fileID: 7207054860279043389}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 3052556167829076705}
   - component: {fileID: 4873809228646644518}
   - component: {fileID: 886629739222688854}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -400,7 +400,7 @@ GameObject:
   - component: {fileID: 8142371689460407805}
   - component: {fileID: 7972448111296446375}
   - component: {fileID: 5540232955403875088}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Button (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -533,7 +533,7 @@ GameObject:
   - component: {fileID: 1321126974542217406}
   - component: {fileID: 3681952043141032072}
   - component: {fileID: 2681150652995271480}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -664,14 +664,14 @@ GameObject:
   m_Component:
   - component: {fileID: 8299863647868996214}
   - component: {fileID: 7320530596885654827}
-  - component: {fileID: 6337267526063410208}
+  - component: {fileID: 2801994058024932328}
   - component: {fileID: 5281341845801619528}
   - component: {fileID: 2607501806783753416}
   - component: {fileID: 3087733694695101758}
   - component: {fileID: 8542226106201887170}
   - component: {fileID: 7294725278299715926}
   - component: {fileID: 5498885299576556777}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CameraMan_Networked
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -746,7 +746,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &6337267526063410208
+--- !u!81 &2801994058024932328
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -777,7 +777,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -881,7 +881,7 @@ GameObject:
   - component: {fileID: 888937008212833063}
   - component: {fileID: 1615501359397239327}
   - component: {fileID: 7564048577427214441}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Speaker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
