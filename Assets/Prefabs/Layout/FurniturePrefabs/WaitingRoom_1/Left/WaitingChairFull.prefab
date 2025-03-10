@@ -56,8 +56,40 @@ PrefabInstance:
       propertyPath: m_Name
       value: WaitingChairFull
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a629f028ec8fbd44693e457d7ab6ea8f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a629f028ec8fbd44693e457d7ab6ea8f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -6529383402081334320}
   m_SourcePrefab: {fileID: 100100000, guid: a629f028ec8fbd44693e457d7ab6ea8f, type: 3}
+--- !u!1 &5971438695490052442 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a629f028ec8fbd44693e457d7ab6ea8f, type: 3}
+  m_PrefabInstance: {fileID: 6782322129594080267}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-6529383402081334320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5971438695490052442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
