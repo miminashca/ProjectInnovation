@@ -681,27 +681,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 392676601347057456, guid: b34db281a3bf5174d9c2516719edd5c5, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2588603842260455912, guid: b34db281a3bf5174d9c2516719edd5c5, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2655344917175988410, guid: b34db281a3bf5174d9c2516719edd5c5, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2692498312650691377, guid: b34db281a3bf5174d9c2516719edd5c5, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4376430648050101911, guid: b34db281a3bf5174d9c2516719edd5c5, type: 3}
       propertyPath: m_Name
       value: SettingsPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 4376430648050101911, guid: b34db281a3bf5174d9c2516719edd5c5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5760088245998365878, guid: b34db281a3bf5174d9c2516719edd5c5, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6336280774909204626, guid: b34db281a3bf5174d9c2516719edd5c5, type: 3}
       propertyPath: targetPanel
@@ -709,7 +713,7 @@ PrefabInstance:
       objectReference: {fileID: 396551415}
     - target: {fileID: 9113192316742543591, guid: b34db281a3bf5174d9c2516719edd5c5, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1012,6 +1016,10 @@ PrefabInstance:
     - target: {fileID: 2635324406460630416, guid: fd90eccaeeaac2c439a0a6bda206bf9a, type: 3}
       propertyPath: m_Name
       value: MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635324406460630416, guid: fd90eccaeeaac2c439a0a6bda206bf9a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4335353461426071826, guid: fd90eccaeeaac2c439a0a6bda206bf9a, type: 3}
       propertyPath: targetPanel
