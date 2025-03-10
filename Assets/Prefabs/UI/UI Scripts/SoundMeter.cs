@@ -24,19 +24,20 @@ public class SoundMeter : MonoBehaviour
     public Color dangerColor = Color.red;
 
     private float currentFill = 0f;
-    private float screamTimer = 0f;
+    private float warningTimer = 0f;
+    private float dangerTimer = 0f;
+
     private string[] warningMessages = {
         "KEEP IT QUIET",
         "SPOTTED"
-
     };
+
     private void Start()
     {
         GameObject voiceManager = GameObject.Find("VoiceManager");
 
         if (voiceManager != null)
         {
-            // Get the Recorder component from the VoiceManager
             recorder = voiceManager.GetComponent<Recorder>();
 
             if (recorder == null)
@@ -59,7 +60,7 @@ public class SoundMeter : MonoBehaviour
             currentFill = Mathf.Lerp(currentFill, amplitude, Time.deltaTime * smoothSpeed);
             volumeFill.fillAmount = currentFill;
 
-            // Determine the color based on volume level
+            // Determine the color and warning state
             if (currentFill < threshold * 0.7f)
             {
                 volumeFill.color = safeColor;
@@ -69,23 +70,24 @@ public class SoundMeter : MonoBehaviour
                 volumeFill.color = warningColor;
                 screamText.gameObject.SetActive(true);
                 screamText.text = warningMessages[0];
+                warningTimer = warningDuration;
             }
             else
             {
                 volumeFill.color = dangerColor;
-            }
-
-            // Scream detection logic
-            if (currentFill >= threshold)
-            {
                 screamText.gameObject.SetActive(true);
                 screamText.text = warningMessages[1];
-                screamTimer = warningDuration;
+                dangerTimer = warningDuration;
             }
 
-            if (screamTimer > 0)
+            // Handle timers
+            if (dangerTimer > 0)
             {
-                screamTimer -= Time.deltaTime;
+                dangerTimer -= Time.deltaTime;
+            }
+            else if (warningTimer > 0)
+            {
+                warningTimer -= Time.deltaTime;
             }
             else
             {
