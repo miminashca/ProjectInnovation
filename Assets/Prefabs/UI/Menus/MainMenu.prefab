@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6588208310043889059}
   - component: {fileID: 4351463033812976931}
   - component: {fileID: 6110184263935061848}
-  - component: {fileID: 4335353461426071826}
   m_Layer: 5
   m_Name: SettingsButton
   m_TagString: Untagged
@@ -121,33 +120,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1000548816153559671}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4335353461426071826}
-        m_TargetAssemblyTypeName: PanelSwitch, Assembly-CSharp
-        m_MethodName: SwitchPan
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &4335353461426071826
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2205470168769799199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3ba73866c80e864b803ebda6ec346f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentPanel: {fileID: 2635324406460630416}
-  targetPanel: {fileID: 0}
+      m_Calls: []
 --- !u!1 &2612255298595357292
 GameObject:
   m_ObjectHideFlags: 0

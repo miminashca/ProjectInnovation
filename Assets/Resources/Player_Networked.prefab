@@ -409,6 +409,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4298497214730766342, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
+      propertyPath: verticalSensitivity
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 5181853141744245623, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -456,6 +460,14 @@ PrefabInstance:
     - target: {fileID: 6355239528576815316, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
       propertyPath: m_Name
       value: Player_Networked
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164019683301901393, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
+      propertyPath: joystick
+      value: 
+      objectReference: {fileID: 1918823778882171405}
+    - target: {fileID: 8164019683301901393, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
+      propertyPath: horizontalSensitivity
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -689,4 +701,20 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
+--- !u!224 &1918823778882171400 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8170153791668043268, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
+  m_PrefabInstance: {fileID: 7765120110732708876}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1918823778882171405 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8170153791668043265, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
+  m_PrefabInstance: {fileID: 7765120110732708876}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a47f546fc70ec8428172694e78e4288, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
