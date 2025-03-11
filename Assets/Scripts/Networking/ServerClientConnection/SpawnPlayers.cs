@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Photon.Pun;
 
@@ -17,7 +18,6 @@ public class SpawnPlayers : MonoBehaviourPunCallbacks
     [SerializeField] private ChaseMusicController chaseMusicController;
 
     private GameObject playerInstance;
-
     private void Start()
     {
         if (PhotonNetwork.IsMasterClient)
@@ -31,6 +31,7 @@ public class SpawnPlayers : MonoBehaviourPunCallbacks
                 playerSpawnTransform.position,
                 playerSpawnTransform.rotation
             );
+            NetworkingEventBus.SpawnThief(playerInstance.gameObject.transform);
 
             chaseMusicController = playerInstance.GetComponentInChildren<ChaseMusicController>();
 

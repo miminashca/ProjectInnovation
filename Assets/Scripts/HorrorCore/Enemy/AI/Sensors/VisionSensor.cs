@@ -10,16 +10,29 @@ public class VisionSensor : MonoBehaviour
     [SerializeField] private float visionAngle = 60f;
     [SerializeField] private float visionRange = 10f;
     private EnemyStateMachine SM;
+    private Transform playerTransform;
 
+    private void OnEnable()
+    {
+        NetworkingEventBus.OnThiefSpawned += InitPlayer;
+    }
+    private void OnDisable()
+    {
+        NetworkingEventBus.OnThiefSpawned -= InitPlayer;
+    }
     private void Start()
     {
         SM = GetComponent<EnemyStateMachine>();
     }
-
+    private void InitPlayer(Transform pPlayerTransform)
+    {
+        playerTransform = pPlayerTransform;
+    }
     private void Update()
     {
-        CheckPlayerInVision(SM.context.playerTransform);
+        if(playerTransform) CheckPlayerInVision(playerTransform);
     }
+    
 
     public bool CheckPlayerInVision(Transform playerTransform)
     {
@@ -47,6 +60,7 @@ public class VisionSensor : MonoBehaviour
     // Draw the vision cone and ray in the Scene view using Gizmos
     private void OnDrawGizmos()
     {
+        if(!playerTransform) return;
         // Calculate enemy head position based on offset
         Vector3 enemyHeadPosition = transform.position + SM.context.enemyHeadOffset;
 
@@ -60,18 +74,26 @@ public class VisionSensor : MonoBehaviour
         Vector3 upRayDirection = upRayRotation * transform.forward;
         Vector3 downRayDirection = downRayRotation * transform.forward;
 
-        Gizmos.color = Color.green;
+        if (CheckPlayerInVision(playerTransform))
+        {
+            Gizmos.color = Color.red;
+            Handles.color = Color.red;
+        }
+        else
+        {
+            Gizmos.color = Color.green;
+            Handles.color = Color.green;
+        }
         Gizmos.DrawRay(enemyHeadPosition, leftRayDirection * visionRange);
         Gizmos.DrawRay(enemyHeadPosition, rightRayDirection * visionRange);
         Gizmos.DrawRay(enemyHeadPosition, upRayDirection * visionRange);
         Gizmos.DrawRay(enemyHeadPosition, downRayDirection * visionRange);
         
-        Handles.color = Color.green;
         Handles.DrawWireArc(enemyHeadPosition, Vector3.up, leftRayDirection, visionAngle, visionRange);
         Handles.DrawWireArc(enemyHeadPosition, Vector3.right, upRayDirection, visionAngle, visionRange);
         
-        Vector3 playerHeadPosition = SM.context.playerTransform.position + SM.context.playerHeadOffset;
-        Gizmos.color = Color.red;
+        Vector3 playerHeadPosition = playerTransform.position + SM.context.playerHeadOffset;
+        Gizmos.color = Color.cyan;
         Gizmos.DrawLine(enemyHeadPosition, playerHeadPosition);
     }
 

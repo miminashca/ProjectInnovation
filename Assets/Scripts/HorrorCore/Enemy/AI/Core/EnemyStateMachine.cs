@@ -11,11 +11,6 @@ public class EnemyStateMachine : MonoBehaviour
     private IEnemyState currentState;
     public EnemyContext context; // Drag & drop or create in Awake()
 
-    /// <summary>
-    /// Serialized context holding shared data for all states (NavMeshAgent, sensors, etc.).
-    /// </summary>
-    [SerializeField]
-    private EnemyContext context;
 
     private void Start()
     {
