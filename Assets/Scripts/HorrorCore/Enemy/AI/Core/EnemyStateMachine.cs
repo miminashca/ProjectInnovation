@@ -32,7 +32,7 @@ public class EnemyStateMachine : MonoBehaviour
         // 1) Exit the current state
         if (currentState != null)
         {
-            EnemyAiEventBus.ExitStateWithID(currentState.enemyStateType);
+            AIDirector.ExitStateWithID(currentState.enemyStateType);
             currentState.Exit(context);
         }
 
@@ -42,7 +42,7 @@ public class EnemyStateMachine : MonoBehaviour
         // 3) Enter the new state
         if (currentState != null)
         {
-            EnemyAiEventBus.EnterStateWithID(currentState.enemyStateType);
+            AIDirector.EnterStateWithID(currentState.enemyStateType);
             currentState.Enter(context);
         }
     }

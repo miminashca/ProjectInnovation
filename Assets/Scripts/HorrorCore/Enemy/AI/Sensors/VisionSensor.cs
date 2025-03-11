@@ -11,7 +11,8 @@ public class VisionSensor : MonoBehaviour
     [SerializeField] private float visionRange = 10f;
     private EnemyStateMachine SM;
     private Transform playerTransform;
-
+    private bool executed = false;
+    
     private void OnEnable()
     {
         NetworkingEventBus.OnThiefSpawned += InitPlayer;
@@ -30,7 +31,22 @@ public class VisionSensor : MonoBehaviour
     }
     private void Update()
     {
-        if(playerTransform) CheckPlayerInVision(playerTransform);
+        if (playerTransform)
+        {
+            if (!executed)
+            {
+                if (CheckPlayerInVision(playerTransform))
+                {
+                    AIDirector.SpotPlayer();
+                    executed = true;
+                }
+            }
+            else
+            {
+                if(!CheckPlayerInVision(playerTransform)) executed = false;
+            }
+        }
+        
     }
     
 
@@ -49,7 +65,6 @@ public class VisionSensor : MonoBehaviour
             {
                 if (hit.transform == playerTransform)
                 {
-                    Debug.Log("Enemy detects player!");
                     return true;
                 }
             }
