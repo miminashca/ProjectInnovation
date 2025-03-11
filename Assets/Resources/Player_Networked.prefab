@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_Networked
       objectReference: {fileID: 0}
+    - target: {fileID: 7727429761098094609, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
+      propertyPath: m_Name
+      value: MainCamera
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
