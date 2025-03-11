@@ -9,6 +9,7 @@ public class EnemyStateMachine : MonoBehaviour
     /// The current active state implementing IEnemyState.
     /// </summary>
     private IEnemyState currentState;
+    public EnemyContext context; // Drag & drop or create in Awake()
 
     /// <summary>
     /// Serialized context holding shared data for all states (NavMeshAgent, sensors, etc.).
@@ -36,7 +37,7 @@ public class EnemyStateMachine : MonoBehaviour
         // 1) Exit the current state
         if (currentState != null)
         {
-            EnemyAiEventBus.ExitStateWithEnum(currentState.enemyStateType);
+            EnemyAiEventBus.ExitStateWithID(currentState.enemyStateType);
             currentState.Exit(context);
         }
 
@@ -46,7 +47,7 @@ public class EnemyStateMachine : MonoBehaviour
         // 3) Enter the new state
         if (currentState != null)
         {
-            EnemyAiEventBus.EnterStateWithEnum(currentState.enemyStateType);
+            EnemyAiEventBus.EnterStateWithID(currentState.enemyStateType);
             currentState.Enter(context);
         }
     }

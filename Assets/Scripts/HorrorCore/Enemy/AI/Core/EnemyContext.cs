@@ -14,6 +14,8 @@ public class EnemyContext
     public AudioSensor audioSensor;    // Custom sensor that detects loudness.
     public VisionSensor visionSensor;  // Custom sensor that detects player in a cone of vision.
     public Transform playerTransform;  // Reference to the player’s transform.
+    public Vector3 playerHeadOffset;
+    public Vector3 enemyHeadOffset;
 
     // --- AI Director data ---
     public Vector3 lastHeardNoisePosition;
