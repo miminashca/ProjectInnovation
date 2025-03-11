@@ -1760,7 +1760,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 997785699419671142, guid: 29aac8e8a1176814898453588722ae2a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.377
+      value: 1.84
       objectReference: {fileID: 0}
     - target: {fileID: 997785699419671142, guid: 29aac8e8a1176814898453588722ae2a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1768,7 +1768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 997785699419671142, guid: 29aac8e8a1176814898453588722ae2a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 28.452
+      value: 25.96
       objectReference: {fileID: 0}
     - target: {fileID: 997785699419671142, guid: 29aac8e8a1176814898453588722ae2a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2690,7 +2690,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 997785699419671142, guid: 29aac8e8a1176814898453588722ae2a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.414
+      value: 0.19
       objectReference: {fileID: 0}
     - target: {fileID: 997785699419671142, guid: 29aac8e8a1176814898453588722ae2a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2698,7 +2698,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 997785699419671142, guid: 29aac8e8a1176814898453588722ae2a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 27.246
+      value: 28.33
       objectReference: {fileID: 0}
     - target: {fileID: 997785699419671142, guid: 29aac8e8a1176814898453588722ae2a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3167,7 +3167,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1630145483
 Light:
   m_ObjectHideFlags: 0
@@ -3478,6 +3478,10 @@ PrefabInstance:
     - target: {fileID: 4691117498836685535, guid: 29aac8e8a1176814898453588722ae2a, type: 3}
       propertyPath: m_Name
       value: jar (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7197627416757451822, guid: 29aac8e8a1176814898453588722ae2a, type: 3}
+      propertyPath: m_Radius
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 8882220480293431889, guid: 29aac8e8a1176814898453588722ae2a, type: 3}
       propertyPath: newTexture
