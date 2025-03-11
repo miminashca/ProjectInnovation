@@ -1,22 +1,36 @@
 using UnityEngine;
 
+/// <summary>
+/// The state machine that controls which state the Enemy is in.
+/// </summary>
 public class EnemyStateMachine : MonoBehaviour
 {
+    /// <summary>
+    /// The current active state implementing IEnemyState.
+    /// </summary>
     private IEnemyState currentState;
-    [SerializeField] private EnemyContext context; // Drag & drop or create in Awake()
+
+    /// <summary>
+    /// Serialized context holding shared data for all states (NavMeshAgent, sensors, etc.).
+    /// </summary>
+    [SerializeField]
+    private EnemyContext context;
 
     private void Start()
     {
-        // Initialize with Roaming State (or whichever default state you want).
+        // Initialize with the RoamingState as the default state.
         SetState(new RoamingState(this));
     }
 
     private void Update()
     {
-        // Each frame, just run the current state’s logic.
+        // Execute the current state's logic each frame.
         currentState?.Execute(context);
     }
 
+    /// <summary>
+    /// Sets a new state, calling Exit() on the old state and Enter() on the new state.
+    /// </summary>
     public void SetState(IEnemyState newState)
     {
         // 1) Exit the current state
@@ -36,4 +50,18 @@ public class EnemyStateMachine : MonoBehaviour
             currentState.Enter(context);
         }
     }
+
+    void OnDrawGizmos()
+    {
+        if (context == null || context.patrolPoints == null) return;
+
+        Gizmos.color = Color.green;
+        foreach (Transform waypoint in context.patrolPoints)
+        {
+            if (waypoint == null) continue;
+            // Draw a small sphere
+            Gizmos.DrawWireSphere(waypoint.position, 0.3f);
+        }
+    }
+
 }

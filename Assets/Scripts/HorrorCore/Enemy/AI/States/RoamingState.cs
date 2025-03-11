@@ -1,61 +1,95 @@
 using UnityEngine;
 
+/// <summary>
+/// Enemy moves randomly among given patrol points without returning
+/// immediately to the same waypoint. Also listens for audio or vision to transition.
+/// </summary>
 public class RoamingState : IEnemyState
 {
     public EnemyStateMachine SM { get; }
     public EnemyStateType enemyStateType { get; }
+
     public RoamingState(EnemyStateMachine SM)
     {
         this.SM = SM;
         this.enemyStateType = EnemyStateType.Roaming;
     }
+
+    /// <summary>
+    /// Called once when we first enter the RoamingState.
+    /// </summary>
     public void Enter(EnemyContext context)
     {
-        // E.g. set speed, set random or patrol destination
+        // Set the navAgent speed to roamSpeed
         context.navAgent.speed = context.roamSpeed;
+
+        // Choose the first patrol point to move to
         SetNextPatrolPoint(context);
+
+        // Tell the animator we are roaming (e.g., triggers a walk animation)
         context.animator.SetBool("IsRoaming", true);
     }
 
+    /// <summary>
+    /// Called every frame while in RoamingState.
+    /// </summary>
     public void Execute(EnemyContext context)
     {
-        // Move along route or random positions on the NavMesh
+        // Check if we have reached our current patrol destination
         if (!context.navAgent.pathPending && context.navAgent.remainingDistance < 1f)
         {
+            // Pick the next patrol point
             SetNextPatrolPoint(context);
         }
 
-        // Check if there's a loud sound above threshold => transition
+/*        // Transition check #1: If loud sound is detected above threshold
         if (context.audioSensor.CurrentLoudness >= context.alertThreshold)
         {
-            // Switch to GettingAlert state
-            context.navAgent.ResetPath(); 
-            // Access your StateMachine (often via a reference or an event).
-            // For brevity, we’ll assume we have a static reference or pass it in:
+            // Reset path and go to GettingAlertState
+            context.navAgent.ResetPath();
             SM.SetState(new GettingAlertState(SM));
+            return;
         }
 
-        // Or if the player is directly seen for a “considerable amount of time”:
+        // Transition check #2: If we see the player
         if (context.playerInVision)
         {
-            // Possibly accumulate time in vision and then transition to Pursuing:
-            // (Implement the "spotted for X seconds" check)
+            // Go straight to PursuingState
             SM.SetState(new PursuingState(SM));
-        }
+            return;
+        }*/
     }
 
+    /// <summary>
+    /// Called once when we exit the RoamingState.
+    /// </summary>
     public void Exit(EnemyContext context)
     {
-        // Clean up or reset flags
+        // Reset the IsRoaming animator bool so we don't continue the roaming animation
         context.animator.SetBool("IsRoaming", false);
     }
-    
+
+    /// <summary>
+    /// Picks a new patrol point at random that is NOT the same as the current one.
+    /// </summary>
     private void SetNextPatrolPoint(EnemyContext context)
     {
+        // If no patrol points, just return
         if (context.patrolPoints == null || context.patrolPoints.Length == 0)
             return;
 
-        context.currentPatrolIndex = (context.currentPatrolIndex + 1) % context.patrolPoints.Length;
-        context.navAgent.SetDestination(context.patrolPoints[context.currentPatrolIndex].position);
+        int oldIndex = context.currentPatrolIndex;
+        int newIndex = oldIndex;
+
+        // Ensure we pick a new index that is different from the old one
+        while (newIndex == oldIndex)
+        {
+            newIndex = Random.Range(0, context.patrolPoints.Length);
+        }
+
+        // Assign and move to the new patrol point
+        context.currentPatrolIndex = newIndex;
+        context.navAgent.SetDestination(context.patrolPoints[newIndex].position);
     }
+
 }
