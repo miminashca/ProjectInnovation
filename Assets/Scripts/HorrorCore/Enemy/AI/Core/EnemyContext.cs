@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -9,6 +10,7 @@ using UnityEngine.AI;
 public class EnemyContext
 {
     // --- References ---
+    [NonSerialized] public Transform playerTransform;
     public NavMeshAgent navAgent;      // Reference to the NavMeshAgent component on the Enemy.
     public Animator animator;          // Animator controlling the Enemy’s animations.
     public AudioSensor audioSensor;    // Custom sensor that detects loudness.
@@ -38,4 +40,10 @@ public class EnemyContext
 
     // --- Additional design tweak fields ---
     public float killDistance;          // Distance at which the Enemy can kill the player.
+    
+    public void InitPlayer(Transform pPlayerTransform)
+    { 
+        playerTransform = pPlayerTransform;
+        //if(playerTransform) Debug.Log("PLAYER INITIALIZED!!!");
+    }
 }

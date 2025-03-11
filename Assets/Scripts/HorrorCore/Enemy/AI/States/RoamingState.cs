@@ -20,6 +20,8 @@ public class RoamingState : IEnemyState
     /// </summary>
     public void Enter(EnemyContext context)
     {
+        Debug.Log("Enter roaming state");
+        AIDirector.OnPlayerSpotted += TransitToPursuingState;
         // Set the navAgent speed to roamSpeed
         context.navAgent.speed = context.roamSpeed;
 
@@ -64,9 +66,11 @@ public class RoamingState : IEnemyState
     /// Called once when we exit the RoamingState.
     /// </summary>
     public void Exit(EnemyContext context)
-    {
+    { 
         // Reset the IsRoaming animator bool so we don't continue the roaming animation
         context.animator.SetBool("IsRoaming", false);
+        context.navAgent.ResetPath();
+        AIDirector.OnPlayerSpotted -= TransitToPursuingState;
     }
 
     /// <summary>
@@ -90,6 +94,11 @@ public class RoamingState : IEnemyState
         // Assign and move to the new patrol point
         context.currentPatrolIndex = newIndex;
         context.navAgent.SetDestination(context.patrolPoints[newIndex].position);
+    }
+
+    private void TransitToPursuingState()
+    {
+        SM.SetState(new PursuingState(SM));
     }
 
 }

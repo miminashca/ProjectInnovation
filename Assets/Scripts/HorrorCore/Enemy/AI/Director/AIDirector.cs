@@ -8,6 +8,7 @@ public static class AIDirector
     //SENSORS EVENTS
     public static event Action<Vector3, float> OnNoiseEvent;
     public static event Action OnPlayerSpotted;
+    public static event Action OnPlayerLost;
     public static void PlayerMadeNoise(Vector3 position, float loudness)
     {
         OnNoiseEvent?.Invoke(position, loudness);
@@ -15,7 +16,12 @@ public static class AIDirector
     public static void SpotPlayer()
     {
         OnPlayerSpotted?.Invoke();
-        Debug.Log("Enemy detects player!");
+        //Debug.Log("Enemy spots player!");
+    }
+    public static void LosePlayer()
+    {
+        OnPlayerLost?.Invoke();
+        //Debug.Log("Enemy loses player!");
     }
     
     //STATES EVENTS

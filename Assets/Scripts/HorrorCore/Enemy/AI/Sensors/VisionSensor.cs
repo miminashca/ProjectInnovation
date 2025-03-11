@@ -10,32 +10,22 @@ public class VisionSensor : MonoBehaviour
     [SerializeField] private float visionAngle = 60f;
     [SerializeField] private float visionRange = 10f;
     private EnemyStateMachine SM;
-    private Transform playerTransform;
     private bool executed = false;
     
-    private void OnEnable()
-    {
-        NetworkingEventBus.OnThiefSpawned += InitPlayer;
-    }
-    private void OnDisable()
-    {
-        NetworkingEventBus.OnThiefSpawned -= InitPlayer;
-    }
     private void Start()
     {
         SM = GetComponent<EnemyStateMachine>();
     }
-    private void InitPlayer(Transform pPlayerTransform)
-    {
-        playerTransform = pPlayerTransform;
-    }
+   
     private void Update()
     {
-        if (playerTransform)
+        if (SM.context.playerTransform)
         {
+            SM.context.playerInVision = CheckPlayerInVision(SM.context.playerTransform);
+
             if (!executed)
             {
-                if (CheckPlayerInVision(playerTransform))
+                if (CheckPlayerInVision(SM.context.playerTransform))
                 {
                     AIDirector.SpotPlayer();
                     executed = true;
@@ -43,7 +33,11 @@ public class VisionSensor : MonoBehaviour
             }
             else
             {
-                if(!CheckPlayerInVision(playerTransform)) executed = false;
+                if (!CheckPlayerInVision(SM.context.playerTransform))
+                {
+                    AIDirector.LosePlayer();
+                    executed = false;
+                }
             }
         }
         
@@ -75,7 +69,7 @@ public class VisionSensor : MonoBehaviour
     // Draw the vision cone and ray in the Scene view using Gizmos
     private void OnDrawGizmos()
     {
-        if(!playerTransform) return;
+        if(!SM.context.playerTransform) return;
         // Calculate enemy head position based on offset
         Vector3 enemyHeadPosition = transform.position + SM.context.enemyHeadOffset;
 
@@ -89,7 +83,7 @@ public class VisionSensor : MonoBehaviour
         Vector3 upRayDirection = upRayRotation * transform.forward;
         Vector3 downRayDirection = downRayRotation * transform.forward;
 
-        if (CheckPlayerInVision(playerTransform))
+        if (CheckPlayerInVision(SM.context.playerTransform))
         {
             Gizmos.color = Color.red;
             Handles.color = Color.red;
@@ -107,7 +101,7 @@ public class VisionSensor : MonoBehaviour
         Handles.DrawWireArc(enemyHeadPosition, Vector3.up, leftRayDirection, visionAngle, visionRange);
         Handles.DrawWireArc(enemyHeadPosition, Vector3.right, upRayDirection, visionAngle, visionRange);
         
-        Vector3 playerHeadPosition = playerTransform.position + SM.context.playerHeadOffset;
+        Vector3 playerHeadPosition = SM.context.playerTransform.position + SM.context.playerHeadOffset;
         Gizmos.color = Color.cyan;
         Gizmos.DrawLine(enemyHeadPosition, playerHeadPosition);
     }

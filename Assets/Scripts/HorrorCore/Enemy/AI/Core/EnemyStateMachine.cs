@@ -11,7 +11,14 @@ public class EnemyStateMachine : MonoBehaviour
     private IEnemyState currentState;
     public EnemyContext context; // Drag & drop or create in Awake()
 
-
+    private void OnEnable()
+    {
+        NetworkingEventBus.OnThiefSpawned += context.InitPlayer;
+    }
+    private void OnDisable()
+    {
+        NetworkingEventBus.OnThiefSpawned -= context.InitPlayer;
+    }
     private void Start()
     {
         // Initialize with the RoamingState as the default state.
