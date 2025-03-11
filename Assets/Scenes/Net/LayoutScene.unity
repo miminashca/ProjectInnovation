@@ -465,7 +465,6 @@ MonoBehaviour:
   playerSpawnTransform: {fileID: 114747223}
   enemyInScene: {fileID: 97494110}
   chaseMusicController: {fileID: 0}
-  chaseMusicController: {fileID: 380317100}
 --- !u!1001 &238973490
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2860,7 +2859,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1630145483
 Light:
   m_ObjectHideFlags: 0
@@ -4489,67 +4488,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8667170182601443726, guid: 832ea0951b131ee41801e8082078d38f, type: 3}
   m_PrefabInstance: {fileID: 7594002267679437854}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &5383569661835316114
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6690703515988014679, guid: 10b2e5cfb2992004e83dd3247454636f, type: 3}
-      propertyPath: m_Name
-      value: CameraPatientRoom
-      objectReference: {fileID: 0}
-    - target: {fileID: 6690703515988014679, guid: 10b2e5cfb2992004e83dd3247454636f, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7449555628829453114, guid: 10b2e5cfb2992004e83dd3247454636f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7449555628829453114, guid: 10b2e5cfb2992004e83dd3247454636f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.345
-      objectReference: {fileID: 0}
-    - target: {fileID: 7449555628829453114, guid: 10b2e5cfb2992004e83dd3247454636f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 57.446
-      objectReference: {fileID: 0}
-    - target: {fileID: 7449555628829453114, guid: 10b2e5cfb2992004e83dd3247454636f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.35792783
-      objectReference: {fileID: 0}
-    - target: {fileID: 7449555628829453114, guid: 10b2e5cfb2992004e83dd3247454636f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.08539559
-      objectReference: {fileID: 0}
-    - target: {fileID: 7449555628829453114, guid: 10b2e5cfb2992004e83dd3247454636f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.91243845
-      objectReference: {fileID: 0}
-    - target: {fileID: 7449555628829453114, guid: 10b2e5cfb2992004e83dd3247454636f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.1790288
-      objectReference: {fileID: 0}
-    - target: {fileID: 7449555628829453114, guid: 10b2e5cfb2992004e83dd3247454636f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 22.82
-      objectReference: {fileID: 0}
-    - target: {fileID: 7449555628829453114, guid: 10b2e5cfb2992004e83dd3247454636f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 137.509
-      objectReference: {fileID: 0}
-    - target: {fileID: 7449555628829453114, guid: 10b2e5cfb2992004e83dd3247454636f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 1.721
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 10b2e5cfb2992004e83dd3247454636f, type: 3}
 --- !u!1001 &5569491952740419529
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5246,6 +5184,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 147.188
       objectReference: {fileID: 0}
+    - target: {fileID: 2821514066295871853, guid: 832ea0951b131ee41801e8082078d38f, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821514066295871853, guid: 832ea0951b131ee41801e8082078d38f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3822115989883049261, guid: 832ea0951b131ee41801e8082078d38f, type: 3}
       propertyPath: m_Name
       value: PatientRoomLayout
@@ -5876,4 +5822,4 @@ SceneRoots:
   - {fileID: 1806206565}
   - {fileID: 97494109}
   - {fileID: 1861984321}
-  - {fileID: 5383569661835316114}
+  - {fileID: 486294050}
