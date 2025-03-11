@@ -4,7 +4,7 @@ public class PlayerCameraConroller : MonoBehaviour
 {
     [SerializeField] private float topClamp = -90f;
     [SerializeField] private float bottomClamp = 90f;
-    [SerializeField] private float verticalSensitivity = 500f;
+    [SerializeField] public float verticalSensitivity = 500f;
     
     private float xRotation = 0f;
     void Start()
