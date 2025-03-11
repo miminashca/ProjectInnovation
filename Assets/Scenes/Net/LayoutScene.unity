@@ -200,6 +200,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.534
       objectReference: {fileID: 0}
+    - target: {fileID: 3098544888152176573, guid: de312bb0812840e4ab9186b5108f77dd, type: 3}
+      propertyPath: context.animator
+      value: 
+      objectReference: {fileID: 97494111}
+    - target: {fileID: 3098544888152176573, guid: de312bb0812840e4ab9186b5108f77dd, type: 3}
+      propertyPath: context.patrolPoints.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3796098685954401649, guid: de312bb0812840e4ab9186b5108f77dd, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7
@@ -256,6 +264,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5990381604836748731, guid: de312bb0812840e4ab9186b5108f77dd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6576680403876800988, guid: de312bb0812840e4ab9186b5108f77dd, type: 3}
       propertyPath: sceneViewId
       value: 1
@@ -272,14 +284,36 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 8930111565055837038, guid: de312bb0812840e4ab9186b5108f77dd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8930111565055837038, guid: de312bb0812840e4ab9186b5108f77dd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8930111565055837038, guid: de312bb0812840e4ab9186b5108f77dd, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8930111565055837038, guid: de312bb0812840e4ab9186b5108f77dd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.677
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5990381604836748731, guid: de312bb0812840e4ab9186b5108f77dd, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de312bb0812840e4ab9186b5108f77dd, type: 3}
 --- !u!1 &97494110 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 209055540923254911, guid: de312bb0812840e4ab9186b5108f77dd, type: 3}
+  m_PrefabInstance: {fileID: 97494109}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &97494111 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2923401539525464126, guid: de312bb0812840e4ab9186b5108f77dd, type: 3}
   m_PrefabInstance: {fileID: 97494109}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &114747222
