@@ -22,6 +22,9 @@ public class SpawnPlayers : MonoBehaviourPunCallbacks
     {
         if (PhotonNetwork.IsMasterClient)
         {
+
+            Debug.Log("SpawnPlayers: Starting. IsMasterClient = " + PhotonNetwork.IsMasterClient);
+
             // 1) Spawn the main player (the thief)
             playerInstance = PhotonNetwork.Instantiate(
                 playerPrefab.name,
@@ -29,25 +32,18 @@ public class SpawnPlayers : MonoBehaviourPunCallbacks
                 playerSpawnTransform.rotation
             );
 
-            // Ensure the player has been instantiated and networked
-            PhotonView photonView = playerInstance.GetComponent<PhotonView>();
-            Debug.Log("playeInstance" + playerInstance);
-            if (photonView != null && photonView.IsMine)
+            chaseMusicController = playerInstance.GetComponentInChildren<ChaseMusicController>();
+
+            // Instead of checking for PhotonView.IsMine, call SetReferences immediately.
+            if (chaseMusicController != null && playerInstance != null && enemyInScene != null)
             {
-                // 2) Delay calling SetReferences until the player is instantiated
-                if (chaseMusicController != null && playerInstance != null && enemyInScene != null)
-                {
-                    chaseMusicController.SetReferences(playerInstance, enemyInScene);
-                    Debug.Log("SpawnPlayers: SetReferences called after instantiation.");
-                }
-                else
-                {
-                    Debug.LogWarning("SpawnPlayers: chaseMusicController or playerInstance or enemyInScene is null.");
-                }
+                Debug.Log("SpawnPlayers: About to call SetReferences on ChaseMusicController.");
+                chaseMusicController.SetReferences(playerInstance, enemyInScene);
+                //Debug.Log("SpawnPlayers: SetReferences called after instantiation.");
             }
             else
             {
-                Debug.LogWarning("SpawnPlayers: PhotonView is null or this is not the local player.");
+                Debug.LogWarning("SpawnPlayers: chaseMusicController or playerInstance or enemyInScene is null.");
             }
         }
         else
