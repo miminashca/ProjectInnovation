@@ -450,7 +450,7 @@ GameObject:
   - component: {fileID: 4281428637536875783}
   - component: {fileID: 5270477252750586960}
   m_Layer: 5
-  m_Name: SensitivityPanel
+  m_Name: HorizontalSensitivityPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -598,14 +598,14 @@ MonoBehaviour:
   m_FillRect: {fileID: 3169301875946257449}
   m_HandleRect: {fileID: 8172328305448951497}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: 10
+  m_MaxValue: 200
   m_WholeNumbers: 0
-  m_Value: 0.5
+  m_Value: 40
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8259487159056538058}
         m_TargetAssemblyTypeName: SensitivitySettings, Assembly-CSharp
         m_MethodName: SetVerticalSensitivity
         m_Mode: 1
@@ -650,7 +650,7 @@ RectTransform:
   m_Father: {fileID: 3154298162912630525}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 72, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -724,8 +724,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 584830648160922723}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 72, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -799,8 +799,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1032475193545068401}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5589559, y: 0}
-  m_AnchorMax: {x: 0.5589559, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 72, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1178,13 +1178,14 @@ GameObject:
   - component: {fileID: 2650988901751220804}
   - component: {fileID: 4339896938180257999}
   - component: {fileID: 8897415890911287299}
+  - component: {fileID: 8259487159056538058}
   m_Layer: 5
   m_Name: SettingsPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &134471581933560005
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1266,6 +1267,22 @@ MonoBehaviour:
   MusicMixer: {fileID: 24100000, guid: d76781c670d4f9d498a4d79112a7eca4, type: 2}
   sfxSlider: {fileID: 6555516082709978975}
   musicSlider: {fileID: 3513781881065784556}
+--- !u!114 &8259487159056538058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4376430648050101911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c97cbeafa653c478b5052fcb0d823d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMovement: {fileID: 9042509291031626141, guid: 6479c5b10ab2a44f6bd6d6323bfc9f51, type: 3}
+  playerCameraController: {fileID: 0}
+  horizontalSlider: {fileID: 2041724717013813699}
+  verticalSlider: {fileID: 633755099707758787}
 --- !u!1 &5343036982280058078
 GameObject:
   m_ObjectHideFlags: 0
@@ -1299,7 +1316,7 @@ RectTransform:
   m_Father: {fileID: 2850930809593354295}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 72, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1526,7 +1543,7 @@ RectTransform:
   m_Father: {fileID: 7651274174300437026}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1601,7 +1618,7 @@ RectTransform:
   m_Father: {fileID: 3675532237849756375}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1748,7 +1765,7 @@ RectTransform:
   m_Father: {fileID: 6196150473948193939}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2302,7 +2319,7 @@ GameObject:
   - component: {fileID: 8797485326749565549}
   - component: {fileID: 2041724717013813699}
   m_Layer: 5
-  m_Name: SensitivitySlider
+  m_Name: HorizontalSensitivitySlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2374,13 +2391,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 9113192316742543591}
   m_HandleRect: {fileID: 392676601347057456}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: 10
+  m_MaxValue: 200
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 50
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8259487159056538058}
+        m_TargetAssemblyTypeName: SensitivitySettings, Assembly-CSharp
+        m_MethodName: SetHorizontalSensitivity
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8190066015212699422
 GameObject:
   m_ObjectHideFlags: 0
@@ -2482,7 +2511,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Sensitivity
+  m_text: 'Horizontal Sensitivity
 
 '
   m_isRightToLeft: 0
@@ -3045,7 +3074,7 @@ RectTransform:
   m_Father: {fileID: 9084643073281102435}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.5589559, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

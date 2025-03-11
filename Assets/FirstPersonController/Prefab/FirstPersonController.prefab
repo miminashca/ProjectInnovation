@@ -451,7 +451,7 @@ MonoBehaviour:
   moveForce: 5
   moveSpeed: 5
   joystick: {fileID: 4756359991347824882}
-  horizontalSensitivity: 50
+  horizontalSensitivity: 10
 --- !u!114 &4999086923738878281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1220,6 +1220,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3506716676366602473, guid: aa677110521b24246bc2229ec2030465, type: 3}
+      propertyPath: playerMovement
+      value: 
+      objectReference: {fileID: 8164019683301901393}
     - target: {fileID: 3528867808458845336, guid: aa677110521b24246bc2229ec2030465, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -1309,6 +1313,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5403834755862909408, guid: aa677110521b24246bc2229ec2030465, type: 3}
+      propertyPath: m_Value
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5403834755862909408, guid: aa677110521b24246bc2229ec2030465, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 4453242453211857851}
@@ -1342,7 +1350,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6800543342578647264, guid: aa677110521b24246bc2229ec2030465, type: 3}
       propertyPath: m_Value
-      value: 0.5
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6800543342578647264, guid: aa677110521b24246bc2229ec2030465, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
