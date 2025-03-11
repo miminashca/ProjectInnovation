@@ -10,6 +10,8 @@ public class EnemyContext
     public AudioSensor audioSensor;
     public VisionSensor visionSensor;
     public Transform playerTransform;
+    public Vector3 playerHeadOffset;
+    public Vector3 enemyHeadOffset;
 
     // AI-Director data
     public Vector3 lastHeardNoisePosition;

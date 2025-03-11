@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class AudioSensor : MonoBehaviour
 {
+    // audio sensor reads players audio input, and checks if it passes the threshold for enemy to hear the player.
+    // if that is true - it passes this information to AI director, which in its turn passes this event to state machine.
+    
     // This script can accumulate loudness from Photon Voice or footstep events
     [SerializeField] private float loudnessDecaySpeed = 1f;
 
@@ -9,7 +12,6 @@ public class AudioSensor : MonoBehaviour
 
     private void Update()
     {
-        // Example: “CurrentLoudness” decays over time if not receiving new input
         CurrentLoudness = Mathf.Max(0f, CurrentLoudness - loudnessDecaySpeed * Time.deltaTime);
     }
 

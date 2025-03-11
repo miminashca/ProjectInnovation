@@ -3,7 +3,7 @@ using UnityEngine;
 public class EnemyStateMachine : MonoBehaviour
 {
     private IEnemyState currentState;
-    [SerializeField] private EnemyContext context; // Drag & drop or create in Awake()
+    public EnemyContext context; // Drag & drop or create in Awake()
 
     private void Start()
     {
@@ -22,7 +22,7 @@ public class EnemyStateMachine : MonoBehaviour
         // 1) Exit the current state
         if (currentState != null)
         {
-            EnemyAiEventBus.ExitStateWithEnum(currentState.enemyStateType);
+            EnemyAiEventBus.ExitStateWithID(currentState.enemyStateType);
             currentState.Exit(context);
         }
 
@@ -32,7 +32,7 @@ public class EnemyStateMachine : MonoBehaviour
         // 3) Enter the new state
         if (currentState != null)
         {
-            EnemyAiEventBus.EnterStateWithEnum(currentState.enemyStateType);
+            EnemyAiEventBus.EnterStateWithID(currentState.enemyStateType);
             currentState.Enter(context);
         }
     }
