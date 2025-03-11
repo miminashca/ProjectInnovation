@@ -16,30 +16,39 @@ public class SpawnPlayers : MonoBehaviourPunCallbacks
     [Tooltip("Drag the AudioManager with ChaseMusicController here.")]
     [SerializeField] private ChaseMusicController chaseMusicController;
 
+    private GameObject playerInstance;
+
     private void Start()
     {
         if (PhotonNetwork.IsMasterClient)
         {
-            // 1) Spawn the main player
-            GameObject playerInstance = PhotonNetwork.Instantiate(
+
+            Debug.Log("SpawnPlayers: Starting. IsMasterClient = " + PhotonNetwork.IsMasterClient);
+
+            // 1) Spawn the main player (the thief)
+            playerInstance = PhotonNetwork.Instantiate(
                 playerPrefab.name,
                 playerSpawnTransform.position,
                 playerSpawnTransform.rotation
             );
 
-            // 2) Hook up chase music references on the MasterClient side
-            if (chaseMusicController != null)
+            chaseMusicController = playerInstance.GetComponentInChildren<ChaseMusicController>();
+
+            // Instead of checking for PhotonView.IsMine, call SetReferences immediately.
+            if (chaseMusicController != null && playerInstance != null && enemyInScene != null)
             {
-                chaseMusicController.SetTargets(playerInstance, enemyInScene);
+                Debug.Log("SpawnPlayers: About to call SetReferences on ChaseMusicController.");
+                chaseMusicController.SetReferences(playerInstance, enemyInScene);
+                //Debug.Log("SpawnPlayers: SetReferences called after instantiation.");
             }
             else
             {
-                Debug.LogWarning("ChaseMusicController reference is missing!");
+                Debug.LogWarning("SpawnPlayers: chaseMusicController or playerInstance or enemyInScene is null.");
             }
         }
         else
         {
-            // If not the MasterClient, spawn the second player (the camera man)
+            // If not the MasterClient, spawn the second player (the cameraman)
             PhotonNetwork.Instantiate(
                 secondPlayerUIPrefab.name,
                 Vector3.zero,

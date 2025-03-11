@@ -5,7 +5,11 @@ public class FootstepController : MonoBehaviour
     public AudioSource audioSource;         // The AudioSource component on the AudioManager
     public AudioClip footstepClip;            // The footstep sound clip
     public float footstepInterval = 0.56f;    // Interval between footsteps
-    public float movementThreshold = 0.1f;    // Minimum velocity to consider the player moving
+    public float movementThreshold;    // Minimum velocity to consider the player moving
+
+    // New public fields to control pitch randomization range
+    public float pitchMin = 0.8f;
+    public float pitchMax = 1.2f;
 
     private float footstepTimer;
     private Rigidbody rb;
@@ -28,6 +32,8 @@ public class FootstepController : MonoBehaviour
             footstepTimer -= Time.deltaTime;
             if (footstepTimer <= 0f)
             {
+                // Randomize the pitch each time before playing the sound
+                audioSource.pitch = Random.Range(pitchMin, pitchMax);
                 audioSource.PlayOneShot(footstepClip);
                 footstepTimer = footstepInterval;
             }
