@@ -1,4 +1,3 @@
-using UnityEditor.Timeline.Actions;
 using UnityEngine;
 
 public class PursuingState : IEnemyState
@@ -28,11 +27,11 @@ public class PursuingState : IEnemyState
         // Check distance for Killing
         float distance = Vector3.Distance(context.navAgent.transform.position,context.playerTransform.position);
         //Debug.Log(distance);
-        if (distance <= context.killDistance)
+/*        if (distance <= context.killDistance)
         {
             SM.SetState(new KillingState(SM));
             return;
-        }
+        }*/
         
         // If we lose vision, increment lostPlayerTimer
         if (!context.playerInVision)

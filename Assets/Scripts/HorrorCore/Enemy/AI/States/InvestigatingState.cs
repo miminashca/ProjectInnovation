@@ -5,6 +5,7 @@ public class InvestigatingState : IEnemyState
     private float investigateTimer = 0f;
     public EnemyStateMachine SM { get; }
     public EnemyStateType enemyStateType { get; }
+
     public InvestigatingState(EnemyStateMachine SM)
     {
         this.SM = SM;
@@ -13,13 +14,15 @@ public class InvestigatingState : IEnemyState
 
     public void Enter(EnemyContext context)
     {
-        Debug.Log("Enter investigating state");
-
+        Debug.Log("Enter Investigating state");
+        // Reset the accumulated noise when starting investigation.
+        context.accumulateLoudness = 0f;
         investigateTimer = 0f;
-        context.navAgent.speed = context.chaseSpeed * 0.8f; // adjust speed as needed
+        // Use chaseSpeed (or you could use a multiplier if desired).
+        context.navAgent.speed = context.chaseSpeed;
         context.animator.SetBool("IsInvestigating", true);
 
-        // Use the last heard noise position to set the destination
+        // Set destination to the last heard noise position.
         context.navAgent.SetDestination(context.lastHeardNoisePosition);
     }
 
@@ -27,22 +30,23 @@ public class InvestigatingState : IEnemyState
     {
         investigateTimer += Time.deltaTime;
 
+        // If the player is spotted, switch to pursuing.
         if (context.playerInVision)
         {
             SM.SetState(new PursuingState(SM));
             return;
         }
 
-        // If reached the destination, you might add logic to search nearby
+        // Optionally, if the enemy reaches the destination and has looked around long enough, revert to roaming.
         if (!context.navAgent.pathPending && context.navAgent.remainingDistance < 1f)
         {
-            // Search behavior can be added here.
+            // Here you could add “searching” behavior.
+            if (investigateTimer >= context.investigateTimeout)
+            {
+                SM.SetState(new RoamingState(SM));
+                return;
+            }
         }
-
-        // if (investigateTimer >= context.investigateTimeout)
-        // {
-        //     SM.SetState(new RoamingState(SM));
-        // }
     }
 
     public void Exit(EnemyContext context)

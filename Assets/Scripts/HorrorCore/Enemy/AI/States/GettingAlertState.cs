@@ -5,6 +5,7 @@ public class GettingAlertState : IEnemyState
     private float alertTimeCounter = 0f;
     public EnemyStateMachine SM { get; }
     public EnemyStateType enemyStateType { get; }
+
     public GettingAlertState(EnemyStateMachine SM)
     {
         this.SM = SM;
@@ -13,8 +14,7 @@ public class GettingAlertState : IEnemyState
 
     public void Enter(EnemyContext context)
     {
-        Debug.Log("Enter getting alert state");
-        // Possibly play a “startled” animation
+        Debug.Log("Enter GettingAlert state");
         context.animator.SetTrigger("Alerted");
         alertTimeCounter = 0f;
     }
@@ -23,31 +23,31 @@ public class GettingAlertState : IEnemyState
     {
         alertTimeCounter += Time.deltaTime;
 
-        // For example, transition to Investigating if repeated or stronger noise
-        // or if we have “recent noise location” from the AI Director
-        // if (context.hasRecentNoise || context.accumulateLoudness >= context.alertThreshold)
-        // {
-        //     SM.SetState(new InvestigatingState(SM));
-        //     return;
-        // }
-        
+        // If the enemy sees the player at any point, switch to pursuing.
         if (context.playerInVision)
         {
-            // Go straight to PursuingState
             SM.SetState(new PursuingState(SM));
+            return;
         }
 
-        // // If we remain “GettingAlert” beyond a small duration, revert to Roaming
-        // if (alertTimeCounter >= context.alertTimeout)
-        // {
-        //     SM.SetState(new RoamingState(SM));
-        // }
+        // If the accumulated noise has reached the threshold, transition to investigating.
+        if (context.accumulateLoudness >= context.alertThreshold)
+        {
+            SM.SetState(new InvestigatingState(SM));
+            return;
+        }
+
+        // After the alert duration, return to roaming while preserving the accumulated noise.
+        if (alertTimeCounter >= context.alertDuration)
+        {
+            SM.SetState(new RoamingState(SM));
+            return;
+        }
     }
 
     public void Exit(EnemyContext context)
     {
-        // Reset the loudness for next time (optional design choice)
-        context.accumulateLoudness = 0f;
-        context.hasRecentNoise = false;
+        // Do NOT reset accumulateLoudness here so that the enemy “remembers” the noise.
+        // It will be reset only when entering the Investigating state.
     }
 }

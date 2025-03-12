@@ -49,7 +49,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -157,18 +157,21 @@ MonoBehaviour:
     navAgent: {fileID: 5700816259517237657}
     animator: {fileID: 2923401539525464126}
     visionSensor: {fileID: 7902946726402063994}
+    playerInVision: 0
     playerHeadOffset: {x: 0, y: 0.5, z: 0}
     enemyHeadOffset: {x: 0, y: 2.8, z: 0}
+    timeSinceLastPlayerSight: 0
     lastHeardNoisePosition: {x: 0, y: 0, z: 0}
     hasRecentNoise: 0
-    alertThreshold: 0
-    investigateTimeout: 0
-    pursuingVisionLostTime: 3
-    timeSinceLastPlayerSight: 0
+    alertThreshold: 3
+    investigateThreshold: 0
     accumulateLoudness: 0
-    playerInVision: 0
-    roamSpeed: 3
-    chaseSpeed: 4
+    immediatePursuitDistance: 1.5
+    investigateTimeout: 3
+    pursuingVisionLostTime: 3
+    alertDuration: 1.5
+    roamSpeed: 2
+    chaseSpeed: 3
     patrolPoints:
     - {fileID: 0}
     - {fileID: 0}

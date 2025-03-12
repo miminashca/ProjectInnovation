@@ -9,50 +9,52 @@ public class VoiceDetectionTrigger : MonoBehaviour
     // LayerMask for filtering enemy colliders.
     public LayerMask enemyLayer;
 
-    // How long (in accumulated noise units) before an enemy is alerted.
-    public float alertThreshold = 10f;
-
-    // Internal accumulator that tracks the �noise exposure.�
-    private float noiseAccumulator = 0f;
-
     void Update()
     {
-        // Calculate the current detection radius based on the SoundMeter amplitude.
-        float currentRadius = baseRadius + soundMeter.currentFill * radiusMultiplier;
+        float amplitude = soundMeter.currentFill;
+        float currentRadius = baseRadius + amplitude * radiusMultiplier;
 
-        // Check for enemies within the dynamic detection circle.
+        // Check for enemy colliders within the dynamic detection sphere.
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, currentRadius, enemyLayer);
         foreach (var hit in hitColliders)
         {
-            // Try to get the enemy's state machine component.
             EnemyStateMachine enemySM = hit.GetComponent<EnemyStateMachine>();
             if (enemySM != null)
             {
-                // Increase the accumulator based on the amplitude and time.
-                noiseAccumulator += soundMeter.currentFill * Time.deltaTime;
+                float distance = Vector3.Distance(transform.position, enemySM.transform.position);
+                Debug.Log($"[VoiceDetectionTrigger] Detected player at distance: {distance:F2}");
 
-                // If the accumulated noise exceeds the threshold, alert the enemy.
-                if (noiseAccumulator >= alertThreshold)
+                // Record the noise position for the enemy.
+                enemySM.context.lastHeardNoisePosition = transform.position;
+
+                // Immediate pursuit if very close.
+                if (distance <= enemySM.context.immediatePursuitDistance)
                 {
-                    // Set the enemy�s last-heard noise position to the player's position.
-                    enemySM.context.lastHeardNoisePosition = transform.position;
+                    Debug.Log("[VoiceDetectionTrigger] Player is close! Triggering Pursuing state.");
+                    enemySM.SetState(new PursuingState(enemySM));
+                }
+                else
+                {
+                    // Accumulate noise using the context’s accumulator.
+                    enemySM.context.accumulateLoudness += amplitude * Time.deltaTime;
+                    Debug.Log($"[VoiceDetectionTrigger] Enemy noise accumulation: {enemySM.context.accumulateLoudness:F2}");
 
-                    // Change the enemy's state � for example, go to the GettingAlert state.
-                    //enemySM.SetState(new GettingAlertState(enemySM));
-
-                    // Reset the accumulator once the alert is triggered.
-                    noiseAccumulator = 0f;
+                    // If accumulated noise reaches or exceeds threshold and enemy is not already alerting/investigating:
+                    if (enemySM.context.accumulateLoudness >= enemySM.context.alertThreshold)
+                    {
+                        // Trigger Getting Alert state.
+                        Debug.Log("[VoiceDetectionTrigger] Noise threshold reached! Triggering GettingAlert state.");
+                        enemySM.SetState(new GettingAlertState(enemySM));
+                    }
                 }
             }
         }
     }
 
-    // Visualize the detection sphere in the Scene view.
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmos()
     {
         if (soundMeter == null)
             return;
-
         float currentRadius = baseRadius + soundMeter.currentFill * radiusMultiplier;
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, currentRadius);

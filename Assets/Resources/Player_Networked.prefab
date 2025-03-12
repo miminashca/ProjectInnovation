@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4555335170920677416}
-  - component: {fileID: 7515818555799078112}
   - component: {fileID: 4432653003791941646}
   m_Layer: 0
   m_Name: VoiceDetection
@@ -33,22 +32,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5465326048381345467}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7515818555799078112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 84977904640487695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9b0e28fb65505c4186910935f271534, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundMeter: {fileID: 3917609127351640433}
-  baseRadius: 1
-  radiusMultiplier: 10
-  gizmoColor: {r: 0, g: 1, b: 0.9827192, a: 1}
 --- !u!114 &4432653003791941646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,7 +50,6 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 512
-  alertThreshold: 10
 --- !u!1001 &878517417659975116
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -184,6 +166,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1106353226114074409, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1126117654313769201, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -298,11 +284,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3214121058029417634, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1.2490234
+      value: -1.2489014
       objectReference: {fileID: 0}
     - target: {fileID: 3401529889084110498, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000061035156
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3690360397039963615, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
       propertyPath: m_Layer
