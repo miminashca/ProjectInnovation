@@ -167,15 +167,15 @@ MonoBehaviour:
     timeSinceLastPlayerSight: 0
     accumulateLoudness: 0
     playerInVision: 0
-    roamSpeed: 3
-    chaseSpeed: 4
+    roamSpeed: 2
+    chaseSpeed: 2
     patrolPoints:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     currentPatrolIndex: 0
-    killDistance: 1
+    killDistance: 0.2
 --- !u!114 &7902946726402063994
 MonoBehaviour:
   m_ObjectHideFlags: 0

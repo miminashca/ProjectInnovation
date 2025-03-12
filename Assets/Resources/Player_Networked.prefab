@@ -516,6 +516,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6355239528576815316, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
+      propertyPath: m_TagString
+      value: Thief
+      objectReference: {fileID: 0}
     - target: {fileID: 6364262754402477944, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
       propertyPath: m_Layer
       value: 0

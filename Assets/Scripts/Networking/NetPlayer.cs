@@ -5,6 +5,10 @@ public class NetPlayer : MonoBehaviour
     private PhotonView view;
     void Start()
     {
+        if (gameObject.CompareTag("Thief"))
+        {
+            EventBus.SpawnThief(gameObject.transform);
+        }
         view = GetComponent<PhotonView>();
         // If this Player object is not owned by me, disable its camera & listener
         Camera camera = GetComponentInChildren<Camera>();

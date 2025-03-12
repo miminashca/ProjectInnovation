@@ -11,6 +11,13 @@ public static class EventBus
     public static event Action<PickUp> OnPickupCollected;
     public static event Action OnMinAmountOfPickupsCollected;
     
+    public static event Action<Transform> OnThiefSpawned;
+    public static void SpawnThief(Transform thiefTransform)
+    {
+        OnThiefSpawned?.Invoke(thiefTransform);
+        Debug.Log("Spawn thief");
+    }
+    
     public static void PressCameraSwitchButton(int ID)
     {
         OnCameraSwitchButtonPressedWithID?.Invoke(ID);
