@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 
 public class AudioSensor : MonoBehaviour
 {
@@ -20,4 +20,4 @@ public class AudioSensor : MonoBehaviour
         // Called by a PhotonVoice callback or footstep event
         CurrentLoudness = Mathf.Max(CurrentLoudness, decibels);
     }
-}
+}*/
