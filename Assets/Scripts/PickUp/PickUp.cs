@@ -1,4 +1,5 @@
 using System;
+using Photon.Pun;
 using UnityEngine;
 
 public class PickUp : MonoBehaviour
@@ -25,6 +26,6 @@ public class PickUp : MonoBehaviour
 
     private void Collect(PickUp pickUp)
     {
-        if(pickUp == this) Destroy(this.gameObject);
+        if(pickUp == this) PhotonNetwork.Destroy(this.gameObject);
     }
 }
