@@ -43,7 +43,6 @@ public class VisionSensor : MonoBehaviour
         
     }
     
-
     public bool CheckPlayerInVision(Transform playerTransform)
     {
         Vector3 playerHeadPosition = playerTransform.position + SM.context.playerHeadOffset;

@@ -12,10 +12,15 @@ public static class EventBus
     public static event Action OnMinAmountOfPickupsCollected;
     
     public static event Action<Transform> OnThiefSpawned;
+    public static event Action OnPlayerCrouch;
     public static void SpawnThief(Transform thiefTransform)
     {
         OnThiefSpawned?.Invoke(thiefTransform);
         Debug.Log("Spawn thief");
+    }
+    public static void Crouch()
+    {
+        OnPlayerCrouch?.Invoke();
     }
     
     public static void PressCameraSwitchButton(int ID)

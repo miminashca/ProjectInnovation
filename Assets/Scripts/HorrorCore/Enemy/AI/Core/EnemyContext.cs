@@ -44,6 +44,11 @@ public class EnemyContext
     public void InitPlayer(Transform pPlayerTransform)
     { 
         playerTransform = pPlayerTransform;
+        playerHeadOffset = playerTransform.gameObject.GetComponentInChildren<Camera>().gameObject.transform.localPosition;
         //if(playerTransform) Debug.Log("PLAYER INITIALIZED!!!");
+    }
+    public void ChangePlayerHeadOffset()
+    { 
+        playerHeadOffset = playerTransform.gameObject.GetComponentInChildren<Camera>().gameObject.transform.localPosition;
     }
 }
