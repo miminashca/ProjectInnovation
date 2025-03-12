@@ -94,7 +94,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 0e3eb569b73465f46aff87b5d79a14a4, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3257,8 +3257,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13409fc81dc81124ebe319ac05855c04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLightmapTextures: []
-  operatorLightmapTextures: []
+  playerLightmapTextures:
+  - {fileID: 2800000, guid: db35235ce77770045948db1af55bddbb, type: 3}
+  - {fileID: 2800000, guid: 8f65e1e9990eb39409411034212e925a, type: 3}
+  - {fileID: 2800000, guid: 26eeea27f7dc8864096578321a0c3a29, type: 3}
+  - {fileID: 2800000, guid: 332b1ba4dd2c067478f52c4ea983286a, type: 3}
+  - {fileID: 2800000, guid: 9056cf58efa0d274cb0abd7d47a847f4, type: 3}
+  - {fileID: 2800000, guid: 9ed77ccd93b5d134da81e539e5f1c2d9, type: 3}
+  - {fileID: 2800000, guid: ce9b829441597cf42bca3ae043055fef, type: 3}
+  - {fileID: 2800000, guid: c209bfc76f12c3b4097b540abf4cec43, type: 3}
+  - {fileID: 2800000, guid: 42bd7e43bec252f4fa739209dd1cf2b3, type: 3}
+  - {fileID: 2800000, guid: 7dfe0e7623536a54f845b023afc68aa7, type: 3}
+  operatorLightmapTextures:
+  - {fileID: 2800000, guid: 35f4547b4e59c7940937832f48b42eb2, type: 3}
+  - {fileID: 2800000, guid: 75135613ff665b1429af8996f9da0ab4, type: 3}
+  - {fileID: 2800000, guid: a9d1f128365576841927317e070b0771, type: 3}
+  - {fileID: 2800000, guid: a1b5277dbb649e5499b23827fecfc2ca, type: 3}
+  - {fileID: 2800000, guid: bd1ce03e557803a44878a5487f733c3b, type: 3}
+  - {fileID: 2800000, guid: 49ca0123136275f43b4dc745e873b2d4, type: 3}
+  - {fileID: 2800000, guid: e1e9690b64dbad944a497cdb8e9ef2f8, type: 3}
+  - {fileID: 2800000, guid: db32ced367589a6449a9f425c8d5d0a0, type: 3}
+  - {fileID: 2800000, guid: e42aba38f98c68a468b74c7b4f897f14, type: 3}
+  - {fileID: 2800000, guid: dc69ce0347379ac48a9149b120f2cbf3, type: 3}
 --- !u!4 &1653645316
 Transform:
   m_ObjectHideFlags: 0
@@ -3441,7 +3461,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1806206564
 MonoBehaviour:
   m_ObjectHideFlags: 0
