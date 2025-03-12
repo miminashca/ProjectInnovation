@@ -659,7 +659,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 15
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -1149,6 +1149,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1276038783031156674, guid: aa677110521b24246bc2229ec2030465, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1338284104294466180, guid: aa677110521b24246bc2229ec2030465, type: 3}
       propertyPath: m_text
       value: 'Horizontal Sensitivity
@@ -1367,6 +1371,10 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 4453242453211857851}
+    - target: {fileID: 5448695523794020523, guid: aa677110521b24246bc2229ec2030465, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5663493059932581238, guid: aa677110521b24246bc2229ec2030465, type: 3}
       propertyPath: m_Layer
       value: 0
