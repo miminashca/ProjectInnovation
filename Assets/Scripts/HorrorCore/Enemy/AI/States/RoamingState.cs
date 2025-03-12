@@ -21,7 +21,6 @@ public class RoamingState : IEnemyState
     public void Enter(EnemyContext context)
     {
         Debug.Log("Enter roaming state");
-        AIDirector.OnPlayerSpotted += TransitToPursuingState;
         // Set the navAgent speed to roamSpeed
         context.navAgent.speed = context.roamSpeed;
 
@@ -44,22 +43,21 @@ public class RoamingState : IEnemyState
             SetNextPatrolPoint(context);
         }
 
-/*        // Transition check #1: If loud sound is detected above threshold
+        /*// Transition check #1: If loud sound is detected above threshold
         if (context.audioSensor.CurrentLoudness >= context.alertThreshold)
         {
             // Reset path and go to GettingAlertState
             context.navAgent.ResetPath();
             SM.SetState(new GettingAlertState(SM));
             return;
-        }
+        }*/
 
         // Transition check #2: If we see the player
         if (context.playerInVision)
         {
             // Go straight to PursuingState
             SM.SetState(new PursuingState(SM));
-            return;
-        }*/
+        }
     }
 
     /// <summary>
@@ -70,7 +68,6 @@ public class RoamingState : IEnemyState
         // Reset the IsRoaming animator bool so we don't continue the roaming animation
         context.animator.SetBool("IsRoaming", false);
         context.navAgent.ResetPath();
-        AIDirector.OnPlayerSpotted -= TransitToPursuingState;
     }
 
     /// <summary>
@@ -94,11 +91,6 @@ public class RoamingState : IEnemyState
         // Assign and move to the new patrol point
         context.currentPatrolIndex = newIndex;
         context.navAgent.SetDestination(context.patrolPoints[newIndex].position);
-    }
-
-    private void TransitToPursuingState()
-    {
-        SM.SetState(new PursuingState(SM));
     }
 
 }
