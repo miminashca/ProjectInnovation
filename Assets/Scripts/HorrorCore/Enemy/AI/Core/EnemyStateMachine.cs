@@ -9,7 +9,7 @@ public class EnemyStateMachine : MonoBehaviour
     /// The current active state implementing IEnemyState.
     /// </summary>
     private IEnemyState currentState;
-    public EnemyContext context; // Drag & drop or create in Awake()
+    public EnemyContext context;
 
     private void OnEnable()
     {

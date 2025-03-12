@@ -23,7 +23,7 @@ public class SoundMeter : MonoBehaviour
     public Color warningColor = new Color(1f, 0.6f, 0f); // Orange
     public Color dangerColor = Color.red;
 
-    private float currentFill = 0f;
+    public float currentFill = 0f;
     private float warningTimer = 0f;
     private float dangerTimer = 0f;
 

@@ -14,10 +14,10 @@ public class InvestigatingState : IEnemyState
     public void Enter(EnemyContext context)
     {
         investigateTimer = 0f;
-        context.navAgent.speed = context.chaseSpeed * 0.8f; // slightly faster than roaming, if desired
+        context.navAgent.speed = context.chaseSpeed * 0.8f; // adjust speed as needed
         context.animator.SetBool("IsInvestigating", true);
 
-        // Move to lastHeardNoisePosition (or a random point within a radius).
+        // Use the last heard noise position to set the destination
         context.navAgent.SetDestination(context.lastHeardNoisePosition);
     }
 
@@ -25,20 +25,18 @@ public class InvestigatingState : IEnemyState
     {
         investigateTimer += Time.deltaTime;
 
-        // Check if we see the player => transition to Pursuing
         if (context.playerInVision)
         {
             SM.SetState(new PursuingState(SM));
             return;
         }
 
-        // If we arrive near the noise position, either linger or do some searching pattern
+        // If reached the destination, you might add logic to search nearby
         if (!context.navAgent.pathPending && context.navAgent.remainingDistance < 1f)
         {
-            // Possibly pick a new random point within a certain “search radius” around lastHeardNoisePosition
+            // Search behavior can be added here.
         }
 
-        // If we exceed the investigating timeout => revert to Roaming
         if (investigateTimer >= context.investigateTimeout)
         {
             SM.SetState(new RoamingState(SM));
