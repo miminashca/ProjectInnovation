@@ -12,7 +12,7 @@ public class VoiceDetectionTrigger : MonoBehaviour
     // How long (in accumulated noise units) before an enemy is alerted.
     public float alertThreshold = 10f;
 
-    // Internal accumulator that tracks the “noise exposure.”
+    // Internal accumulator that tracks the ï¿½noise exposure.ï¿½
     private float noiseAccumulator = 0f;
 
     void Update()
@@ -34,11 +34,11 @@ public class VoiceDetectionTrigger : MonoBehaviour
                 // If the accumulated noise exceeds the threshold, alert the enemy.
                 if (noiseAccumulator >= alertThreshold)
                 {
-                    // Set the enemy’s last-heard noise position to the player's position.
+                    // Set the enemyï¿½s last-heard noise position to the player's position.
                     enemySM.context.lastHeardNoisePosition = transform.position;
 
-                    // Change the enemy's state – for example, go to the GettingAlert state.
-                    enemySM.SetState(new GettingAlertState(enemySM));
+                    // Change the enemy's state ï¿½ for example, go to the GettingAlert state.
+                    //enemySM.SetState(new GettingAlertState(enemySM));
 
                     // Reset the accumulator once the alert is triggered.
                     noiseAccumulator = 0f;
