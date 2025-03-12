@@ -882,6 +882,9 @@ GameObject:
   - component: {fileID: 888937008212833063}
   - component: {fileID: 1615501359397239327}
   - component: {fileID: 7564048577427214441}
+  - component: {fileID: 4157539791416070212}
+  - component: {fileID: 943723487605496738}
+  - component: {fileID: 3900086992406124601}
   m_Layer: 3
   m_Name: Speaker
   m_TagString: Untagged
@@ -931,7 +934,7 @@ AudioSource:
   m_GameObject: {fileID: 5503976540711178654}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: fdfca9383c91f144f99e34448c22b1a9, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
@@ -1019,6 +1022,50 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!165 &4157539791416070212
+AudioHighPassFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5503976540711178654}
+  m_Enabled: 1
+  m_CutoffFrequency: 1000
+  m_HighpassResonanceQ: 2
+--- !u!169 &943723487605496738
+AudioLowPassFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5503976540711178654}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_LowpassResonanceQ: 2
+  lowpassLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.09049568
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!170 &3900086992406124601
+AudioDistortionFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5503976540711178654}
+  m_Enabled: 1
+  m_DistortionLevel: 0.5
 --- !u!1001 &5743149449561569340
 PrefabInstance:
   m_ObjectHideFlags: 0

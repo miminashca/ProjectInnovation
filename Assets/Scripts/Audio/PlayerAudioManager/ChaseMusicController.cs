@@ -12,12 +12,14 @@ public class ChaseMusicController : MonoBehaviourPunCallbacks
     public float baseStartDistance = 30f;
     public float intenseStartDistance = 20f;
     public float crazyStartDistance = 10f;
+    public float violinStartDistance = 6f;
     public float minDistance = 5f;
 
     [Header("Audio Sources")]
     public AudioSource baseLayer;
     public AudioSource intenseLayer;
     public AudioSource crazyLayer;
+    public AudioSource violinLayer;
 
     private GameObject thiefPlayer;
     private GameObject enemy;
@@ -33,6 +35,7 @@ public class ChaseMusicController : MonoBehaviourPunCallbacks
             baseLayer.mute = true;
             intenseLayer.mute = true;
             crazyLayer.mute = true;
+            violinLayer.mute = true;
             enabled = false;
             return;
         }
@@ -121,6 +124,19 @@ public class ChaseMusicController : MonoBehaviourPunCallbacks
         {
             //Debug.LogError("Crazy Layer AudioSource is not assigned.");
         }
+
+        if (violinLayer != null)
+        {
+            if (!violinLayer.isPlaying)
+            {
+                violinLayer.Play();
+                //Debug.Log("Violin layer started playing.");
+            }
+        }
+        else
+        {
+            //Debug.LogError("Violin Layer AudioSource is not assigned.");
+        }
     }
 
     void StopMusic()
@@ -129,6 +145,7 @@ public class ChaseMusicController : MonoBehaviourPunCallbacks
         if (baseLayer.isPlaying) baseLayer.Stop();
         if (intenseLayer.isPlaying) intenseLayer.Stop();
         if (crazyLayer.isPlaying) crazyLayer.Stop();
+        if (violinLayer.isPlaying) violinLayer.Stop();
     }
 
     void UpdateMusicLayers()
@@ -137,12 +154,14 @@ public class ChaseMusicController : MonoBehaviourPunCallbacks
         float baseVolume = CalculateLayerVolume(baseStartDistance);
         float intenseVolume = CalculateLayerVolume(intenseStartDistance);
         float crazyVolume = CalculateLayerVolume(crazyStartDistance);
+        float violinVolume = CalculateLayerVolume(violinStartDistance);
 
         // Debug.Log($"Updated Volumes - Base: {baseVolume}, Intense: {intenseVolume}, Crazy: {crazyVolume}");
 
         baseLayer.volume = baseVolume;
         intenseLayer.volume = intenseVolume;
         crazyLayer.volume = crazyVolume;
+        violinLayer.volume = violinVolume;
 
         // Update AudioMixer parameters if one is used.
         if (musicMixer != null)
@@ -150,6 +169,7 @@ public class ChaseMusicController : MonoBehaviourPunCallbacks
             musicMixer.SetFloat("BaseLayerVolume", Mathf.Lerp(-80f, 0f, baseVolume));
             musicMixer.SetFloat("IntenseLayerVolume", Mathf.Lerp(-80f, 0f, intenseVolume));
             musicMixer.SetFloat("CrazyLayerVolume", Mathf.Lerp(-80f, 0f, crazyVolume));
+            musicMixer.SetFloat("ViolinLayerVolume", Mathf.Lerp(-80f, 0f, violinVolume));
         }
     }
 
