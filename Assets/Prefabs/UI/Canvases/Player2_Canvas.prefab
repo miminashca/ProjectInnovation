@@ -1049,9 +1049,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6744111134748823456}
     m_Modifications:
+    - target: {fileID: 795122168087299462, guid: e01f57f688f793b479afa9e1c9f7182c, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1359635670870074184, guid: e01f57f688f793b479afa9e1c9f7182c, type: 3}
       propertyPath: m_Name
       value: HUD_Operator
+      objectReference: {fileID: 0}
+    - target: {fileID: 1830209033199689583, guid: e01f57f688f793b479afa9e1c9f7182c, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4477774181032126818, guid: e01f57f688f793b479afa9e1c9f7182c, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4544489083383267252, guid: e01f57f688f793b479afa9e1c9f7182c, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5759668841342762263, guid: e01f57f688f793b479afa9e1c9f7182c, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6541068618404136389, guid: e01f57f688f793b479afa9e1c9f7182c, type: 3}
       propertyPath: m_Pivot.x
@@ -1131,6 +1151,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6541068618404136389, guid: e01f57f688f793b479afa9e1c9f7182c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6791685457301908019, guid: e01f57f688f793b479afa9e1c9f7182c, type: 3}
+      propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7079073307925139358, guid: e01f57f688f793b479afa9e1c9f7182c, type: 3}
