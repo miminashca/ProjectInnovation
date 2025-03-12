@@ -13,6 +13,8 @@ public class InvestigatingState : IEnemyState
 
     public void Enter(EnemyContext context)
     {
+        Debug.Log("Enter investigating state");
+
         investigateTimer = 0f;
         context.navAgent.speed = context.chaseSpeed * 0.8f; // adjust speed as needed
         context.animator.SetBool("IsInvestigating", true);
@@ -37,10 +39,10 @@ public class InvestigatingState : IEnemyState
             // Search behavior can be added here.
         }
 
-        if (investigateTimer >= context.investigateTimeout)
-        {
-            SM.SetState(new RoamingState(SM));
-        }
+        // if (investigateTimer >= context.investigateTimeout)
+        // {
+        //     SM.SetState(new RoamingState(SM));
+        // }
     }
 
     public void Exit(EnemyContext context)

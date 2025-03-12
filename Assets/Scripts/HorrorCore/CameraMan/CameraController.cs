@@ -11,7 +11,7 @@ public class CameraController : MonoBehaviour
 
     private void OnEnable()
     {
-        PickupEventBus.OnCameraViewChanged += ResetCamera;
+        EventBus.OnCameraViewChanged += ResetCamera;
     }
 
     void Start()
@@ -62,6 +62,6 @@ public class CameraController : MonoBehaviour
     
     private void OnDisable()
     {
-        PickupEventBus.OnCameraViewChanged -= ResetCamera;
+        EventBus.OnCameraViewChanged -= ResetCamera;
     }
 }
