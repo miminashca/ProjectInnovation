@@ -1622,7 +1622,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8342699649578648975}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4064001300492063768}
+        m_TargetAssemblyTypeName: LeaveGame, Assembly-CSharp
+        m_MethodName: QuitToMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6901317720678214857
 GameObject:
   m_ObjectHideFlags: 0
@@ -1982,6 +1994,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5717755920714568378}
   - component: {fileID: 1171903462830221883}
+  - component: {fileID: 4064001300492063768}
   - component: {fileID: 1023639937034183079}
   m_Layer: 5
   m_Name: WinScreen
@@ -1989,7 +2002,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5717755920714568378
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2024,6 +2037,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7342693548858794572}
   m_CullTransparentMesh: 1
+--- !u!114 &4064001300492063768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7342693548858794572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d22b5176cdd9d8842962531140b45337, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1023639937034183079
 MonoBehaviour:
   m_ObjectHideFlags: 0

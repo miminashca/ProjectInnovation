@@ -7,8 +7,10 @@ public class VolumeSettings : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField] private AudioMixer SFXMixer;
     [SerializeField] private AudioMixer MusicMixer;
+    [SerializeField] private AudioMixer VoiceMixer;
     [SerializeField] private Slider sfxSlider;
     [SerializeField] private Slider musicSlider;
+    [SerializeField] private Slider voiceSlider;
 
     private void Start()
     {
