@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 5561127918636410009}
   - component: {fileID: 5700816259517237657}
   - component: {fileID: 3098544888152176573}
-  - component: {fileID: 1702479308824997765}
   - component: {fileID: 7902946726402063994}
   m_Layer: 9
   m_Name: Enemy
@@ -157,7 +156,6 @@ MonoBehaviour:
   context:
     navAgent: {fileID: 5700816259517237657}
     animator: {fileID: 2923401539525464126}
-    audioSensor: {fileID: 1702479308824997765}
     visionSensor: {fileID: 7902946726402063994}
     playerHeadOffset: {x: 0, y: 0.5, z: 0}
     enemyHeadOffset: {x: 0, y: 2.8, z: 0}
@@ -177,20 +175,7 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     currentPatrolIndex: 0
-    killDistance: 0
---- !u!114 &1702479308824997765
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 209055540923254911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0c439cb51d11404d9127602c830f3bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loudnessDecaySpeed: 1
+    killDistance: 1
 --- !u!114 &7902946726402063994
 MonoBehaviour:
   m_ObjectHideFlags: 0

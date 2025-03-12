@@ -36,5 +36,13 @@ public static class AIDirector
     {
         OnExitStateWithID?.Invoke(type);
     }
+    
+    //KILL
+    public static event Action OnEnemyKilledPlayer;
+    public static void KillPlayer()
+    {
+        OnEnemyKilledPlayer?.Invoke();
+    }
+
 }
 

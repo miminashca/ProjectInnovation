@@ -11,9 +11,11 @@ public class KillingState : IEnemyState
     }
     public void Enter(EnemyContext context)
     {
+        Debug.Log("Enter killing state!");
         // Trigger a kill animation
         context.animator.SetTrigger("Kill");
         // Possibly disable player movement, etc.
+        AIDirector.KillPlayer();
     }
 
     public void Execute(EnemyContext context)

@@ -13,7 +13,7 @@ public class EnemyContext
     [NonSerialized] public Transform playerTransform;
     public NavMeshAgent navAgent;      // Reference to the NavMeshAgent component on the Enemy.
     public Animator animator;          // Animator controlling the Enemy’s animations.
-    public AudioSensor audioSensor;    // Custom sensor that detects loudness.
+    //public AudioSensor audioSensor;    // Custom sensor that detects loudness.
     public VisionSensor visionSensor;  // Custom sensor that detects player in a cone of vision.
     public Vector3 playerHeadOffset;
     public Vector3 enemyHeadOffset;

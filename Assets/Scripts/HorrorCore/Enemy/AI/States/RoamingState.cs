@@ -43,14 +43,14 @@ public class RoamingState : IEnemyState
             SetNextPatrolPoint(context);
         }
 
-        /*// Transition check #1: If loud sound is detected above threshold
-        if (context.audioSensor.CurrentLoudness >= context.alertThreshold)
-        {
-            // Reset path and go to GettingAlertState
-            context.navAgent.ResetPath();
-            SM.SetState(new GettingAlertState(SM));
-            return;
-        }*/
+        // // Transition check #1: If loud sound is detected above threshold
+        // if (context.audioSensor.CurrentLoudness >= context.alertThreshold)
+        // {
+        //     // Reset path and go to GettingAlertState
+        //     context.navAgent.ResetPath();
+        //     SM.SetState(new GettingAlertState(SM));
+        //     return;
+        // }
 
         // Transition check #2: If we see the player
         if (context.playerInVision)

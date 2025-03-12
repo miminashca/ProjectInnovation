@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public static class PickupEventBus
+public static class EventBus
 {
     public static event Action<int> OnCameraSwitchButtonPressedWithID;
     public static event Action OnCameraViewChanged;
@@ -9,6 +9,7 @@ public static class PickupEventBus
     public static event Action<PickUp> OnPickupDetected;
     public static event Action<PickUp> OnPickupUndetected;
     public static event Action<PickUp> OnPickupCollected;
+    public static event Action OnMinAmountOfPickupsCollected;
     
     public static void PressCameraSwitchButton(int ID)
     {
@@ -30,5 +31,10 @@ public static class PickupEventBus
     public static void CollectPickup(PickUp pickUp)
     {
         OnPickupCollected?.Invoke(pickUp);
+    }
+    
+    public static void MinPickupsCollected()
+    {
+        OnMinAmountOfPickupsCollected?.Invoke();
     }
 }

@@ -3,7 +3,6 @@ using UnityEngine;
 public class GettingAlertState : IEnemyState
 {
     private float alertTimeCounter = 0f;
-    private const float MAX_ALERT_DURATION = 2f; // Example: how long we remain in this "startled" reaction
     public EnemyStateMachine SM { get; }
     public EnemyStateType enemyStateType { get; }
     public GettingAlertState(EnemyStateMachine SM)
@@ -14,6 +13,7 @@ public class GettingAlertState : IEnemyState
 
     public void Enter(EnemyContext context)
     {
+        Debug.Log("Enter getting alert state");
         // Possibly play a “startled” animation
         context.animator.SetTrigger("Alerted");
         alertTimeCounter = 0f;
@@ -25,17 +25,23 @@ public class GettingAlertState : IEnemyState
 
         // For example, transition to Investigating if repeated or stronger noise
         // or if we have “recent noise location” from the AI Director
-        if (context.hasRecentNoise || context.accumulateLoudness >= context.alertThreshold)
+        // if (context.hasRecentNoise || context.accumulateLoudness >= context.alertThreshold)
+        // {
+        //     SM.SetState(new InvestigatingState(SM));
+        //     return;
+        // }
+        
+        if (context.playerInVision)
         {
-            SM.SetState(new InvestigatingState(SM));
-            return;
+            // Go straight to PursuingState
+            SM.SetState(new PursuingState(SM));
         }
 
-        // If we remain “GettingAlert” beyond a small duration, revert to Roaming
-        if (alertTimeCounter >= MAX_ALERT_DURATION)
-        {
-            SM.SetState(new RoamingState(SM));
-        }
+        // // If we remain “GettingAlert” beyond a small duration, revert to Roaming
+        // if (alertTimeCounter >= context.alertTimeout)
+        // {
+        //     SM.SetState(new RoamingState(SM));
+        // }
     }
 
     public void Exit(EnemyContext context)

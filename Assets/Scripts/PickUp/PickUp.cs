@@ -6,21 +6,21 @@ public class PickUp : MonoBehaviour
 {
     private void OnEnable()
     {
-        PickupEventBus.OnPickupCollected += Collect;
+        EventBus.OnPickupCollected += Collect;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            PickupEventBus.DetectPickup(this);
+            EventBus.DetectPickup(this);
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            PickupEventBus.UndetectPickup(this);
+            EventBus.UndetectPickup(this);
         }
     }
 

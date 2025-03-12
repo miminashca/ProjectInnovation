@@ -26,15 +26,13 @@ public class PursuingState : IEnemyState
         context.navAgent.SetDestination(context.playerTransform.position);
     
         // Check distance for Killing
-        // float distance = Vector3.Distance(
-        //     context.navAgent.transform.position,
-        //     context.playerTransform.position
-        // );
-        // if (distance <= context.killDistance)
-        // {
-        //     SM.SetState(new KillingState(SM));
-        //     return;
-        // }
+        float distance = Vector3.Distance(context.navAgent.transform.position,context.playerTransform.position);
+        //Debug.Log(distance);
+        if (distance <= context.killDistance)
+        {
+            SM.SetState(new KillingState(SM));
+            return;
+        }
         
         // If we lose vision, increment lostPlayerTimer
         if (!context.playerInVision)
@@ -47,13 +45,13 @@ public class PursuingState : IEnemyState
         }
         
         // If we lost the player for too long => go Investigate or revert to Roaming
-        if (lostPlayerTimer >= context.pursuingVisionLostTime)
-        {
-            // Move to last known location and investigate
-            //context.lastHeardNoisePosition = context.playerTransform.position;
-            //SM.SetState(new InvestigatingState(SM));
-            SM.SetState(new RoamingState(SM));
-        }
+        // if (lostPlayerTimer >= context.pursuingVisionLostTime)
+        // {
+        //     // Move to last known location and investigate
+        //     //context.lastHeardNoisePosition = context.playerTransform.position;
+        //     //SM.SetState(new InvestigatingState(SM));
+        //     SM.SetState(new InvestigatingState(SM));
+        // }
     }
 
     public void Exit(EnemyContext context)
