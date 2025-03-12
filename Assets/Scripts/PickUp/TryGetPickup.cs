@@ -1,10 +1,11 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class TryGetPickup : MonoBehaviour
 {
     private Camera cam;
-    private PickUp currentPickup;
+    private List<PickUp> currentPickups;
     private void OnEnable()
     {
         PickupEventBus.OnPickupDetected += PickupDetected;
@@ -18,12 +19,13 @@ public class TryGetPickup : MonoBehaviour
 
     void Start()
     {
+        currentPickups = new List<PickUp>();
         cam = GetComponentInChildren<Camera>();
     }
 
     private void FixedUpdate()
     {
-        if (!currentPickup || !cam) return;
+        if (currentPickups.Count==0 || !cam) return;
         
         if (Input.touchCount > 0)
         {
@@ -42,10 +44,10 @@ public class TryGetPickup : MonoBehaviour
                     // or some component that identifies it
                     PickUp pickup = hitInfo.collider.GetComponent<PickUp>();
 
-                    if (pickup == currentPickup)
+                    if (currentPickups.Contains(pickup))
                     {
-                        PickupEventBus.CollectPickup(currentPickup); // Your custom pickup handling
-                        currentPickup = null;
+                        PickupEventBus.CollectPickup(pickup); // Your custom pickup handling
+                        PickupUndetected(pickup);
                         Debug.Log("picked up");
                     }
                 }
@@ -62,10 +64,10 @@ public class TryGetPickup : MonoBehaviour
                 // If the collider we hit has a "Pickup" script (or tag named "Pickup"):
                 // (Here, we assume you have a "Pickup" script or a Tag to identify pickups)
                 PickUp pickup = hitInfo.collider.GetComponent<PickUp>();
-                if (pickup == currentPickup)
+                if (currentPickups.Contains(pickup))
                 {
-                    PickupEventBus.CollectPickup(currentPickup); // Your custom pickup handling
-                    currentPickup = null;
+                    PickupEventBus.CollectPickup(pickup); // Your custom pickup handling
+                    PickupUndetected(pickup);
                     Debug.Log("picked up");
                 }
             }
@@ -76,12 +78,12 @@ public class TryGetPickup : MonoBehaviour
 
     void PickupDetected(PickUp pickUp)
     {
-        currentPickup = pickUp;
+        currentPickups.Add(pickUp);
         Debug.Log("pickup det");
     }
     void PickupUndetected(PickUp pickUp)
     {
-        currentPickup = null;
+        if (currentPickups.Contains(pickUp)) currentPickups.Remove(pickUp);
         Debug.Log("pickup undet");
     }
 }
