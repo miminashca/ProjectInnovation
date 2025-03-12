@@ -1,3 +1,4 @@
+using Photon.Pun;
 using UnityEngine;
 
 public class FootstepController : MonoBehaviour
@@ -27,21 +28,24 @@ public class FootstepController : MonoBehaviour
 
     void Update()
     {
-        if (IsMoving())
-        {
-            footstepTimer -= Time.deltaTime;
-            if (footstepTimer <= 0f)
+        if (PhotonNetwork.IsMasterClient)
+        { 
+            if (IsMoving())
             {
-                // Randomize the pitch each time before playing the sound
-                audioSource.pitch = Random.Range(pitchMin, pitchMax);
-                audioSource.PlayOneShot(footstepClip);
+                footstepTimer -= Time.deltaTime;
+                if (footstepTimer <= 0f)
+                {
+                    // Randomize the pitch each time before playing the sound
+                    audioSource.pitch = Random.Range(pitchMin, pitchMax);
+                    audioSource.PlayOneShot(footstepClip);
+                    footstepTimer = footstepInterval;
+                }
+            }
+            else
+            {
+                // Reset timer when not moving so the footsteps sync correctly
                 footstepTimer = footstepInterval;
             }
-        }
-        else
-        {
-            // Reset timer when not moving so the footsteps sync correctly
-            footstepTimer = footstepInterval;
         }
     }
 
