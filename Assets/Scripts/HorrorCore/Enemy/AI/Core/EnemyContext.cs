@@ -94,4 +94,8 @@ public class EnemyContext
         // Uncomment the following line for debug confirmation of player initialization.
         // if(playerTransform) Debug.Log("PLAYER INITIALIZED!!!");
     }
+    public void ChangePlayerHeadOffset()
+    { 
+        playerHeadOffset = playerTransform.gameObject.GetComponentInChildren<Camera>().gameObject.transform.localPosition;
+    }
 }

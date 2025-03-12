@@ -31,7 +31,6 @@ public class SpawnPlayers : MonoBehaviourPunCallbacks
                 playerSpawnTransform.position,
                 playerSpawnTransform.rotation
             );
-            NetworkingEventBus.SpawnThief(playerInstance.gameObject.transform);
 
             chaseMusicController = playerInstance.GetComponentInChildren<ChaseMusicController>();
 

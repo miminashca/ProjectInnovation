@@ -83,9 +83,7 @@ public class PlayerMovement : MonoBehaviour
         {
             moveVector += new Vector3(joystick.Horizontal, 0, joystick.Vertical);
         }
-#if UNITY_EDITOR
         moveVector += new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-#endif
 
         control = IsGrounded() ? ControlType.Velocity : ControlType.Force;
 
@@ -120,11 +118,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        // For mobile, you may want to disable the mouse input
-        float mouseX = 0;
-#if UNITY_EDITOR
-        mouseX = Input.GetAxis("Mouse X") * horizontalSensitivity * Time.deltaTime;
-#endif
+        float mouseX = Input.GetAxis("Mouse X") * horizontalSensitivity * Time.deltaTime;
 
         yRotation += (mouseX + touchVec.x);
         transform.localRotation = Quaternion.Euler(0f, yRotation, 0f);

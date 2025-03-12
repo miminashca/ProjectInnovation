@@ -43,7 +43,6 @@ public class VisionSensor : MonoBehaviour
         
     }
     
-
     public bool CheckPlayerInVision(Transform playerTransform)
     {
         Vector3 playerHeadPosition = playerTransform.position + SM.context.playerHeadOffset;
@@ -55,7 +54,7 @@ public class VisionSensor : MonoBehaviour
         if (angle < visionAngle * 0.5f)
         {
             // Check if there’s a line of sight
-            if (Physics.Raycast(enemyHeadPosition, directionToPlayer, out RaycastHit hit, visionRange))
+            if (Physics.Raycast(enemyHeadPosition, directionToPlayer, out RaycastHit hit, visionRange, ~(1<<LayerMask.NameToLayer("Enemy"))))
             {
                 if (hit.transform == playerTransform)
                 {

@@ -178,7 +178,7 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     currentPatrolIndex: 0
-    killDistance: 1
+    killDistance: 0.2
 --- !u!114 &7902946726402063994
 MonoBehaviour:
   m_ObjectHideFlags: 0

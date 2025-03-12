@@ -13,11 +13,14 @@ public class EnemyStateMachine : MonoBehaviour
 
     private void OnEnable()
     {
-        NetworkingEventBus.OnThiefSpawned += context.InitPlayer;
+        EventBus.OnThiefSpawned += context.InitPlayer;
+        EventBus.OnPlayerCrouch += context.ChangePlayerHeadOffset;
     }
     private void OnDisable()
     {
-        NetworkingEventBus.OnThiefSpawned -= context.InitPlayer;
+        EventBus.OnThiefSpawned -= context.InitPlayer;
+        EventBus.OnPlayerCrouch -= context.ChangePlayerHeadOffset;
+
     }
     private void Start()
     {
