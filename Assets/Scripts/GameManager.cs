@@ -42,8 +42,15 @@ public class GameManager : MonoBehaviour
         if (!enemy) enemy = Instantiate(enemyPrefab, enemySpawnTransform.position, Quaternion.identity);
         
         currentAmountOfPickups++;
+        GetComponent<PhotonView>().RPC("UpdateCounter", RpcTarget.All, currentAmountOfPickups);
         Debug.Log(currentAmountOfPickups);
         if(currentAmountOfPickups==minAmountOfPickups) EventBus.MinPickupsCollected();
+    }
+
+    [PunRPC]
+    void UpdateCounter(int newCounter)
+    {
+        currentAmountOfPickups = newCounter;
     }
 
     void LoadWinGameScene()

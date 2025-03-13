@@ -46,3 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minAmountOfPickups: 2
   currentAmountOfPickups: 0
+  enemySpawnTransform: {fileID: 0}
+  enemyPrefab: {fileID: 209055540923254911, guid: de312bb0812840e4ab9186b5108f77dd, type: 3}

@@ -114,7 +114,7 @@ MonoBehaviour:
     pursuingVisionLostTime: 3
     alertDuration: 1.5
     roamSpeed: 1
-    chaseSpeed: 3
+    chaseSpeed: 2.5
     patrolPoints:
     - {fileID: 1019859176643864592, guid: 9394bb1cd4abc4e748c2f6c28d00e63e, type: 3}
     - {fileID: 7544376536511201098, guid: 7fa2959c95d654877a5b39d0e6fbb505, type: 3}
