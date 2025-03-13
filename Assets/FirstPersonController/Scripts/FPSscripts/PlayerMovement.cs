@@ -6,11 +6,8 @@ using UnityEngine.EventSystems;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private LayerMask groundMask;
-    [SerializeField] private Transform groundCheck;
-    [SerializeField] private float jumpForce = 5f;
-    [SerializeField] private float moveForce = 5f;
     [SerializeField] private float moveSpeed = 5f;
+    
     [SerializeField] private Joystick joystick;
 
     private PlayerCameraConroller playerPlayerCameraController;
@@ -20,18 +17,22 @@ public class PlayerMovement : MonoBehaviour
     // For each finger, store whether it STARTED on UI or not
     private Dictionary<int, bool> fingerStartedOnUI = new Dictionary<int, bool>();
 
-
-    private enum ControlType
-    {
-        Force,
-        Velocity
-    }
-    private ControlType control;
+    private bool crouched = false;
+    
     private float groundCheckRadius = 0.5f;
     private Rigidbody playerRigidbody;
 
     private float yRotation = 0f;
     public float horizontalSensitivity = 500f;
+
+    private void OnEnable()
+    {
+        EventBus.OnPlayerCrouch += ChangeSpeed;
+    }
+    private void OnDisable()
+    {
+        EventBus.OnPlayerCrouch -= ChangeSpeed;
+    }
 
     void Start()
     {
@@ -50,30 +51,12 @@ public class PlayerMovement : MonoBehaviour
         {
             HandleTouches();
             RotatePlayer();
-            Jump();
         }
     }
 
     private void FixedUpdate()
     {
         if (!view || view.IsMine) Move();
-    }
-
-    bool IsGrounded()
-    {
-        return Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundMask);
-    }
-
-    private void Jump()
-    {
-        if (IsGrounded())
-        {
-            //Debug.Log("grounded");
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                playerRigidbody.linearVelocity += new Vector3(0, jumpForce, 0);
-            }
-        }
     }
 
     private void Move()
@@ -85,21 +68,11 @@ public class PlayerMovement : MonoBehaviour
         }
         moveVector += new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
-        control = IsGrounded() ? ControlType.Velocity : ControlType.Force;
-
-        switch (control)
-        {
-            case ControlType.Force:
-                playerRigidbody.AddRelativeForce(moveVector * moveForce);
-                break;
-            case ControlType.Velocity:
-                Vector3 newVelocity = playerRigidbody.transform.right * moveVector.x +
-                                      playerRigidbody.transform.forward * moveVector.z;
-                newVelocity *= moveSpeed;
-                newVelocity.y = playerRigidbody.linearVelocity.y;
-                playerRigidbody.linearVelocity = newVelocity;
-                break;
-        }
+        Vector3 newVelocity = playerRigidbody.transform.right * moveVector.x +
+                              playerRigidbody.transform.forward * moveVector.z;
+        newVelocity *= moveSpeed;
+        newVelocity.y = playerRigidbody.linearVelocity.y;
+        playerRigidbody.linearVelocity = newVelocity;
     }
 
     private void RotatePlayer()
@@ -127,13 +100,7 @@ public class PlayerMovement : MonoBehaviour
             playerPlayerCameraController.RotateCamera(touchVec.y);
     }
 
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.magenta;
-        Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
-        //Debug.DrawRay(groundCheck.position, Vector3.down * groundCheckRadius, Color.magenta);
-    }
+    
     /// <summary>
     /// Returns true if the specified touch is over any UI element, false otherwise.
     /// </summary>
@@ -172,6 +139,20 @@ public class PlayerMovement : MonoBehaviour
                     rotationFingerId = null;
                 }
             }
+        }
+    }
+
+    void ChangeSpeed()
+    {
+        if (!crouched)
+        {
+            moveSpeed *= .5f;
+            crouched = true;
+        }
+        else
+        {
+            moveSpeed *= 2f;
+            crouched = false;
         }
     }
 }
