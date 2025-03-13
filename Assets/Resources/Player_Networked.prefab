@@ -192,6 +192,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 3214121058029417634, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.2490234
+      objectReference: {fileID: 0}
     - target: {fileID: 3466997613276010929, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
       propertyPath: m_Layer
       value: 15
@@ -535,6 +539,30 @@ PrefabInstance:
     - target: {fileID: 9072222504951306168, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9120012221082894799, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 4f01d3d7c3374d34b9537b1903422006, type: 2}
+    - target: {fileID: 9120012221082894799, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8100946646147842651, guid: 4f01d3d7c3374d34b9537b1903422006, type: 2}
+    - target: {fileID: 9120012221082894799, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9170327539005234912, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 4f01d3d7c3374d34b9537b1903422006, type: 2}
+    - target: {fileID: 9170327539005234912, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8100946646147842651, guid: 4f01d3d7c3374d34b9537b1903422006, type: 2}
+    - target: {fileID: 9170327539005234912, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9206289488625334086, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
       propertyPath: m_Layer
