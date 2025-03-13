@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 1419240792571089349}
   - component: {fileID: 5443596024682913311}
   - component: {fileID: 777462038607838394}
+  - component: {fileID: 6433068255803292806}
   m_Layer: 5
   m_Name: RoleDescriptionPlayer2Panel
   m_TagString: Untagged
@@ -161,7 +162,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7549431635700961226}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -213,6 +214,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6433068255803292806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7549431635700961226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d57cd54fc877d774d92bf552a91e689b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TutorialPanel: {fileID: 7549431635700961226}
+  timer: 5
 --- !u!1 &8788234937595588621
 GameObject:
   m_ObjectHideFlags: 0

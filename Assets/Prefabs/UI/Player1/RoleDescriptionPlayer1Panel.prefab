@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 4460688025600007292}
   - component: {fileID: 7340342260648612774}
   - component: {fileID: 2639023902224396547}
+  - component: {fileID: 8486744350142201821}
   m_Layer: 5
   m_Name: RoleDescriptionPlayer1Panel
   m_TagString: Untagged
@@ -215,6 +216,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8486744350142201821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5084937581029147251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d57cd54fc877d774d92bf552a91e689b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TutorialPanel: {fileID: 5084937581029147251}
+  timer: 5
 --- !u!1 &6315100860154412468
 GameObject:
   m_ObjectHideFlags: 0
