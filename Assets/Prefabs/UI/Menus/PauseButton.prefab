@@ -121,7 +121,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PausePopUp, Assembly-CSharp
+        m_TargetAssemblyTypeName: PanelToggle, Assembly-CSharp
         m_MethodName: On
         m_Mode: 1
         m_Arguments:

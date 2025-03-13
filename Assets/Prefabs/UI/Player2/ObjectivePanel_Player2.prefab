@@ -222,6 +222,7 @@ GameObject:
   - component: {fileID: 1045550168889372634}
   - component: {fileID: 4077062195990063030}
   - component: {fileID: 2923232992749381088}
+  - component: {fileID: 2203486261591114178}
   m_Layer: 5
   m_Name: CollectQuest
   m_TagString: Untagged
@@ -288,6 +289,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2203486261591114178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5235672170763772414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 514f59a81d3ee7d4e9a3090a021db7df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countertext: {fileID: 2155875420963127508}
 --- !u!1 &6243651881628085955
 GameObject:
   m_ObjectHideFlags: 0
