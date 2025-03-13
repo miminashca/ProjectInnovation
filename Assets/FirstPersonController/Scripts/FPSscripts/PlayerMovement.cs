@@ -51,10 +51,13 @@ public class PlayerMovement : MonoBehaviour
         playerRigidbody = GetComponent<Rigidbody>();
         playerCamera = GetComponentInChildren<Camera>();
 
+        playerRigidbody.freezeRotation = true;
+
         if (playerCamera.gameObject.GetComponent<PlayerCameraConroller>()) playerPlayerCameraController = playerCamera.gameObject.GetComponent<PlayerCameraConroller>();
         else playerPlayerCameraController = playerCamera.gameObject.AddComponent<PlayerCameraConroller>();
 
         view = GetComponent<PhotonView>();
+
     }
 
     private void Update()
