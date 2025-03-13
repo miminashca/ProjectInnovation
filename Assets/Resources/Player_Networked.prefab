@@ -252,6 +252,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 4999086923738878281, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
+      propertyPath: ObservedComponents.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999086923738878281, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
+      propertyPath: 'ObservedComponents.Array.data[1]'
+      value: 
+      objectReference: {fileID: 412308037255750895}
     - target: {fileID: 5004732103442336304, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
       propertyPath: m_Layer
       value: 15
@@ -501,6 +509,10 @@ PrefabInstance:
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8473295177513265415, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8473295177513265415, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -560,13 +572,13 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 2
     Name: IsCrouching
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 2
     Name: IsDieing
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 2
     Name: IsMoving
   m_SynchronizeLayers:
   - SynchronizeType: 0
