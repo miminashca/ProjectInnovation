@@ -684,7 +684,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8164019683301901393, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
       propertyPath: horizontalSensitivity
-      value: 114.58237
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8271950193085842842, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
       propertyPath: m_Layer
