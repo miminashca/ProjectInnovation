@@ -374,6 +374,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3515057914622064640, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3690360397039963615, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -696,6 +700,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8368884718193934920, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
       propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8473295177513265415, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
+      propertyPath: m_Name
+      value: PlayerMeshAnimator
+      objectReference: {fileID: 0}
+    - target: {fileID: 8473295177513265415, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8484612230431787617, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}

@@ -156,6 +156,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 7028943646485941755}
+  - {fileID: 2752901459166053358}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -797,47 +798,26 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5872140206999382467, guid: cabd056c28b11b649aa07c6658f1336e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2752901459166053358}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cabd056c28b11b649aa07c6658f1336e, type: 3}
 --- !u!4 &332472167926080079 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 411698593576381982, guid: cabd056c28b11b649aa07c6658f1336e, type: 3}
   m_PrefabInstance: {fileID: 84310673258302545}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &2923401539525464126 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 3006586140471532655, guid: cabd056c28b11b649aa07c6658f1336e, type: 3}
-  m_PrefabInstance: {fileID: 84310673258302545}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &5788674133221533074 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5872140206999382467, guid: cabd056c28b11b649aa07c6658f1336e, type: 3}
-  m_PrefabInstance: {fileID: 84310673258302545}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2752901459166053358
+--- !u!114 &2752901459166053358 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 2819197665125502911, guid: cabd056c28b11b649aa07c6658f1336e, type: 3}
+  m_PrefabInstance: {fileID: 84310673258302545}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5788674133221533074}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShowLayerWeightsInspector: 1
-  ShowParameterInspector: 1
-  m_SynchronizeParameters:
-  - Type: 4
-    SynchronizeType: 0
-    Name: IsRoaming
-  - Type: 4
-    SynchronizeType: 0
-    Name: IsPursuing
-  m_SynchronizeLayers:
-  - SynchronizeType: 0
-    LayerIndex: 0
+--- !u!95 &2923401539525464126 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3006586140471532655, guid: cabd056c28b11b649aa07c6658f1336e, type: 3}
+  m_PrefabInstance: {fileID: 84310673258302545}
+  m_PrefabAsset: {fileID: 0}
