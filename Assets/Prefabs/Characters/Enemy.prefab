@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visionAngle: 120
-  visionRange: 10
+  visionRange: 8
 --- !u!114 &1970351254051138510
 MonoBehaviour:
   m_ObjectHideFlags: 0
