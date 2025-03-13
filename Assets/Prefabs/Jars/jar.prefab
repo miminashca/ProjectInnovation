@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 997785699419671142}
   - component: {fileID: 1099288689019281248}
   - component: {fileID: 5570083943084033760}
-  - component: {fileID: 2940259933782007538}
+  - component: {fileID: 4823576915957837021}
+  - component: {fileID: 6345714782447997456}
   - component: {fileID: 8882220480293431889}
-  - component: {fileID: -2886643889396331860}
-  - component: {fileID: 1804523353828072509}
-  - component: {fileID: 3788079325256193724}
-  - component: {fileID: 933684112222591166}
+  - component: {fileID: 2178438196288469241}
+  - component: {fileID: 7385803943816579283}
+  - component: {fileID: 4640401420661898268}
   m_Layer: 0
   m_Name: jar
   m_TagString: Untagged
@@ -71,6 +71,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: dec9ca35dcff47749851dfe48569c83a, type: 2}
+  - {fileID: 2100000, guid: ad375dd3dfefa48ae8f00bb66c1dca77, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -92,7 +93,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2940259933782007538
+--- !u!65 &4823576915957837021
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,8 +112,20 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 2, z: 2}
-  m_Center: {x: -0.0040747076, y: 0.23557985, z: 7.6757803}
+  m_Size: {x: 0.37176594, y: 0.4650774, z: 0.37176475}
+  m_Center: {x: 0.004074709, y: 0.23557985, z: 7.675782}
+--- !u!114 &6345714782447997456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4691117498836685535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61e845b8b3711441a97d4cb56e0365e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8882220480293431889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,19 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newTexture: {fileID: 2800000, guid: f30af67f550d9344e907406a4d171f15, type: 3}
---- !u!114 &-2886643889396331860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4691117498836685535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61e845b8b3711441a97d4cb56e0365e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!135 &1804523353828072509
+--- !u!135 &2178438196288469241
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,9 +158,9 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 2
-  m_Center: {x: 0, y: 0.23557985, z: 7.675782}
---- !u!114 &3788079325256193724
+  m_Radius: 1.302342
+  m_Center: {x: -0.18899235, y: 0.13138306, z: 7.660745}
+--- !u!114 &7385803943816579283
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -178,11 +179,11 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
-  - {fileID: 933684112222591166}
+  - {fileID: 4640401420661898268}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &933684112222591166
+--- !u!114 &4640401420661898268
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
