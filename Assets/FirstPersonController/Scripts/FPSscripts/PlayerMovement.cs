@@ -24,14 +24,26 @@ public class PlayerMovement : MonoBehaviour
 
     private float yRotation = 0f;
     public float horizontalSensitivity = 500f;
+    float moveThreshold = 0.5f;
+
+    public event Action OnPlayerStartMove;
+    public event Action OnPlayerStopMove;
+    public event Action OnPlayerDie;
+    public event Action OnPlayerCrouch;
+
+    private float lastVelocity = 0f;
+    bool isMoving = false;
+    bool isDead = false;
 
     private void OnEnable()
     {
         EventBus.OnPlayerCrouch += ChangeSpeed;
+        AIDirector.OnEnemyKilledPlayer += Die;
     }
     private void OnDisable()
     {
         EventBus.OnPlayerCrouch -= ChangeSpeed;
+        AIDirector.OnEnemyKilledPlayer -= Die;
     }
 
     void Start()
@@ -47,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (!view || view.IsMine)
+        if ((!view || view.IsMine) && !isDead)
         {
             HandleTouches();
             RotatePlayer();
@@ -56,11 +68,26 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!view || view.IsMine) Move();
+        if ((!view || view.IsMine) && !isDead) Move();
     }
 
     private void Move()
     {
+        float currentVelocity = playerRigidbody.linearVelocity.magnitude;
+
+        // Check if the player has started moving.
+        if (!isMoving && currentVelocity > moveThreshold)
+        {
+            isMoving = true;
+            OnPlayerStartMove?.Invoke();
+        }
+        // Check if the player has stopped moving.
+        else if (isMoving && currentVelocity <= moveThreshold)
+        {
+            isMoving = false;
+            OnPlayerStopMove?.Invoke();
+        }
+////
         Vector3 moveVector = Vector3.zero;
         if (joystick)
         {
@@ -144,6 +171,8 @@ public class PlayerMovement : MonoBehaviour
 
     void ChangeSpeed()
     {
+        OnPlayerCrouch?.Invoke();
+        
         if (!crouched)
         {
             moveSpeed *= .5f;
@@ -154,5 +183,11 @@ public class PlayerMovement : MonoBehaviour
             moveSpeed *= 2f;
             crouched = false;
         }
+    }
+
+    void Die()
+    {
+        isDead = true; 
+        OnPlayerDie?.Invoke();
     }
 }

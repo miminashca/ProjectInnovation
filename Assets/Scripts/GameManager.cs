@@ -13,12 +13,14 @@ public class GameManager : MonoBehaviour
     {
         EventBus.OnPickupCollected += UpdateAmountOfPickups;
         EventBus.OnGameFinished += LoadWinGameScene;
+        EventBus.OnGameLost += LoadLoseGameScene;
     }
 
     private void OnDestroy()
     {
         EventBus.OnPickupCollected -= UpdateAmountOfPickups;
         EventBus.OnGameFinished -= LoadWinGameScene;
+        EventBus.OnGameLost -= LoadLoseGameScene;
     }
 
     void Start()
@@ -39,6 +41,10 @@ public class GameManager : MonoBehaviour
     }
 
     void LoadWinGameScene()
+    {
+        PhotonNetwork.LoadLevel("Win");
+    }
+    void LoadLoseGameScene()
     {
         PhotonNetwork.LoadLevel("Win");
     }

@@ -13,20 +13,23 @@ public class KillingState : IEnemyState
     {
         Debug.Log("Enter killing state!");
         // Trigger a kill animation
-        context.animator.SetTrigger("Kill");
+        context.animator.SetBool("IsKilling", true);
+
         // Possibly disable player movement, etc.
         AIDirector.KillPlayer();
     }
 
     public void Execute(EnemyContext context)
     {
-        // The kill animation is playing. Once done, you might:
-        // - Trigger game over screen
-        // - Or if the game has multiple lives, do something else
     }
 
     public void Exit(EnemyContext context)
     {
-        // Clean up if needed
+    }
+    
+    public void OnKillAnimationEnd()
+    {
+        Debug.Log("Kill animation ended, triggering LoseGame event.");
+        EventBus.LoseGame();
     }
 }
