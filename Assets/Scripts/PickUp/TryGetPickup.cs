@@ -23,7 +23,7 @@ public class TryGetPickup : MonoBehaviour
         cam = GetComponentInChildren<Camera>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (currentPickups.Count==0 || !cam) return;
         
@@ -61,6 +61,7 @@ public class TryGetPickup : MonoBehaviour
             // RaycastHit is where the ray hits
             if (Physics.Raycast(ray, out RaycastHit hitInfo))
             {
+                //Debug.Log(hitInfo.transform);
                 // If the collider we hit has a "Pickup" script (or tag named "Pickup"):
                 // (Here, we assume you have a "Pickup" script or a Tag to identify pickups)
                 PickUp pickup = hitInfo.collider.GetComponent<PickUp>();

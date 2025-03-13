@@ -546,6 +546,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_Networked
       objectReference: {fileID: 0}
+    - target: {fileID: 9042509291031626141, guid: 6479c5b10ab2a44f6bd6d6323bfc9f51, type: 3}
+      propertyPath: horizontalSensitivity
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
