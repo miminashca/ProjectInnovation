@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Thief
+  - PlayerModel
   layers:
   - Default
   - TransparentFX
@@ -21,9 +22,7 @@ TagManager:
   - 
   - OperatorJar
   - PlayerJar
-  - 
-  - 
-  - 
+  - PlayerModel
   - 
   - 
   - 

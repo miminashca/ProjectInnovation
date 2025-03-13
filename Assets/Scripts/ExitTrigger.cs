@@ -4,12 +4,12 @@ using UnityEngine;
 public class ExitTrigger : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void OnEnable()
+    void Start()
     {
-        gameObject.GetComponent<Collider>().enabled = false;
+        gameObject.SetActive(false);
         EventBus.OnMinAmountOfPickupsCollected += EnableTrigger;
     }
-    void OnDisable()
+    void OnDestroy()
     {
         EventBus.OnMinAmountOfPickupsCollected -= EnableTrigger;
     }
@@ -17,7 +17,7 @@ public class ExitTrigger : MonoBehaviour
     // Update is called once per frame
     void EnableTrigger()
     {
-        gameObject.GetComponent<Collider>().enabled = true;
+        gameObject.SetActive(true);
     }
 
     private void OnTriggerEnter(Collider other)

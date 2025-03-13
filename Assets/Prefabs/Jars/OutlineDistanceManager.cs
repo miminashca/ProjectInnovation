@@ -14,7 +14,7 @@ public class OutlineDistanceManager : MonoBehaviour
         outlineController = GetComponent<OutlineController>();
         if (outlineController.outlineObject == null)
         {
-            Debug.LogError("OutlineDistanceManager: Дочерний объект обводки не найден!");
+            Debug.LogError("OutlineDistanceManager: пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ!");
         }
         StartCoroutine(FindThiefCoroutine());
     }

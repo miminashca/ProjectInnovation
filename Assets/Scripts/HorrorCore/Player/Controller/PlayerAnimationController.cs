@@ -7,7 +7,7 @@ public class PlayerAnimationController : MonoBehaviour
     private Animator animator;
     private void Start()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
         playerMovement = GetComponent<PlayerMovement>();
         playerMovement.OnPlayerCrouch += Crouch;
         playerMovement.OnPlayerDie += Die;

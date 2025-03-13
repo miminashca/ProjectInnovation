@@ -15,6 +15,13 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        if(Instance != null) Destroy(gameObject);
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        
         EventBus.OnPickupCollected += UpdateAmountOfPickups;
         EventBus.OnGameFinished += LoadWinGameScene;
         EventBus.OnGameLost += LoadLoseGameScene;
@@ -27,19 +34,9 @@ public class GameManager : MonoBehaviour
         EventBus.OnGameLost -= LoadLoseGameScene;
     }
 
-    void Start()
-    {
-        if(Instance != null) Destroy(gameObject);
-        else
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-    }
-
     void UpdateAmountOfPickups(PickUp pickUp)
     {
-        if (!enemy) enemy = Instantiate(enemyPrefab, enemySpawnTransform.position, Quaternion.identity);
+        if (!enemy) enemy = PhotonNetwork.Instantiate(enemyPrefab.name, enemySpawnTransform.position, Quaternion.identity);
         
         currentAmountOfPickups++;
         GetComponent<PhotonView>().RPC("UpdateCounter", RpcTarget.All, currentAmountOfPickups);
@@ -59,6 +56,6 @@ public class GameManager : MonoBehaviour
     }
     void LoadLoseGameScene()
     {
-        PhotonNetwork.LoadLevel("Win");
+        PhotonNetwork.LoadLevel("Lose_Player2");
     }
 }
