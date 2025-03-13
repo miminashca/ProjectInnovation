@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3796098685954401649}
   - component: {fileID: 1805875296543793461}
-  - component: {fileID: 6576680403876800988}
-  - component: {fileID: 5561127918636410009}
   - component: {fileID: 5700816259517237657}
   - component: {fileID: 3098544888152176573}
   - component: {fileID: 7902946726402063994}
+  - component: {fileID: 1970351254051138510}
+  - component: {fileID: 7028943646485941755}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
@@ -62,63 +62,6 @@ CapsuleCollider:
   m_Height: 3.5
   m_Direction: 1
   m_Center: {x: 0, y: 1.75, z: 0}
---- !u!114 &6576680403876800988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 209055540923254911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents:
-  - {fileID: 5561127918636410009}
-  - {fileID: 2752901459166053358}
-  sceneViewId: 0
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
---- !u!114 &5561127918636410009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 209055540923254911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8efc6b1d64977384eb3405357896c656, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PositionModel:
-    SynchronizeEnabled: 1
-    TeleportEnabled: 1
-    TeleportIfDistanceGreaterThan: 3
-    InterpolateOption: 2
-    InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 1
-    ExtrapolateOption: 0
-    ExtrapolateSpeed: 1
-    ExtrapolateIncludingRoundTripTime: 1
-    ExtrapolateNumberOfStoredPositions: 1
-  m_RotationModel:
-    SynchronizeEnabled: 1
-    InterpolateOption: 1
-    InterpolateRotateTowardsSpeed: 180
-    InterpolateLerpSpeed: 5
-  m_ScaleModel:
-    SynchronizeEnabled: 0
-    InterpolateOption: 0
-    InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 0
 --- !u!195 &5700816259517237657
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -193,6 +136,63 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visionAngle: 120
   visionRange: 10
+--- !u!114 &1970351254051138510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209055540923254911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 7028943646485941755}
+  - {fileID: 2752901459166053358}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &7028943646485941755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209055540923254911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8efc6b1d64977384eb3405357896c656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PositionModel:
+    SynchronizeEnabled: 1
+    TeleportEnabled: 1
+    TeleportIfDistanceGreaterThan: 3
+    InterpolateOption: 2
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 1
+    ExtrapolateOption: 0
+    ExtrapolateSpeed: 1
+    ExtrapolateIncludingRoundTripTime: 1
+    ExtrapolateNumberOfStoredPositions: 1
+  m_RotationModel:
+    SynchronizeEnabled: 1
+    InterpolateOption: 1
+    InterpolateRotateTowardsSpeed: 180
+    InterpolateLerpSpeed: 5
+  m_ScaleModel:
+    SynchronizeEnabled: 0
+    InterpolateOption: 0
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 0
 --- !u!1 &498809878100045039
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,6 +205,7 @@ GameObject:
   - component: {fileID: 4226921468231968128}
   - component: {fileID: 858072523670585556}
   - component: {fileID: 1037544926568919476}
+  - component: {fileID: 2193752259570695962}
   m_Layer: 9
   m_Name: AudioOcclusion
   m_TagString: Untagged
@@ -248,6 +249,7 @@ MonoBehaviour:
   numberOfRays: 10
   coneAngle: 45
   occlusionCutoffScalingFactor: 0.1
+  playerListener: {fileID: 0}
 --- !u!82 &858072523670585556
 AudioSource:
   m_ObjectHideFlags: 0
@@ -258,8 +260,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: ee8b77521739a414fb3b06419f3e9b93, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 630997dfce04a454a948609d53488a35, type: 3}
-  m_Resource: {fileID: 8300000, guid: 630997dfce04a454a948609d53488a35, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6663a8adacbde844aa04c665fa86312b, type: 3}
+  m_Resource: {fileID: 8300000, guid: 6663a8adacbde844aa04c665fa86312b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -270,9 +272,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 40
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -281,13 +283,49 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.6926346
       inSlope: 0
       outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.13509223
+      value: 0.5640944
+      inSlope: -2.7135434
+      outSlope: -2.7135434
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 1
+    - serializedVersion: 3
+      time: 0.1652668
+      value: 0.39036742
+      inSlope: -4.852187
+      outSlope: -4.852187
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.97269684
+      outWeight: 0.53888464
+    - serializedVersion: 3
+      time: 0.21049282
+      value: 0.14958501
+      inSlope: -2.1967528
+      outSlope: -2.1967528
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.3538024
+    - serializedVersion: 3
+      time: 0.42195398
+      value: 0
+      inSlope: -0.15435001
+      outSlope: -0.15435001
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.3393368
     - serializedVersion: 3
       time: 1
       value: 0
@@ -360,7 +398,7 @@ AudioLowPassFilter:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.22727273
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -370,6 +408,29 @@ AudioLowPassFilter:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!164 &2193752259570695962
+AudioReverbFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498809878100045039}
+  m_Enabled: 1
+  m_DryLevel: 0
+  m_Room: -1000
+  m_RoomHF: -300
+  m_DecayTime: 1.49
+  m_DecayHFRatio: 0.59
+  m_ReflectionsLevel: -1219
+  m_ReverbLevel: 441
+  m_ReverbDelay: 0.011
+  m_Diffusion: 100
+  m_Density: 100
+  m_HFReference: 5000
+  m_RoomLF: 0
+  m_LFReference: 250
+  m_ReflectionsDelay: 0
+  m_ReverbPreset: 13
 --- !u!1 &6640432512376975246
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,6 +574,14 @@ PrefabInstance:
     - target: {fileID: 2664545239842911605, guid: cabd056c28b11b649aa07c6658f1336e, type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3006586140471532655, guid: cabd056c28b11b649aa07c6658f1336e, type: 3}
+      propertyPath: m_AnimatePhysics
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3006586140471532655, guid: cabd056c28b11b649aa07c6658f1336e, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3141453873434942020, guid: cabd056c28b11b649aa07c6658f1336e, type: 3}
       propertyPath: m_Layer
@@ -729,47 +798,26 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5872140206999382467, guid: cabd056c28b11b649aa07c6658f1336e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2752901459166053358}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cabd056c28b11b649aa07c6658f1336e, type: 3}
 --- !u!4 &332472167926080079 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 411698593576381982, guid: cabd056c28b11b649aa07c6658f1336e, type: 3}
   m_PrefabInstance: {fileID: 84310673258302545}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &2923401539525464126 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 3006586140471532655, guid: cabd056c28b11b649aa07c6658f1336e, type: 3}
-  m_PrefabInstance: {fileID: 84310673258302545}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &5788674133221533074 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5872140206999382467, guid: cabd056c28b11b649aa07c6658f1336e, type: 3}
-  m_PrefabInstance: {fileID: 84310673258302545}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2752901459166053358
+--- !u!114 &2752901459166053358 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 2819197665125502911, guid: cabd056c28b11b649aa07c6658f1336e, type: 3}
+  m_PrefabInstance: {fileID: 84310673258302545}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5788674133221533074}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShowLayerWeightsInspector: 1
-  ShowParameterInspector: 1
-  m_SynchronizeParameters:
-  - Type: 4
-    SynchronizeType: 0
-    Name: IsRoaming
-  - Type: 4
-    SynchronizeType: 0
-    Name: IsPursuing
-  m_SynchronizeLayers:
-  - SynchronizeType: 0
-    LayerIndex: 0
+--- !u!95 &2923401539525464126 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3006586140471532655, guid: cabd056c28b11b649aa07c6658f1336e, type: 3}
+  m_PrefabInstance: {fileID: 84310673258302545}
+  m_PrefabAsset: {fileID: 0}
