@@ -18,6 +18,7 @@ public class InvestigatingState : IEnemyState
     public void Enter(EnemyContext context)
     {
         Debug.Log("Enter Investigating state");
+        AIDirector.OnPlayerSpotted += TransitToPursuingState;
         // Reset accumulated noise when starting investigation.
         context.accumulateLoudness = 0f;
         investigateTimer = 0f;
@@ -64,7 +65,12 @@ public class InvestigatingState : IEnemyState
 
     public void Exit(EnemyContext context)
     {
+        AIDirector.OnPlayerSpotted -= TransitToPursuingState;
         context.animator.SetBool("IsInvestigating", false);
+    }
+    private void TransitToPursuingState()
+    {
+        SM.SetState(new PursuingState(SM));
     }
 
     // Generates investigation points around a center point.

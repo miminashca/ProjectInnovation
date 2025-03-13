@@ -21,6 +21,8 @@ public class RoamingState : IEnemyState
         context.navAgent.speed = context.roamSpeed;
         SetNextPatrolPoint(context);
         context.animator.SetBool("IsRoaming", true);
+        AIDirector.OnPlayerSpotted += TransitToPursuingState;
+        AIDirector.OnAlert += TransitToAlertState;
     }
 
     public void Execute(EnemyContext context)
@@ -38,6 +40,9 @@ public class RoamingState : IEnemyState
 
     public void Exit(EnemyContext context)
     {
+        AIDirector.OnPlayerSpotted -= TransitToPursuingState;
+        AIDirector.OnAlert -= TransitToAlertState;
+
         context.animator.SetBool("IsRoaming", false);
         context.navAgent.ResetPath();
     }
@@ -57,5 +62,14 @@ public class RoamingState : IEnemyState
 
         context.currentPatrolIndex = newIndex;
         context.navAgent.SetDestination(context.patrolPoints[newIndex].position);
+    }
+
+    private void TransitToPursuingState()
+    {
+        SM.SetState(new PursuingState(SM));
+    }
+    private void TransitToAlertState()
+    {
+        SM.SetState(new GettingAlertState(SM));
     }
 }

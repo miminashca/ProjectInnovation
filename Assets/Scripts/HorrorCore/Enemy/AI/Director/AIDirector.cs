@@ -8,12 +8,17 @@ public static class AIDirector
 
 
     //SENSORS EVENTS
+    public static event Action OnAlert;
     public static event Action OnPlayerSpotted;
     public static event Action OnPlayerLost;
 
     public static event Action<Vector3, float> OnNoiseEvent;
     public static event Action<EnemyStateMachine> OnNoiseAlert;
 
+    public static void ALert()
+    {
+        OnAlert?.Invoke();
+    }
     public static void SpotPlayer()
     {
         OnPlayerSpotted?.Invoke();

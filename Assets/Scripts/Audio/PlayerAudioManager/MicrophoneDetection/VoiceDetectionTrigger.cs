@@ -20,7 +20,7 @@ public class VoiceDetectionTrigger : MonoBehaviour
             EnemyStateMachine enemySM = hit.GetComponent<EnemyStateMachine>();
             if (enemySM != null)
             {
-                float distance = Vector3.Distance(transform.position, enemySM.transform.position);
+                float distance = Vector2.Distance(new Vector2(enemySM.context.navAgent.transform.position.x,enemySM.context.navAgent.transform.position.z),new Vector2(transform.position.x,transform.position.z));
                 //Debug.Log($"[VoiceDetectionTrigger] Detected player at distance: {distance:F2}");
 
                 // Record the noise position of the player
@@ -29,11 +29,8 @@ public class VoiceDetectionTrigger : MonoBehaviour
                 // Immediate pursuit if very close
                 if (distance <= enemySM.context.immediatePursuitDistance)
                 {
-                    Debug.Log("[VoiceDetectionTrigger] Player is close! Triggering Pursuing state.");
-
-                    // -----
-                    enemySM.SetState(new PursuingState(enemySM));
-                    // -----
+                    AIDirector.SpotPlayer();
+                    //Debug.Log("[VoiceDetectionTrigger] Player is close! Triggering Pursuing state.");
                 }
                 else
                 {
@@ -44,11 +41,8 @@ public class VoiceDetectionTrigger : MonoBehaviour
                     // When noise threshold is reached, trigger an alert event.
                     if (enemySM.context.accumulateLoudness >= enemySM.context.alertThreshold)
                     {
+                        AIDirector.ALert();
                         Debug.Log("[VoiceDetectionTrigger] Noise threshold reached! Triggering Noise Alert.");
-
-                        // ----
-                        enemySM.SetState(new GettingAlertState(enemySM));
-                        // ----
                     }
                 }
             }

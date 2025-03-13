@@ -27,11 +27,11 @@ public class PursuingState : IEnemyState
         // Check distance for Killing
         float distance = Vector2.Distance(new Vector2(context.navAgent.transform.position.x,context.navAgent.transform.position.z),new Vector2(context.playerTransform.position.x,context.playerTransform.position.z));
         //Debug.Log(distance);
-/*        if (distance <= context.killDistance)
+        if (distance <= context.killDistance)
         {
             SM.SetState(new KillingState(SM));
             return;
-        }*/
+        }
         
         // If we lose vision, increment lostPlayerTimer
         if (!context.playerInVision)
