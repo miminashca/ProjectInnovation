@@ -18,8 +18,13 @@ public class AudioOcclusion : MonoBehaviour
     private float originalVolume;  // The original volume of the AudioSource
     private float originalCutoffFrequency;  // The original cutoff frequency of the low pass filter
 
+    [SerializeField] private GameObject playerListener;
+
     void Start()
     {
+        //playerListener = 
+        
+        
         // Get the AudioSource component
         audioSource = GetComponent<AudioSource>();
         originalVolume = audioSource.volume;  // Save the original volume
