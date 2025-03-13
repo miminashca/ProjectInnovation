@@ -36,7 +36,11 @@ public class GameManager : MonoBehaviour
 
     void UpdateAmountOfPickups(PickUp pickUp)
     {
-        if (!enemy) enemy = PhotonNetwork.Instantiate(enemyPrefab.name, enemySpawnTransform.position, Quaternion.identity);
+        if (!enemy)
+        {
+            enemy = PhotonNetwork.Instantiate(enemyPrefab.name, enemySpawnTransform.position, Quaternion.identity);
+            EventBus.SpawnEnemy(enemy);
+        }
         
         currentAmountOfPickups++;
         GetComponent<PhotonView>().RPC("UpdateCounter", RpcTarget.All, currentAmountOfPickups);

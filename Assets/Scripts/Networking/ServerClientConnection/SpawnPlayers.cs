@@ -18,6 +18,16 @@ public class SpawnPlayers : MonoBehaviourPunCallbacks
     [SerializeField] private ChaseMusicController chaseMusicController;
 
     private GameObject playerInstance;
+
+    private void Awake()
+    {
+        EventBus.OnSpawnEnemy += ConfigureEnemy;
+    }
+    private void OnDestroy()
+    {
+        EventBus.OnSpawnEnemy -= ConfigureEnemy;
+    }
+
     private void Start()
     {
         PhotonNetwork.AutomaticallySyncScene = true;
@@ -56,5 +66,11 @@ public class SpawnPlayers : MonoBehaviourPunCallbacks
                 Quaternion.identity
             );
         }
+    }
+
+    void ConfigureEnemy(GameObject enemy)
+    {
+        enemyInScene = enemy;
+        chaseMusicController.SetReferences(playerInstance, enemyInScene);
     }
 }
