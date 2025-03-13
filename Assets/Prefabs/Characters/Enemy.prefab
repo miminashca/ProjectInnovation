@@ -113,8 +113,8 @@ MonoBehaviour:
     investigateTimeout: 3
     pursuingVisionLostTime: 3
     alertDuration: 1.5
-    roamSpeed: 1
-    chaseSpeed: 2.5
+    roamSpeed: 1.5
+    chaseSpeed: 3
     patrolPoints:
     - {fileID: 1019859176643864592, guid: 9394bb1cd4abc4e748c2f6c28d00e63e, type: 3}
     - {fileID: 7544376536511201098, guid: 7fa2959c95d654877a5b39d0e6fbb505, type: 3}
@@ -577,6 +577,42 @@ PrefabInstance:
     - target: {fileID: 2664545239842911605, guid: cabd056c28b11b649aa07c6658f1336e, type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2819197665125502911, guid: cabd056c28b11b649aa07c6658f1336e, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2819197665125502911, guid: cabd056c28b11b649aa07c6658f1336e, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[2].Name
+      value: IsAlerting
+      objectReference: {fileID: 0}
+    - target: {fileID: 2819197665125502911, guid: cabd056c28b11b649aa07c6658f1336e, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[2].Type
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2819197665125502911, guid: cabd056c28b11b649aa07c6658f1336e, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[3].Name
+      value: IsKilling
+      objectReference: {fileID: 0}
+    - target: {fileID: 2819197665125502911, guid: cabd056c28b11b649aa07c6658f1336e, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[3].Type
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2819197665125502911, guid: cabd056c28b11b649aa07c6658f1336e, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[0].SynchronizeType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2819197665125502911, guid: cabd056c28b11b649aa07c6658f1336e, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[1].SynchronizeType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2819197665125502911, guid: cabd056c28b11b649aa07c6658f1336e, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[2].SynchronizeType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2819197665125502911, guid: cabd056c28b11b649aa07c6658f1336e, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[3].SynchronizeType
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3006586140471532655, guid: cabd056c28b11b649aa07c6658f1336e, type: 3}
       propertyPath: m_AnimatePhysics

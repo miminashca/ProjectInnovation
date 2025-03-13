@@ -5936,7 +5936,7 @@ PrefabInstance:
     - target: {fileID: 6857230959691266149, guid: 2debc5d813f6e40f8b010e19b8181e33, type: 3}
       propertyPath: enemyPrefab
       value: 
-      objectReference: {fileID: 209055540923254911, guid: 50c8a6f0bcdf5d349a7d1e64b5087c91, type: 3}
+      objectReference: {fileID: 209055540923254911, guid: de312bb0812840e4ab9186b5108f77dd, type: 3}
     - target: {fileID: 6857230959691266149, guid: 2debc5d813f6e40f8b010e19b8181e33, type: 3}
       propertyPath: enemySpawnTransform
       value: 

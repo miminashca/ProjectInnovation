@@ -16,6 +16,8 @@ public class PursuingState : IEnemyState
         Debug.Log("Enter pursuing state");
         context.animator.SetBool("IsPursuing", true);
         context.navAgent.speed = context.chaseSpeed;
+        // Resetting the threshold bar here just for consistency
+        context.accumulateLoudness = 0f;
         lostPlayerTimer = 0f;
     }
 

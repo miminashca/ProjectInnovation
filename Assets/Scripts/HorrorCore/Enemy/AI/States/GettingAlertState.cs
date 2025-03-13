@@ -15,7 +15,9 @@ public class GettingAlertState : IEnemyState
     public void Enter(EnemyContext context)
     {
         Debug.Log("Enter GettingAlert state");
-        context.animator.SetTrigger("Alerted");
+        context.navAgent.speed = 0;
+        context.navAgent.ResetPath();
+        context.animator.SetBool("IsAlerting", true);
         alertTimeCounter = 0f;
     }
 
@@ -23,31 +25,33 @@ public class GettingAlertState : IEnemyState
     {
         alertTimeCounter += Time.deltaTime;
 
-        // If the enemy sees the player at any point, switch to pursuing.
+        // If the enemy sees the player, transition immediately to pursuing.
         if (context.playerInVision)
         {
             SM.SetState(new PursuingState(SM));
             return;
         }
 
-        // If the accumulated noise has reached the threshold, transition to investigating.
-        if (context.accumulateLoudness >= context.alertThreshold)
-        {
-            SM.SetState(new InvestigatingState(SM));
-            return;
-        }
-
-        // After the alert duration, return to roaming while preserving the accumulated noise.
+        // Wait for the alert animation to finish.
         if (alertTimeCounter >= context.alertDuration)
         {
-            SM.SetState(new RoamingState(SM));
+            // After the alert animation, if noise threshold is met, go into investigating;
+            // otherwise, return to roaming (or you could always choose investigating if that's preferred).
+            if (context.accumulateLoudness >= context.alertThreshold)
+            {
+                SM.SetState(new InvestigatingState(SM));
+            }
+            else
+            {
+                SM.SetState(new RoamingState(SM));
+            }
             return;
         }
     }
 
     public void Exit(EnemyContext context)
     {
-        // Do NOT reset accumulateLoudness here so that the enemy “remembers” the noise.
-        // It will be reset only when entering the Investigating state.
+        context.animator.SetBool("IsAlerting", false);
+        context.navAgent.speed = context.roamSpeed;
     }
 }
