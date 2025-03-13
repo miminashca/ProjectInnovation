@@ -14,7 +14,7 @@ public class VolumeSettings : MonoBehaviour
 
     private void Start()
     {
-        if (PlayerPrefs.HasKey("musicValue"))
+        if (PlayerPrefs.HasKey("musicVolume"))
         {
             LoadVolume();
         }
@@ -22,17 +22,48 @@ public class VolumeSettings : MonoBehaviour
         {
             setMusicVolume();
         }
+        if (PlayerPrefs.HasKey("sfxVolume"))
+        {
+            LoadVolume();
+        }
+        else
+        {
+           setSFXVolume();           
+        }
+        if (PlayerPrefs.HasKey("voiceVolume"))
+        {
+            LoadVolume();
+        }
+        else
+        {
+           setVoiceVolume();           
+        }
        
     }
     public void setMusicVolume()
     {
         float musicVolume = musicSlider.value;
-        MusicMixer.SetFloat("MasterVolume", Mathf.Log10(musicVolume)*20);
+        MusicMixer.SetFloat("music", Mathf.Log10(musicVolume)*20);
         PlayerPrefs.SetFloat("musicVolume", musicVolume); //store the slider info inetween scenes and whatnot
+    }
+    public void setSFXVolume()
+    {
+        float sfxVolume = sfxSlider.value;
+        SFXMixer.SetFloat("sfx", Mathf.Log10(sfxVolume) * 20);
+        PlayerPrefs.SetFloat("sfxVolume", sfxVolume);
+    }
+    public void setVoiceVolume()
+    {
+        float voiceVolume = voiceSlider.value;
+        VoiceMixer.SetFloat("voice", Mathf.Log10(voiceVolume)*20);
+        PlayerPrefs.SetFloat("voiceVolume", voiceVolume);
     }
     private void LoadVolume()
     {
         musicSlider.value = PlayerPrefs.GetFloat("musicVolume"); //get the stored val
         setMusicVolume();
+        sfxSlider.value = PlayerPrefs.GetFloat("sfxVolume");
+        setSFXVolume();
+        voiceSlider.value = PlayerPrefs.GetFloat("voiceVolume");
     }
 }

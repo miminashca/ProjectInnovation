@@ -121,6 +121,8 @@ AudioMixerController:
     name: IntenseLayerVolume
   - guid: 961237a4a2d3d8345b644b961ea38ed8
     name: CrazyLayerVolume
+  - guid: f7118ad8d5b19a04eba6622cf25eb39f
+    name: music
   - guid: 57f7fcc32619f4144a7bc56867a2bab9
     name: ViolinLayerVolume
   m_AudioMixerGroupViews:
