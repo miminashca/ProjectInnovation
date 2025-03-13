@@ -13,7 +13,7 @@ public class UpdateExitQuest : MonoBehaviour
     // Update is called once per frame
     public void EnableExit()
     {
-        if (GameManager.Instance.currentAmountOfPickups > 0)
+        if (GameManager.Instance.currentAmountOfPickups >= GameManager.Instance.minAmountOfPickups)
         {
             quest.SetActive(true);
         }
