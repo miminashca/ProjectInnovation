@@ -113,6 +113,7 @@ MonoBehaviour:
     investigateTimeout: 3
     pursuingVisionLostTime: 3
     alertDuration: 1.5
+    deathDuration: 3
     roamSpeed: 1.5
     chaseSpeed: 3
     patrolPoints:

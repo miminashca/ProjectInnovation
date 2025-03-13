@@ -4,6 +4,8 @@ public class KillingState : IEnemyState
 {
     public EnemyStateMachine SM { get; }
     public EnemyStateType enemyStateType { get; }
+    
+    private float timer = 0f;
     public KillingState(EnemyStateMachine SM)
     {
         this.SM = SM;
@@ -11,14 +13,15 @@ public class KillingState : IEnemyState
     }
     public void Enter(EnemyContext context)
     {
+        timer = 0f;
+        
         Debug.Log("Enter killing state!");
-        context.animator.SetBool("IsKilling", true);
-
+        
         // 1) Stop enemy movement
         context.navAgent.isStopped = true;
         context.navAgent.ResetPath();
 
-        // Optionally disable the player’s movement
+        // Optionally disable the playerï¿½s movement
         var playerMovement = context.playerTransform.GetComponent<PlayerMovement>();
         if (playerMovement != null)
         {
@@ -47,16 +50,22 @@ public class KillingState : IEnemyState
         Vector3 directionToEnemy = context.navAgent.transform.position - context.playerTransform.position;
         directionToEnemy.y = 0f;
         context.playerTransform.rotation = Quaternion.LookRotation(directionToEnemy);
+        
+        context.animator.SetBool("IsKilling", true);
 
         // 5) Notify the player side to begin the "death" sequence (camera fall, etc.)
         AIDirector.KillPlayer();
-        OnKillAnimationEnd();
     }
 
 
     public void Execute(EnemyContext context)
     {
-        
+        timer += Time.deltaTime;
+        if (timer >= context.deathDuration)
+        {
+            timer = 0f;
+            OnKillAnimationEnd();
+        }
     }
 
     public void Exit(EnemyContext context)

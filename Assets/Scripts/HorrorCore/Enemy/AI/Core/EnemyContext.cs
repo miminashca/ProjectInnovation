@@ -68,6 +68,8 @@ public class EnemyContext
     [Header("~ Duration of the GettingAlert state")]
     public float alertDuration = 1.5f;
 
+    public float deathDuration = 3f;
+
     // --- Movement / Patrol Data ---
     [Header("--- MOVEMENT / PATROL DATA ---")]
     [Header("~ Enemy speed during roaming state")]
