@@ -38,7 +38,7 @@ public class TryGetPickup : MonoBehaviour
                 Ray ray = cam.ScreenPointToRay(touch.position);
 
                 // Perform a 3D physics raycast
-                if (Physics.Raycast(ray, out RaycastHit hitInfo))
+                if (Physics.Raycast(ray, out RaycastHit hitInfo, 10, (1<<LayerMask.NameToLayer("Pickup"))))
                 {
                     // Here, we assume the pickup object has a "Pickup" script
                     // or some component that identifies it
@@ -59,7 +59,7 @@ public class TryGetPickup : MonoBehaviour
             // ScreenPointToRay: from the main camera, create a ray from the tap/click position
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             // RaycastHit is where the ray hits
-            if (Physics.Raycast(ray, out RaycastHit hitInfo))
+            if (Physics.Raycast(ray, out RaycastHit hitInfo,(1<<LayerMask.NameToLayer("Pickup"))))
             {
                 //Debug.Log(hitInfo.transform);
                 // If the collider we hit has a "Pickup" script (or tag named "Pickup"):
