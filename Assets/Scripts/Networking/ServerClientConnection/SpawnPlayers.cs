@@ -20,6 +20,8 @@ public class SpawnPlayers : MonoBehaviourPunCallbacks
     private GameObject playerInstance;
     private void Start()
     {
+        PhotonNetwork.AutomaticallySyncScene = true;
+
         if (PhotonNetwork.IsMasterClient)
         {
 
