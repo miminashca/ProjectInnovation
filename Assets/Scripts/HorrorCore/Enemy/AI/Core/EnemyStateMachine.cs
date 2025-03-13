@@ -20,7 +20,6 @@ public class EnemyStateMachine : MonoBehaviour
     {
         EventBus.OnThiefSpawned -= context.InitPlayer;
         EventBus.OnPlayerCrouch -= context.ChangePlayerHeadOffset;
-
     }
     private void Start()
     {
@@ -39,17 +38,17 @@ public class EnemyStateMachine : MonoBehaviour
     /// </summary>
     public void SetState(IEnemyState newState)
     {
-        // 1) Exit the current state
+        // 1) Exit the current state.
         if (currentState != null)
         {
             AIDirector.ExitStateWithID(currentState.enemyStateType);
             currentState.Exit(context);
         }
 
-        // 2) Switch to the new state
+        // 2) Switch to the new state.
         currentState = newState;
 
-        // 3) Enter the new state
+        // 3) Enter the new state.
         if (currentState != null)
         {
             AIDirector.EnterStateWithID(currentState.enemyStateType);
@@ -57,17 +56,24 @@ public class EnemyStateMachine : MonoBehaviour
         }
     }
 
-    void OnDrawGizmos()
+    // Centralized Gizmo drawing.
+    private void OnDrawGizmos()
     {
-        if (context == null || context.patrolPoints == null) return;
-
-        Gizmos.color = Color.green;
-        foreach (Transform waypoint in context.patrolPoints)
+        // Draw investigation points if current state is InvestigatingState.
+        if (currentState is InvestigatingState investigatingState)
         {
-            if (waypoint == null) continue;
-            // Draw a small sphere
-            Gizmos.DrawWireSphere(waypoint.position, 0.3f);
+            investigatingState.DrawInvestigationGizmos();
+        }
+
+        // Draw patrol points from the context.
+        if (context != null && context.patrolPoints != null)
+        {
+            Gizmos.color = Color.blue;
+            foreach (Transform waypoint in context.patrolPoints)
+            {
+                if (waypoint != null)
+                    Gizmos.DrawWireSphere(waypoint.position, 0.3f);
+            }
         }
     }
-
 }
