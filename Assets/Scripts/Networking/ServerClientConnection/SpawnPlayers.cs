@@ -24,7 +24,6 @@ public class SpawnPlayers : MonoBehaviourPunCallbacks
 
         if (PhotonNetwork.IsMasterClient)
         {
-
             Debug.Log("SpawnPlayers: Starting. IsMasterClient = " + PhotonNetwork.IsMasterClient);
 
             // 1) Spawn the main player (the thief)

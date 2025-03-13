@@ -15,6 +15,13 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        if(Instance != null) Destroy(gameObject);
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        
         EventBus.OnPickupCollected += UpdateAmountOfPickups;
         EventBus.OnGameFinished += LoadWinGameScene;
         EventBus.OnGameLost += LoadLoseGameScene;
@@ -25,16 +32,6 @@ public class GameManager : MonoBehaviour
         EventBus.OnPickupCollected -= UpdateAmountOfPickups;
         EventBus.OnGameFinished -= LoadWinGameScene;
         EventBus.OnGameLost -= LoadLoseGameScene;
-    }
-
-    void Start()
-    {
-        if(Instance != null) Destroy(gameObject);
-        else
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
     }
 
     void UpdateAmountOfPickups(PickUp pickUp)
@@ -59,6 +56,6 @@ public class GameManager : MonoBehaviour
     }
     void LoadLoseGameScene()
     {
-        PhotonNetwork.LoadLevel("Win");
+        PhotonNetwork.LoadLevel("Lose_Player2");
     }
 }

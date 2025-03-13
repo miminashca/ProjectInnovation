@@ -20,6 +20,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0.64285713
       objectReference: {fileID: 0}
+    - target: {fileID: 397449366832611872, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 736336527589482199, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.64285713
@@ -28,10 +32,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 831256532227140278, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1107535887506261701, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 1169286846584875184, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1741009178851750056, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -192,6 +204,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7301252830553084370, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7320342006309390485, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7994604729606939237, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8159536549113467136, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.64285713
@@ -207,6 +231,10 @@ PrefabInstance:
     - target: {fileID: 8473295177513265415, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8811953554205616766, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8902105031812518412, guid: eb0b6df47305440b68d9ad205694f3b7, type: 3}
       propertyPath: m_fontAsset

@@ -17,6 +17,7 @@ public class KillingState : IEnemyState
 
         // Possibly disable player movement, etc.
         AIDirector.KillPlayer();
+        OnKillAnimationEnd();
     }
 
     public void Execute(EnemyContext context)
