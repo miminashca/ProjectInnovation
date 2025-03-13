@@ -106,15 +106,15 @@ MonoBehaviour:
     timeSinceLastPlayerSight: 0
     lastHeardNoisePosition: {x: 0, y: 0, z: 0}
     hasRecentNoise: 0
-    alertThreshold: 1
+    alertThreshold: 3
     investigateThreshold: 0
     accumulateLoudness: 0
     immediatePursuitDistance: 1.5
     investigateTimeout: 3
     pursuingVisionLostTime: 3
     alertDuration: 1.5
-    roamSpeed: 2
-    chaseSpeed: 3
+    roamSpeed: 1
+    chaseSpeed: 2.5
     patrolPoints:
     - {fileID: 0}
     - {fileID: 0}
