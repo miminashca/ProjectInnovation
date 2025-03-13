@@ -795,12 +795,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2588603842260455912, guid: b34db281a3bf5174d9c2516719edd5c5, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.00090009003
+      objectReference: {fileID: 0}
+    - target: {fileID: 2588603842260455912, guid: b34db281a3bf5174d9c2516719edd5c5, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2655344917175988410, guid: b34db281a3bf5174d9c2516719edd5c5, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.00090009003
+      objectReference: {fileID: 0}
+    - target: {fileID: 2655344917175988410, guid: b34db281a3bf5174d9c2516719edd5c5, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2655344917175988410, guid: b34db281a3bf5174d9c2516719edd5c5, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.00090009003
       objectReference: {fileID: 0}
     - target: {fileID: 2692498312650691377, guid: b34db281a3bf5174d9c2516719edd5c5, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1006,6 +1018,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1832733616}
+    - target: {fileID: 3191576544682102219, guid: dad161d36076c1543988eb67de8115fd, type: 3}
+      propertyPath: m_text
+      value: Trusty Camera opperator. You are the eyes and ears of the Thief. Your
+        task is survailing the layout of the hospital and relaying useful inormation
+        to your buddy. Make sure the Thief makes it out alive!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5370627199729709192, guid: dad161d36076c1543988eb67de8115fd, type: 3}
+      propertyPath: m_text
+      value: Thief (Host)
+      objectReference: {fileID: 0}
     - target: {fileID: 8361861458574106954, guid: dad161d36076c1543988eb67de8115fd, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1089,6 +1111,10 @@ PrefabInstance:
     - target: {fileID: 8678079887673535986, guid: dad161d36076c1543988eb67de8115fd, type: 3}
       propertyPath: m_Name
       value: InfoPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8678079887673535986, guid: dad161d36076c1543988eb67de8115fd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

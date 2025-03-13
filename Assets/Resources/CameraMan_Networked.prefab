@@ -1078,10 +1078,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player2_Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 5187945264634221685, guid: 48cd16e71d0f992409ab6fa4f9d131fb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -54
-      objectReference: {fileID: 0}
     - target: {fileID: 6744111134748823456, guid: 48cd16e71d0f992409ab6fa4f9d131fb, type: 3}
       propertyPath: m_Pivot.x
       value: 0
