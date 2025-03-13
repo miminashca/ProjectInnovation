@@ -38,7 +38,7 @@ public class TryGetPickup : MonoBehaviour
                 Ray ray = cam.ScreenPointToRay(touch.position);
 
                 // Perform a 3D physics raycast
-                if (Physics.Raycast(ray, out RaycastHit hitInfo, 10, (1<<LayerMask.NameToLayer("Pickup"))))
+                if (Physics.Raycast(ray, out RaycastHit hitInfo, 10, (1<<LayerMask.NameToLayer("PlayerJar"))))
                 {
                     // Here, we assume the pickup object has a "Pickup" script
                     // or some component that identifies it
