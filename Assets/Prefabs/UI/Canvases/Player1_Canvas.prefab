@@ -500,6 +500,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6592081703456784530, guid: b34db281a3bf5174d9c2516719edd5c5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000061035156
+      objectReference: {fileID: 0}
     - target: {fileID: 9113192316742543591, guid: b34db281a3bf5174d9c2516719edd5c5, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -837,6 +841,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6990685169108425980}
     m_Modifications:
+    - target: {fileID: 1186215359169467966, guid: 8f9a7ae0910a5f248ab302ead7900f9b, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 4f01d3d7c3374d34b9537b1903422006, type: 2}
+    - target: {fileID: 1186215359169467966, guid: 8f9a7ae0910a5f248ab302ead7900f9b, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8100946646147842651, guid: 4f01d3d7c3374d34b9537b1903422006, type: 2}
+    - target: {fileID: 1186215359169467966, guid: 8f9a7ae0910a5f248ab302ead7900f9b, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271437937771612433, guid: 8f9a7ae0910a5f248ab302ead7900f9b, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 4f01d3d7c3374d34b9537b1903422006, type: 2}
+    - target: {fileID: 1271437937771612433, guid: 8f9a7ae0910a5f248ab302ead7900f9b, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8100946646147842651, guid: 4f01d3d7c3374d34b9537b1903422006, type: 2}
+    - target: {fileID: 1271437937771612433, guid: 8f9a7ae0910a5f248ab302ead7900f9b, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4642425218379312839, guid: 8f9a7ae0910a5f248ab302ead7900f9b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
