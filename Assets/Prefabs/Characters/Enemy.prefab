@@ -116,10 +116,10 @@ MonoBehaviour:
     roamSpeed: 2
     chaseSpeed: 3
     patrolPoints:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 1019859176643864592, guid: 9394bb1cd4abc4e748c2f6c28d00e63e, type: 3}
+    - {fileID: 7544376536511201098, guid: 7fa2959c95d654877a5b39d0e6fbb505, type: 3}
+    - {fileID: 7680624173776010525, guid: db48318bf549b483a959c10f35f1b559, type: 3}
+    - {fileID: 7120114084789456590, guid: 328fc768c39ee4d2681497df62382b8e, type: 3}
     currentPatrolIndex: 0
     killDistance: 0.2
 --- !u!114 &7902946726402063994

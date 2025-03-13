@@ -8,6 +8,10 @@ public class GameManager : MonoBehaviour
     public int minAmountOfPickups;
     public int currentAmountOfPickups = 0;
     public static GameManager Instance { get; private set; }
+    
+    public Transform enemySpawnTransform;
+    public GameObject enemyPrefab;
+    private GameObject enemy;
 
     private void Awake()
     {
@@ -35,6 +39,8 @@ public class GameManager : MonoBehaviour
 
     void UpdateAmountOfPickups(PickUp pickUp)
     {
+        if (!enemy) enemy = Instantiate(enemyPrefab, enemySpawnTransform.position, Quaternion.identity);
+        
         currentAmountOfPickups++;
         Debug.Log(currentAmountOfPickups);
         if(currentAmountOfPickups==minAmountOfPickups) EventBus.MinPickupsCollected();
