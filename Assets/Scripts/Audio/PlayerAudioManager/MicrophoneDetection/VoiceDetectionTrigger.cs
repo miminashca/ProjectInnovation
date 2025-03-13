@@ -2,12 +2,11 @@ using UnityEngine;
 
 public class VoiceDetectionTrigger : MonoBehaviour
 {
-    public SoundMeter soundMeter;       // Reference to the SoundMeter component.
-    public float baseRadius = 1f;         // Base radius for detection when amplitude is low.
-    public float radiusMultiplier = 5f;   // How much the amplitude scales the radius.
+    public SoundMeter soundMeter;           // Reference to the SoundMeter component.
+    public float baseRadius = 1f;           // Base radius for detection when amplitude is low.
+    public float radiusMultiplier = 5f;     // How much the amplitude scales the radius.
 
-    // LayerMask for filtering enemy colliders.
-    public LayerMask enemyLayer;
+    public LayerMask enemyLayer;            // LayerMask for filtering enemy colliders.
 
     void Update()
     {
@@ -22,29 +21,34 @@ public class VoiceDetectionTrigger : MonoBehaviour
             if (enemySM != null)
             {
                 float distance = Vector3.Distance(transform.position, enemySM.transform.position);
-                Debug.Log($"[VoiceDetectionTrigger] Detected player at distance: {distance:F2}");
+                //Debug.Log($"[VoiceDetectionTrigger] Detected player at distance: {distance:F2}");
 
-                // Record the noise position for the enemy.
+                // Record the noise position of the player
                 enemySM.context.lastHeardNoisePosition = transform.position;
 
-                // Immediate pursuit if very close.
+                // Immediate pursuit if very close
                 if (distance <= enemySM.context.immediatePursuitDistance)
                 {
                     Debug.Log("[VoiceDetectionTrigger] Player is close! Triggering Pursuing state.");
+
+                    // -----
                     enemySM.SetState(new PursuingState(enemySM));
+                    // -----
                 }
                 else
                 {
-                    // Accumulate noise using the context’s accumulator.
+                    // Accumulate noise over time.
                     enemySM.context.accumulateLoudness += amplitude * Time.deltaTime;
-                    Debug.Log($"[VoiceDetectionTrigger] Enemy noise accumulation: {enemySM.context.accumulateLoudness:F2}");
+                    //Debug.Log($"[VoiceDetectionTrigger] Enemy noise accumulation: {enemySM.context.accumulateLoudness:F2}");
 
-                    // If accumulated noise reaches or exceeds threshold and enemy is not already alerting/investigating:
+                    // When noise threshold is reached, trigger an alert event.
                     if (enemySM.context.accumulateLoudness >= enemySM.context.alertThreshold)
                     {
-                        // Trigger Getting Alert state.
-                        Debug.Log("[VoiceDetectionTrigger] Noise threshold reached! Triggering GettingAlert state.");
+                        Debug.Log("[VoiceDetectionTrigger] Noise threshold reached! Triggering Noise Alert.");
+
+                        // ----
                         enemySM.SetState(new GettingAlertState(enemySM));
+                        // ----
                     }
                 }
             }

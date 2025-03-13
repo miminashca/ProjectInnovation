@@ -59,9 +59,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 3.532071
+  m_Height: 3.5
   m_Direction: 1
-  m_Center: {x: 0, y: 1.7230153, z: 0}
+  m_Center: {x: 0, y: 1.75, z: 0}
 --- !u!114 &6576680403876800988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,7 +163,7 @@ MonoBehaviour:
     timeSinceLastPlayerSight: 0
     lastHeardNoisePosition: {x: 0, y: 0, z: 0}
     hasRecentNoise: 0
-    alertThreshold: 3
+    alertThreshold: 1
     investigateThreshold: 0
     accumulateLoudness: 0
     immediatePursuitDistance: 1.5

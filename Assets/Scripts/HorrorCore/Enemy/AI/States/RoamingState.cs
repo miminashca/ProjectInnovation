@@ -1,8 +1,8 @@
 using UnityEngine;
 
 /// <summary>
-/// Enemy moves randomly among given patrol points without returning
-/// immediately to the same waypoint. Also listens for audio or vision to transition.
+/// Enemy moves randomly among given patrol points without returning immediately to the same waypoint.
+/// Also listens for audio or vision to transition.
 /// </summary>
 public class RoamingState : IEnemyState
 {
@@ -59,4 +59,3 @@ public class RoamingState : IEnemyState
         context.navAgent.SetDestination(context.patrolPoints[newIndex].position);
     }
 }
-
