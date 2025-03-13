@@ -179,7 +179,7 @@ MonoBehaviour:
     SynchronizeEnabled: 1
     TeleportEnabled: 1
     TeleportIfDistanceGreaterThan: 3
-    InterpolateOption: 2
+    InterpolateOption: 3
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 1
     ExtrapolateOption: 0
@@ -600,19 +600,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2819197665125502911, guid: cabd056c28b11b649aa07c6658f1336e, type: 3}
       propertyPath: m_SynchronizeParameters.Array.data[0].SynchronizeType
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2819197665125502911, guid: cabd056c28b11b649aa07c6658f1336e, type: 3}
       propertyPath: m_SynchronizeParameters.Array.data[1].SynchronizeType
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2819197665125502911, guid: cabd056c28b11b649aa07c6658f1336e, type: 3}
       propertyPath: m_SynchronizeParameters.Array.data[2].SynchronizeType
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2819197665125502911, guid: cabd056c28b11b649aa07c6658f1336e, type: 3}
       propertyPath: m_SynchronizeParameters.Array.data[3].SynchronizeType
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3006586140471532655, guid: cabd056c28b11b649aa07c6658f1336e, type: 3}
       propertyPath: m_AnimatePhysics
