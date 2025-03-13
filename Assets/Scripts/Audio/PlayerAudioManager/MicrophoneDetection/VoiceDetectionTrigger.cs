@@ -42,19 +42,19 @@ public class VoiceDetectionTrigger : MonoBehaviour
                     if (enemySM.context.accumulateLoudness >= enemySM.context.alertThreshold)
                     {
                         AIDirector.ALert();
-                        Debug.Log("[VoiceDetectionTrigger] Noise threshold reached! Triggering Noise Alert.");
+                        //Debug.Log("[VoiceDetectionTrigger] Noise threshold reached! Triggering Noise Alert.");
                     }
                 }
             }
         }
     }
 
-    private void OnDrawGizmos()
+/*    private void OnDrawGizmos()
     {
         if (soundMeter == null)
             return;
         float currentRadius = baseRadius + soundMeter.currentFill * radiusMultiplier;
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, currentRadius);
-    }
+    }*/
 }

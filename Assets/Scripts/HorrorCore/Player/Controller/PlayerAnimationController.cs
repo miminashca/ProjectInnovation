@@ -25,22 +25,18 @@ public class PlayerAnimationController : MonoBehaviour
 
     private void Crouch()
     {
-        Debug.Log("crouch");
         animator.SetBool("IsCrouching", !animator.GetBool("IsCrouching"));
     }
     private void Die()
     {
-        Debug.Log("die");
         animator.SetBool("IsDieing", !animator.GetBool("IsDieing"));
     }
     private void StartMove()
     {
-        Debug.Log("start move");
         animator.SetBool("IsMoving", true);
     }
     private void StopMove()
     {
-        Debug.Log("stop move");
         animator.SetBool("IsMoving", false);
     }
 }

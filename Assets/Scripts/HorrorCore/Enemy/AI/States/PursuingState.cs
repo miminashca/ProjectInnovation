@@ -13,7 +13,7 @@ public class PursuingState : IEnemyState
 
     public void Enter(EnemyContext context)
     {
-        Debug.Log("Enter pursuing state");
+        //Debug.Log("Enter pursuing state");
         context.animator.SetBool("IsPursuing", true);
         context.navAgent.speed = context.chaseSpeed;
         // Resetting the threshold bar here just for consistency

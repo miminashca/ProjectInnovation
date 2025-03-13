@@ -29,13 +29,13 @@ public class CameraController : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("Gyroscope not available on this device. Disabling rotation.");
+                //Debug.LogWarning("Gyroscope not available on this device. Disabling rotation.");
                 gyroAvailable = false;
             }
         }
         else
         {
-            Debug.LogWarning("Gyroscope is disabled on non-mobile platforms.");
+            //Debug.LogWarning("Gyroscope is disabled on non-mobile platforms.");
             gyroAvailable = false;
         }
     }

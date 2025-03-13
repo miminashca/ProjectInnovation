@@ -15,7 +15,7 @@ public class KillingState : IEnemyState
     {
         timer = 0f;
         
-        Debug.Log("Enter killing state!");
+        //Debug.Log("Enter killing state!");
         
         // 1) Stop enemy movement
         context.navAgent.isStopped = true;
@@ -75,7 +75,7 @@ public class KillingState : IEnemyState
     
     public void OnKillAnimationEnd()
     {
-        Debug.Log("Kill animation ended, triggering LoseGame event.");
+        //Debug.Log("Kill animation ended, triggering LoseGame event.");
         EventBus.LoseGame();
     }
 }

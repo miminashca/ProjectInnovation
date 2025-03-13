@@ -17,7 +17,7 @@ public class InvestigatingState : IEnemyState
 
     public void Enter(EnemyContext context)
     {
-        Debug.Log("Enter Investigating state");
+        //Debug.Log("Enter Investigating state");
         AIDirector.OnPlayerSpotted += TransitToPursuingState;
         // Reset accumulated noise when starting investigation.
         context.accumulateLoudness = 0f;
@@ -86,7 +86,7 @@ public class InvestigatingState : IEnemyState
     }
 
     // This method draws the investigation points using Gizmos.
-    public void DrawInvestigationGizmos()
+/*    public void DrawInvestigationGizmos()
     {
         if (investigationPoints == null) return;
         Gizmos.color = Color.yellow;
@@ -95,5 +95,5 @@ public class InvestigatingState : IEnemyState
             // Draw a small sphere at each investigation point.
             Gizmos.DrawSphere(point, 0.3f);
         }
-    }
+    }*/
 }

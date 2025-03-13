@@ -58,7 +58,7 @@ public class EnemyStateMachine : MonoBehaviour
     }
 
     // Centralized Gizmo drawing.
-    private void OnDrawGizmos()
+/*    private void OnDrawGizmos()
     {
         // Draw investigation points if current state is InvestigatingState.
         if (currentState is InvestigatingState investigatingState)
@@ -76,5 +76,5 @@ public class EnemyStateMachine : MonoBehaviour
                     Gizmos.DrawWireSphere(waypoint.position, 0.3f);
             }
         }
-    }
+    }*/
 }

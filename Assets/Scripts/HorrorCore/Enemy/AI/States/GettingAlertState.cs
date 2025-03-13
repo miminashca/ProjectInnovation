@@ -14,7 +14,7 @@ public class GettingAlertState : IEnemyState
 
     public void Enter(EnemyContext context)
     {
-        Debug.Log("Enter GettingAlert state");
+        //Debug.Log("Enter GettingAlert state");
         context.navAgent.speed = 0;
         context.navAgent.ResetPath();
         context.animator.SetBool("IsAlerting", true);

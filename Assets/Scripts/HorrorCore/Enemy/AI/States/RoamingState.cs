@@ -17,7 +17,7 @@ public class RoamingState : IEnemyState
 
     public void Enter(EnemyContext context)
     {
-        Debug.Log("Enter Roaming state");
+        //Debug.Log("Enter Roaming state");
         context.navAgent.speed = context.roamSpeed;
         SetNextPatrolPoint(context);
         context.animator.SetBool("IsRoaming", true);

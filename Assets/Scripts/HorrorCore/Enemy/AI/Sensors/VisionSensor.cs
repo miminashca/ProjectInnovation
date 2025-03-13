@@ -66,7 +66,7 @@ public class VisionSensor : MonoBehaviour
     }
     
     // Draw the vision cone and ray in the Scene view using Gizmos
-    private void OnDrawGizmos()
+    /*private void OnDrawGizmos()
     {
         //if (!SM.context.playerTransform) return;
         // Calculate enemy head position based on offset
@@ -103,6 +103,6 @@ public class VisionSensor : MonoBehaviour
         Vector3 playerHeadPosition = SM.context.playerTransform.position + SM.context.playerHeadOffset;
         Gizmos.color = Color.cyan;
         Gizmos.DrawLine(enemyHeadPosition, playerHeadPosition);
-    }
+    }*/
 
 }

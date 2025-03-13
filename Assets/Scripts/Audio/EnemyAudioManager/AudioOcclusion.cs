@@ -68,7 +68,7 @@ public class AudioOcclusion : MonoBehaviour
 
             // Draw individual rays in Scene view
             Color rayColor = rayBlocked ? Color.red : Color.green;
-            Debug.DrawRay(transform.position, rayDirection * distanceToListener, rayColor);
+            //Debug.DrawRay(transform.position, rayDirection * distanceToListener, rayColor);
 
             // Count the number of blocked rays
             if (rayBlocked)
