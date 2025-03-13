@@ -464,6 +464,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5486244676296353538}
   - component: {fileID: 1341975598098724536}
+  - component: {fileID: 543837849203267549}
   - component: {fileID: 7790299437776480794}
   m_Layer: 5
   m_Name: ObjectivePanel_Player2
@@ -501,6 +502,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7230068512664862797}
   m_CullTransparentMesh: 1
+--- !u!114 &543837849203267549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7230068512664862797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c65c8ecbec52296449b50b5b40a4d312, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest: {fileID: 6243651881628085955}
 --- !u!114 &7790299437776480794
 MonoBehaviour:
   m_ObjectHideFlags: 0
