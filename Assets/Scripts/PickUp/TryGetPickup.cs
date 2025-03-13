@@ -59,7 +59,7 @@ public class TryGetPickup : MonoBehaviour
             // ScreenPointToRay: from the main camera, create a ray from the tap/click position
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             // RaycastHit is where the ray hits
-            if (Physics.Raycast(ray, out RaycastHit hitInfo,(1<<LayerMask.NameToLayer("Pickup"))))
+            if (Physics.Raycast(ray, out RaycastHit hitInfo,(1<<LayerMask.NameToLayer("PlayerJar"))))
             {
                 //Debug.Log(hitInfo.transform);
                 // If the collider we hit has a "Pickup" script (or tag named "Pickup"):
