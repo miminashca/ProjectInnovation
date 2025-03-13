@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public int maxAmountOfPickups;
     public int minAmountOfPickups;
     public int currentAmountOfPickups = 0;
     public static GameManager Instance { get; private set; }
@@ -31,6 +30,7 @@ public class GameManager : MonoBehaviour
     void UpdateAmountOfPickups(PickUp pickUp)
     {
         currentAmountOfPickups++;
+        Debug.Log(currentAmountOfPickups);
         if(currentAmountOfPickups==minAmountOfPickups) EventBus.MinPickupsCollected();
     }
 }

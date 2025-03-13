@@ -47,6 +47,7 @@ public static class EventBus
     
     public static void MinPickupsCollected()
     {
+        Debug.Log("Required amount of pickups collected!!!");
         OnMinAmountOfPickupsCollected?.Invoke();
     }
 }
