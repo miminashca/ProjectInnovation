@@ -217,7 +217,7 @@ Transform:
   m_GameObject: {fileID: 114747222}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1, y: 0.16, z: 28.25}
+  m_LocalPosition: {x: 18.08, y: 0.16, z: 63.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -248,7 +248,7 @@ Transform:
   m_GameObject: {fileID: 203271531}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.368, y: -0.7, z: 20.95}
+  m_LocalPosition: {x: 9.58, y: -0.7, z: 16.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6218,7 +6218,7 @@ PrefabInstance:
     - target: {fileID: 6857230959691266149, guid: 2debc5d813f6e40f8b010e19b8181e33, type: 3}
       propertyPath: enemyPrefab
       value: 
-      objectReference: {fileID: 209055540923254911, guid: 50c8a6f0bcdf5d349a7d1e64b5087c91, type: 3}
+      objectReference: {fileID: 209055540923254911, guid: de312bb0812840e4ab9186b5108f77dd, type: 3}
     - target: {fileID: 6857230959691266149, guid: 2debc5d813f6e40f8b010e19b8181e33, type: 3}
       propertyPath: enemySpawnTransform
       value: 
