@@ -29,7 +29,7 @@ public class SoundMeter : MonoBehaviour
 
     private string[] warningMessages = {
         "KEEP IT QUIET",
-        "SPOTTED"
+        "DANGER"
     };
 
     private void Start()
