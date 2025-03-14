@@ -56,6 +56,7 @@ public class KillingState : IEnemyState
 
         // 5) Notify the player side to begin the "death" sequence (camera fall, etc.)
         EventBus.PlayerDie();
+        AIDirector.KillPlayer();
     }
 
 
