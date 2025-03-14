@@ -96,7 +96,7 @@ public class PlayerMovement : MonoBehaviour
         {
             moveVector += new Vector3(joystick.Horizontal, 0, joystick.Vertical);
         }
-        moveVector += new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        //moveVector += new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
         Vector3 newVelocity = playerRigidbody.transform.right * moveVector.x +
                               playerRigidbody.transform.forward * moveVector.z;
@@ -121,9 +121,11 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        float mouseX = Input.GetAxis("Mouse X") * horizontalSensitivity * Time.deltaTime;
+        //float mouseX = Input.GetAxis("Mouse X") * horizontalSensitivity * Time.deltaTime;
 
-        yRotation += (mouseX + touchVec.x);
+        //yRotation += (mouseX + touchVec.x);
+        yRotation += touchVec.x;
+
         transform.localRotation = Quaternion.Euler(0f, yRotation, 0f);
 
         if (playerPlayerCameraController)
