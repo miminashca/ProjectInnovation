@@ -28,7 +28,6 @@ public class PlayerMovement : MonoBehaviour
 
     public event Action OnPlayerStartMove;
     public event Action OnPlayerStopMove;
-    public event Action OnPlayerDie;
     public event Action OnPlayerCrouch;
 
     private float lastVelocity = 0f;
@@ -38,12 +37,13 @@ public class PlayerMovement : MonoBehaviour
     private void OnEnable()
     {
         EventBus.OnPlayerCrouch += ChangeSpeed;
-        AIDirector.OnEnemyKilledPlayer += Die;
+        EventBus.OnPlayerDie += Die;
+        
     }
     private void OnDisable()
     {
         EventBus.OnPlayerCrouch -= ChangeSpeed;
-        AIDirector.OnEnemyKilledPlayer -= Die;
+        EventBus.OnPlayerDie -= Die;
     }
 
     void Start()
@@ -189,8 +189,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Die()
-    {
-        isDead = true; 
-        OnPlayerDie?.Invoke();
+    { 
+        isDead = true;
     }
 }

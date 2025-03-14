@@ -16,6 +16,9 @@ public static class EventBus
     public static event Action OnGameFinished;
     public static event Action OnGameLost;
     public static event Action<GameObject> OnSpawnEnemy;
+
+    public static event Action OnPlayerDie;
+
     public static void SpawnThief(Transform thiefTransform)
     {
         OnThiefSpawned?.Invoke(thiefTransform);
@@ -37,7 +40,11 @@ public static class EventBus
     {
         OnSpawnEnemy?.Invoke(enemy);
     }
-    
+    public static void PlayerDie()
+    {
+        OnPlayerDie?.Invoke();
+    }
+
     public static void PressCameraSwitchButton(int ID)
     {
         OnCameraSwitchButtonPressedWithID?.Invoke(ID);

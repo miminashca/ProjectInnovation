@@ -10,7 +10,7 @@ public class PlayerAnimationController : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         playerMovement = GetComponent<PlayerMovement>();
         playerMovement.OnPlayerCrouch += Crouch;
-        playerMovement.OnPlayerDie += Die;
+        EventBus.OnPlayerDie += Die;
         playerMovement.OnPlayerStartMove += StartMove;
         playerMovement.OnPlayerStopMove += StopMove;
     }
@@ -18,7 +18,7 @@ public class PlayerAnimationController : MonoBehaviour
     private void OnDestroy()
     {
         playerMovement.OnPlayerCrouch -= Crouch;
-        playerMovement.OnPlayerDie -= Die;
+        EventBus.OnPlayerDie -= Die;
         playerMovement.OnPlayerStartMove -= StartMove;
         playerMovement.OnPlayerStopMove -= StopMove;
     }
@@ -29,7 +29,8 @@ public class PlayerAnimationController : MonoBehaviour
     }
     private void Die()
     {
-        animator.SetBool("IsDieing", !animator.GetBool("IsDieing"));
+        Debug.Log("Death animation should happen here!!!");
+        animator.SetBool("IsDieing", true);
     }
     private void StartMove()
     {

@@ -1,3 +1,4 @@
+using Photon.Pun.Demo.PunBasics;
 using UnityEngine;
 
 public class KillingState : IEnemyState
@@ -54,7 +55,7 @@ public class KillingState : IEnemyState
         context.animator.SetBool("IsKilling", true);
 
         // 5) Notify the player side to begin the "death" sequence (camera fall, etc.)
-        AIDirector.KillPlayer();
+        EventBus.PlayerDie();
     }
 
 

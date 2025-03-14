@@ -14,7 +14,6 @@ public class OutlineDistanceManager : MonoBehaviour
         outlineController = GetComponent<OutlineController>();
         if (outlineController.outlineObject == null)
         {
-            Debug.LogError("OutlineDistanceManager: �������� ������ ������� �� ������!");
         }
         StartCoroutine(FindThiefCoroutine());
     }
