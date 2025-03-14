@@ -41,6 +41,10 @@ public class GameManager : MonoBehaviour
             enemy = PhotonNetwork.Instantiate(enemyPrefab.name, enemySpawnTransform.position, Quaternion.identity);
             EventBus.SpawnEnemy(enemy);
         }
+        // else
+        // {
+        //     enemy.transform.position = enemySpawnTransform.position;
+        // }
         
         currentAmountOfPickups++;
         GetComponent<PhotonView>().RPC("UpdateCounter", RpcTarget.All, currentAmountOfPickups);
