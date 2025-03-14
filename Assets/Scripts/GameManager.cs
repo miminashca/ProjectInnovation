@@ -36,20 +36,18 @@ public class GameManager : MonoBehaviour
 
     void UpdateAmountOfPickups(PickUp pickUp)
     {
-        if (!enemy)
+        // Only the Master Client should spawn the enemy
+        if (PhotonNetwork.IsMasterClient && !enemy)
         {
             enemy = PhotonNetwork.Instantiate(enemyPrefab.name, enemySpawnTransform.position, Quaternion.identity);
             EventBus.SpawnEnemy(enemy);
         }
-        // else
-        // {
-        //     enemy.transform.position = enemySpawnTransform.position;
-        // }
-        
+
         currentAmountOfPickups++;
         GetComponent<PhotonView>().RPC("UpdateCounter", RpcTarget.All, currentAmountOfPickups);
-        Debug.Log(currentAmountOfPickups);
-        if(currentAmountOfPickups==minAmountOfPickups) EventBus.MinPickupsCollected();
+
+        if (currentAmountOfPickups == minAmountOfPickups)
+            EventBus.MinPickupsCollected();
     }
 
     [PunRPC]
