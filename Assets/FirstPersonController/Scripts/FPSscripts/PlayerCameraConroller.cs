@@ -17,10 +17,11 @@ public class PlayerCameraConroller : MonoBehaviour
 
     public void RotateCamera(float touchY)
     {
-        // 🎮 PC: Still support mouse input
-        //float mouseY = Input.GetAxis("Mouse Y") * verticalSensitivity * Time.deltaTime;
+#if UNITY_EDITOR
+        float mouseY = Input.GetAxis("Mouse Y") * verticalSensitivity * Time.deltaTime;
+        xRotation -= mouseY;
+#endif
         
-        //xRotation -= (mouseY + touchY);
         xRotation -= touchY;
         xRotation = Mathf.Clamp(xRotation, topClamp, bottomClamp);
         

@@ -90,13 +90,18 @@ public class PlayerMovement : MonoBehaviour
             isMoving = false;
             OnPlayerStopMove?.Invoke();
         }
-////
+
+        
+        
         Vector3 moveVector = Vector3.zero;
         if (joystick)
         {
             moveVector += new Vector3(joystick.Horizontal, 0, joystick.Vertical);
         }
-        //moveVector += new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        
+#if UNITY_EDITOR
+        moveVector += new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+#endif
 
         Vector3 newVelocity = playerRigidbody.transform.right * moveVector.x +
                               playerRigidbody.transform.forward * moveVector.z;
@@ -121,9 +126,11 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        //float mouseX = Input.GetAxis("Mouse X") * horizontalSensitivity * Time.deltaTime;
-
-        //yRotation += (mouseX + touchVec.x);
+#if UNITY_EDITOR
+        float mouseX = Input.GetAxis("Mouse X") * horizontalSensitivity * Time.deltaTime;
+        yRotation += mouseX;
+#endif
+        
         yRotation += touchVec.x;
 
         transform.localRotation = Quaternion.Euler(0f, yRotation, 0f);
