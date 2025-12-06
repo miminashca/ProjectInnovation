@@ -50,16 +50,18 @@ The interface was rigorously tested and iterated upon to handle complex inputs o
 
 This project was built in a 3-week agile sprint by a multidisciplinary team at Saxion University.
 
-**Engineering & Design**
-* **Nichita Cebotari (Framework & Gameplay):** Architected the Monster FSM, Audio Detection systems, Voice Chat integration, and managed the Git pipeline.
-* **Svitlana Sosnova (Networking & Mechanics):** Implemented the core Photon architecture, Player State Machine, movement synchronization, and object interaction logic.
-* **Bogdan Pascari (UI/UX Designer):** Designed Figma prototypes, implemented Unity UI layouts, and programmed responsive UX logic.
-* **Simeon Dorne (Sound Designer):** Recorded custom foley, composed adaptive music, and wrote scripts for audio occlusion and optimization.
+**Engineering**
+* **[Nichita Cebotari (Framework & Gameplay)](https://linktr.ee/nikkicheb):** Architected the Monster FSM, Audio Detection systems, Voice Chat integration, and managed the Git pipeline.
+* **[Svitlana Sosnova (Networking & Mechanics)](https://linktr.ee/miminashca?ltsid=7c9b94a2-6f6e-431a-937d-a78485047df2):** Implemented the core Photon architecture, Player State Machine, movement synchronization, and object interaction logic.
+
+**UI/UX & SFX Design**
+* **[Bogdan Pascari (UI/UX Designer)](https://pascaribogdan.journoportfolio.com/):** Designed Figma prototypes, implemented Unity UI layouts, and programmed responsive UX logic.
+* **[Simeon Dorne (Sound Designer)](https://simeondorne.com/):** Recorded custom foley, composed adaptive music, and wrote scripts for audio occlusion and optimization.
 
 **Art & Level Design**
-* **Catalin Apostol (3D Art & Animation):** Created the Monster concept and model, managed the character render pipeline, and handled animation states.
-* **Mariia Nechepurenko (Technical Artist):** Modeled environment props, handled UV/Texturing, light baking, and developed post-processing shaders.
-* **Stefani Badzheva (Level Art & Builder):** Modeled layout structures, textured rooms, created the Thief character model, and assembled the final scene.
+* **[Catalin Apostol (3D Art & Animation)](https://cata1029.artstation.com):** Created the Monster concept and model, managed the character render pipeline, and handled animation states.
+* **[Mariia Nechepurenko (Technical Artist)](https://www.artstation.com/mariianechepurenko):** Modeled environment props, handled UV/Texturing, light baking, and developed post-processing shaders.
+* **[Stefani Badzheva (Level Art & Builder)](https://stefanibadzheva.artstation.com/):** Modeled layout structures, textured rooms, created the Thief character model, and assembled the final scene.
 
 ---
 
